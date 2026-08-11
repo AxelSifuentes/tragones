@@ -1,0 +1,62 @@
+[
+  {
+    "nombre": "Champagne",
+    "total": 4
+  },
+  {
+    "nombre": "Vermouth",
+    "total": 1
+  },
+  {
+    "nombre": "Gaseosas",
+    "total": 4
+  },
+  {
+    "nombre": "Complementos",
+    "total": 2
+  },
+  {
+    "nombre": "Vino Blanco",
+    "total": 5
+  },
+  {
+    "nombre": "Tequila",
+    "total": 13
+  },
+  {
+    "nombre": "Otras Bebidas",
+    "total": 13
+  },
+  {
+    "nombre": "Sin Categoria",
+    "total": 5
+  },
+  {
+    "nombre": "Ron",
+    "total": 41
+  },
+  {
+    "nombre": "Whisky",
+    "total": 24
+  },
+  {
+    "nombre": "Vodka",
+    "total": 9
+  },
+  {
+    "nombre": "Pisco",
+    "total": 15
+  },
+  {
+    "nombre": "GIN",
+    "total": 15
+  },
+  {
+    "nombre": "Vinos",
+    "total": 33
+  },
+  {
+    "nombre": "Cerveza",
+    "total": 10
+  }
+]

@@ -1,0 +1,82 @@
+// productos.db.js - BASE DE DATOS INICIAL - 130 productos
+// Este archivo simula tu API. Edítalo o reemplázalo con el export del admin.
+
+const PRODUCTOS_INICIALES = [
+  {
+    id: 6110,
+    slug: "cerveza-corona-extra-twelve-pack-botella-355ml",
+    nombre: "Cerveza CORONA Extra Twelve Pack Botella 355ml",
+    precio: 75.00,
+    imagen: "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/03/Cerveza-CORONA-Extra-twelve-Pack-Lata-355ml.jpg",
+    categoria: "Cerveza",
+    marca: "Corona",
+    stock: true,
+    descripcion_corta: "Twelve Pack Corona Extra 355ml, pilsener mexicana 4.5% alcohol.",
+    descripcion_larga: "Disfruta del inconfundible sabor de Corona Extra en su presentación Twelve Pack de 355ml. Pilsener 4.5% elaborada con agua, malta de cebada, maíz y lúpulo."
+  },
+  {
+    id: 5879,
+    slug: "cerveza-pilsen-12-latas",
+    nombre: "Cerveza PILSEN 12 Latas Twelve Pack Lata 355ml",
+    precio: 69.00,
+    imagen: "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/02/cerveza-pilsen-355ml-12-pack-6475-291x291.jpg",
+    categoria: "Cerveza",
+    marca: "Pilsen",
+    stock: true,
+    descripcion_corta: "Pilsen Callao Twelve Pack 355ml",
+    descripcion_larga: "La cerveza que reúne a los amigos. Pilsen Callao en pack de 12 latas bien heladas."
+  },
+  {
+    id: 5884,
+    slug: "cerveza-pilsen-lata-473ml",
+    nombre: "Cerveza PILSEN LATON 473ml 12 Latas Twelve Pack",
+    precio: 79.00,
+    imagen: "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/02/twelvepack-437ml-1-291x291.jpg",
+    categoria: "Cerveza",
+    marca: "Pilsen",
+    stock: true,
+    descripcion_corta: "Pilsen Latón 473ml x12",
+    descripcion_larga: "Más contenido, mismo sabor. Pack de 12 latones de 473ml."
+  },
+  {
+    id: 6344,
+    slug: "cusquena-laton-twelve-pack-trigo-473-ml",
+    nombre: "Cusqueña laton twelve pack trigo 473 ml",
+    precio: 79.00,
+    imagen: "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/05/cusquena-x12-trigo-1-291x291.jpg",
+    categoria: "Cerveza",
+    marca: "Cusqueña",
+    stock: true,
+    descripcion_corta: "Cusqueña Trigo 473ml x12",
+    descripcion_larga: "Cusqueña Trigo, sabor artesanal con notas de trigo."
+  },
+  {
+    id: 6185,
+    slug: "heineken-twelve-pack-310ml",
+    nombre: "Heineken Twelve Pack 310ml – Cerveza Premium en Pack de 12 latas",
+    precio: 65.00,
+    imagen: "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/04/heineken-lata-310ml-291x291.png.webp",
+    categoria: "Cerveza",
+    marca: "Heineken",
+    stock: true,
+    descripcion_corta: "Heineken Premium 310ml x12",
+    descripcion_larga: "Heineken Premium, sabor internacional en pack de 12."
+  },
+  {
+    id: 6186,
+    slug: "stella-artois-twelve-pack-330ml",
+    nombre: "Stella Artois Twelve Pack 330ml – Cerveza Belga Premium",
+    precio: 75.00,
+    imagen: "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/04/x12-stella-291x291.jpg.webp",
+    categoria: "Cerveza",
+    marca: "Stella Artois",
+    stock: true,
+    descripcion_corta: "Stella Artois 330ml x12",
+    descripcion_larga: "Cerveza belga premium, tradición desde 1366."
+  }
+  // Agrega aquí los otros 124 productos con el mismo formato...
+  // Puedes generarlos desde tu Excel/WordPress export
+];
+
+// Para simular AJAX: si usas .json, haz fetch('./productos.json')
+// Si usas .js, este archivo ya expone PRODUCTOS_INICIALES global

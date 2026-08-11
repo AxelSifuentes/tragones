@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Tragones 194 Productos Categorizados</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body{font-family:'Public Sans',sans-serif;background:#0a0a0a;color:#fff}
+.font-oswald{font-family:'Oswald',sans-serif}
+.scrollbar-hide::-webkit-scrollbar{display:none}
+.scrollbar-hide{-ms-overflow-style:none;scrollbar-width:none}
+</style>
+</head>
+<body class="bg-[#0a0a0a] min-h-screen p-3 md:p-6">
+
+<div class="max-w-[1600px] mx-auto">
+
+  <!-- HEADER -->
+  <div class="bg-[#111] border border-[#222] rounded-[20px] p-5 md:p-6 mb-6">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <div>
+        <h1 class="font-oswald text-[24px] md:text-[32px] font-bold uppercase leading-none">Admin Tragones <span class="text-[#ffaa00]">194 productos</span></h1>
+        <p class="text-[13px] text-[#888] mt-2">Todos categorizados • <span class="text-white" id="statsCategorias"></span> • Edición 100% HTML/CSS/JS • Guarda en localStorage</p>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <button onclick="descargarJSON()" class="bg-[#ffaa00] text-black px-5 py-2.5 rounded-full font-bold text-[11px] tracking-widest hover:bg-white transition"><i class="fas fa-download mr-1"></i> DESCARGAR productos.json</button>
+        <button onclick="descargarJS()" class="bg-white text-black px-5 py-2.5 rounded-full font-bold text-[11px] tracking-widest hover:bg-[#ffaa00] transition"><i class="fas fa-file-code mr-1"></i> DESCARGAR .db.js</button>
+        <button onclick="resetDB()" class="bg-[#222] border border-[#333] text-white px-4 py-2.5 rounded-full font-bold text-[11px] tracking-widest hover:bg-[#333] transition">RESET</button>
+      </div>
+    </div>
+
+    <!-- FILTROS CATEGORIAS -->
+    <div class="mt-6 border-t border-[#222] pt-5">
+      <div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide" id="filtrosCategorias"></div>
+      <div class="flex flex-col md:flex-row gap-3 mt-4">
+        <div class="relative flex-1 max-w-[420px]">
+          <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-[#555] text-[12px]"></i>
+          <input id="buscador" placeholder="Buscar por nombre, marca, tag..." class="w-full bg-[#0a0a0a] border border-[#222] rounded-full pl-10 pr-4 py-2.5 text-[13px] focus:border-[#ffaa00] outline-none">
+        </div>
+        <select id="orden" class="bg-[#0a0a0a] border border-[#222] rounded-full px-4 py-2.5 text-[12px] focus:border-[#ffaa00] outline-none">
+          <option value="">Orden: Por defecto</option>
+          <option value="precio-menor">Precio menor a mayor</option>
+          <option value="precio-mayor">Precio mayor a menor</option>
+          <option value="nombre-az">Nombre A-Z</option>
+          <option value="categoria">Categoría A-Z</option>
+        </select>
+        <div class="text-[11px] text-[#666] flex items-center gap-2">
+          <span id="contadorFiltrados" class="bg-[#1a1a1a] border border-[#222] px-3 py-2 rounded-full"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-6 items-start">
+
+    <!-- FORMULARIO -->
+    <div class="bg-[#111] border border-[#222] rounded-[20px] p-5 md:p-6 sticky top-4 md:top-6">
+      <h2 class="font-oswald font-bold uppercase text-[13px] tracking-[0.15em] mb-5 flex items-center gap-2" id="formTitle"><span class="w-2 h-2 bg-[#25D366] rounded-full animate-pulse"></span> Agregar Producto</h2>
+      
+      <form id="productoForm" class="space-y-4">
+        <input type="hidden" id="editId">
+        <div>
+          <label class="text-[10px] text-[#888] tracking-widest uppercase font-bold">Nombre del producto *</label>
+          <input id="nombre" required class="w-full mt-1.5 bg-[#0a0a0a] border border-[#222] rounded-xl px-4 py-3 text-[13px] focus:border-[#ffaa00] outline-none" placeholder="Ej: Ron Cartavio Black 750ml">
+        </div>
+        
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="text-[10px] text-[#888] tracking-widest uppercase font-bold">Precio S/ *</label>
+            <input id="precio" type="number" step="0.01" required class="w-full mt-1.5 bg-[#0a0a0a] border border-[#222] rounded-xl px-4 py-3 text-[13px] focus:border-[#ffaa00] outline-none" placeholder="85.00">
+          </div>
+          <div>
+            <label class="text-[10px] text-[#888] tracking-widest uppercase font-bold">Marca</label>
+            <input id="marca" class="w-full mt-1.5 bg-[#0a0a0a] border border-[#222] rounded-xl px-4 py-3 text-[13px] focus:border-[#ffaa00] outline-none" placeholder="Cartavio">
+          </div>
+        </div>
+
+        <div>
+          <label class="text-[10px] text-[#888] tracking-widest uppercase font-bold">Categoría *</label>
+          <select id="categoria" required class="w-full mt-1.5 bg-[#0a0a0a] border border-[#222] rounded-xl px-4 py-3 text-[13px] focus:border-[#ffaa00] outline-none">
+            <option value="Ron">Ron (41)</option>
+            <option value="Vinos">Vinos (33)</option>
+            <option value="Whisky">Whisky (24)</option>
+            <option value="Pisco">Pisco (15)</option>
+            <option value="GIN">GIN (15)</option>
+            <option value="Tequila">Tequila (13)</option>
+            <option value="Otras Bebidas">Otras Bebidas (13)</option>
+            <option value="Cerveza">Cerveza (10)</option>
+            <option value="Vodka">Vodka (9)</option>
+            <option value="Vino Blanco">Vino Blanco (5)</option>
+            <option value="Champagne">Champagne (4)</option>
+            <option value="Gaseosas">Gaseosas (4)</option>
+            <option value="Complementos">Complementos (2)</option>
+            <option value="Vermouth">Vermouth (1)</option>
+            <option value="Sin Categoria">Sin Categoria (5)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="text-[10px] text-[#888] tracking-widest uppercase font-bold">Imagen URL *</label>
+          <input id="imagen" required class="w-full mt-1.5 bg-[#0a0a0a] border border-[#222] rounded-xl px-4 py-3 text-[13px] focus:border-[#ffaa00] outline-none" placeholder="https://...jpg">
+          <div id="previewImg" class="mt-2 hidden">
+            <img id="previewImgTag" src="" class="w-full h-32 object-contain bg-white rounded-xl p-2">
+          </div>
+        </div>
+
+        <div>
+          <label class="text-[10px] text-[#888] tracking-widest uppercase font-bold">Descripción corta</label>
+          <textarea id="desc_corta" rows="2" class="w-full mt-1.5 bg-[#0a0a0a] border border-[#222] rounded-xl px-4 py-3 text-[13px] focus:border-[#ffaa00] outline-none resize-none" placeholder="Descripción breve para cards..."></textarea>
+        </div>
+
+        <div class="flex gap-2 pt-2">
+          <button type="submit" class="flex-1 bg-white text-black font-bold py-3.5 rounded-full text-[12px] tracking-widest hover:bg-[#ffaa00] transition shadow" id="btnGuardar">GUARDAR EN LOCALSTORAGE</button>
+          <button type="button" onclick="limpiarForm()" class="bg-[#1a1a1a] border border-[#222] text-white px-5 py-3.5 rounded-full text-[12px] font-bold hover:bg-[#222] transition">LIMPIAR</button>
+        </div>
+        
+        <p class="text-[10px] text-[#555] text-center leading-4 pt-1">Se guarda instantáneamente. Luego descarga el JSON para publicar para todos.</p>
+      </form>
+    </div>
+
+    <!-- LISTADO -->
+    <div class="bg-[#111] border border-[#222] rounded-[20px] p-4 md:p-5">
+      <div id="listaProductos" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-4"></div>
+      <div id="emptyState" class="hidden text-center py-16">
+        <p class="text-[#555] text-[14px]">No se encontraron productos</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#ffaa00] text-black px-6 py-3 rounded-full font-bold text-[13px] shadow-[0_10px_30px_rgba(0,0,0,.6)] hidden z-[999] flex items-center gap-2"></div>
+
+<script src="./productos.db.js"></script>
+<script>
+// DB PURA - sin PHP
+const DB_KEY = 'tragones_db_v1';
+const TragonesDB = {
+  productos: [],
+  async init() {
+    try {
+      const res = await fetch('./productos.json?t=' + Date.now());
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          const local = localStorage.getItem(DB_KEY);
+          if (local) {
+            try {
+              const localData = JSON.parse(local);
+              if (localData.length >= data.length) {
+                this.productos = localData;
+                return localData;
+              }
+            } catch {}
+          }
+          this.productos = data;
+          this.saveLocal(data);
+          return data;
+        }
+      }
+    } catch(e) {}
+    const local = localStorage.getItem(DB_KEY);
+    if (local) {
+      try { this.productos = JSON.parse(local); return this.productos; } catch {}
+    }
+    if (typeof PRODUCTOS_INICIALES !== 'undefined') {
+      this.productos = PRODUCTOS_INICIALES;
+      this.saveLocal(PRODUCTOS_INICIALES);
+      return this.productos;
+    }
+    return [];
+  },
+  saveLocal(p) { localStorage.setItem(DB_KEY, JSON.stringify(p)); this.productos = p; },
+  saveAll(p) { this.saveLocal(p); },
+  getAll() {
+    if (this.productos.length === 0) {
+      try { return JSON.parse(localStorage.getItem(DB_KEY)) || []; } catch { return []; }
+    }
+    return this.productos;
+  },
+  getById(id) { return this.getAll().find(p => p.id == id); },
+  getCategorias() {
+    const cats = {};
+    this.getAll().forEach(p => { const c = p.categoria || 'Sin Categoria'; cats[c] = (cats[c]||0)+1; });
+    return Object.entries(cats).map(([nombre,total])=>({nombre,total})).sort((a,b)=>b.total-a.total);
+  },
+  getByCategoria(cat) {
+    if (!cat || cat==='Todos') return this.getAll();
+    return this.getAll().filter(p => p.categoria===cat || (p.categorias && p.categorias.includes(cat)));
+  },
+  add(prod) {
+    const productos = this.getAll();
+    prod.id = Date.now();
+    if (!prod.slug) prod.slug = prod.nombre.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    productos.push(prod);
+    this.saveAll(productos);
+    return prod;
+  },
+  update(id, datos) {
+    let productos = this.getAll();
+    const i = productos.findIndex(p => p.id == id);
+    if (i===-1) return null;
+    productos[i] = {...productos[i], ...datos};
+    this.saveAll(productos);
+    return productos[i];
+  },
+  delete(id) { this.saveAll(this.getAll().filter(p=>p.id!=id)); },
+  search(q) {
+    const s=q.toLowerCase();
+    return this.getAll().filter(p=> p.nombre.toLowerCase().includes(s) || (p.marca&&p.marca.toLowerCase().includes(s)) || p.categoria.toLowerCase().includes(s));
+  }
+};
+
+let categoriaActiva = 'Todos';
+
+async function initApp() {
+  await TragonesDB.init();
+  renderFiltros();
+  render();
+  document.getElementById('statsCategorias').textContent = TragonesDB.getCategorias().map(c=> c.nombre + ' (' + c.total + ')').join(' • ');
+}
+
+function renderFiltros() {
+  const cats = TragonesDB.getCategorias();
+  const todos = [{nombre:'Todos', total: TragonesDB.getAll().length}, ...cats];
+  document.getElementById('filtrosCategorias').innerHTML = todos.map(c => `
+    <button onclick="filtrarCategoria('${c.nombre}')" data-cat="${c.nombre}" class="cat-btn whitespace-nowrap px-4 py-2 rounded-full text-[11px] font-bold tracking-widest border transition flex items-center gap-1.5 ${c.nombre===categoriaActiva ? 'bg-[#ffaa00] text-black border-[#ffaa00]' : 'bg-[#0a0a0a] text-[#888] border-[#222] hover:border-[#444] hover:text-white'}">
+      ${c.nombre.toUpperCase()} <span class="bg-black/20 px-1.5 py-0.5 rounded-full text-[10px]">${c.total}</span>
+    </button>
+  `).join('');
+}
+
+function filtrarCategoria(cat) {
+  categoriaActiva = cat;
+  renderFiltros();
+  render();
+}
+
+function getProductosFiltrados() {
+  let productos = categoriaActiva === 'Todos' ? TragonesDB.getAll() : TragonesDB.getByCategoria(categoriaActiva);
+  const q = document.getElementById('buscador').value.toLowerCase().trim();
+  const orden = document.getElementById('orden').value;
+  
+  if (q) {
+    productos = productos.filter(p => 
+      p.nombre.toLowerCase().includes(q) || 
+      (p.marca && p.marca.toLowerCase().includes(q)) ||
+      (p.tags && p.tags.join(' ').toLowerCase().includes(q)) ||
+      p.categoria.toLowerCase().includes(q)
+    );
+  }
+  
+  if (orden === 'precio-menor') productos = [...productos].sort((a,b)=>a.precio-b.precio);
+  if (orden === 'precio-mayor') productos = [...productos].sort((a,b)=>b.precio-a.precio);
+  if (orden === 'nombre-az') productos = [...productos].sort((a,b)=>a.nombre.localeCompare(b.nombre));
+  if (orden === 'categoria') productos = [...productos].sort((a,b)=>a.categoria.localeCompare(b.categoria));
+  
+  return productos;
+}
+
+function render() {
+  const productos = getProductosFiltrados();
+  const total = TragonesDB.getAll().length;
+  document.getElementById('contadorFiltrados').textContent = `${productos.length} / ${total} productos`;
+  
+  const cont = document.getElementById('listaProductos');
+  const empty = document.getElementById('emptyState');
+  
+  if (productos.length === 0) {
+    cont.innerHTML = '';
+    empty.classList.remove('hidden');
+    return;
+  }
+  empty.classList.add('hidden');
+  
+  cont.innerHTML = productos.map(p => `
+    <div class="group bg-[#0a0a0a] border border-[#1a1a1a] rounded-2xl p-3 flex gap-3 hover:border-[#ffaa00]/20 hover:bg-[#0f0f0f] transition">
+      <img src="${p.imagen || 'https://via.placeholder.com/80?text=Sin+Img'}" alt="${p.nombre}" class="w-[72px] h-[72px] rounded-xl object-contain bg-white flex-shrink-0 p-1">
+      <div class="flex-1 min-w-0 flex flex-col">
+        <div class="flex items-center gap-1.5 mb-1">
+          <span class="bg-[#ffaa00]/10 border border-[#ffaa00]/20 text-[#ffaa00] text-[8px] font-bold px-2 py-0.5 rounded-full tracking-widest">${p.categoria.toUpperCase()}</span>
+          <span class="text-[#555] text-[10px] truncate">${p.marca || ''}</span>
+        </div>
+        <h4 class="font-bold text-[12px] leading-[1.2] line-clamp-2 text-white group-hover:text-[#ffaa00] transition">${p.nombre}</h4>
+        <p class="text-[#ffaa00] font-bold text-[12px] mt-1">S/ ${Number(p.precio).toFixed(2)}</p>
+        <div class="flex gap-1.5 mt-auto pt-2">
+          <button onclick="editar(${p.id})" class="bg-[#1a1a1a] border border-[#222] text-white text-[10px] font-bold px-3 py-1 rounded-full hover:bg-white hover:text-black transition">EDITAR</button>
+          <button onclick="eliminar(${p.id})" class="bg-[#1a1a1a] border border-[#222] text-[#ff5555] text-[10px] font-bold px-3 py-1 rounded-full hover:bg-[#ff4444] hover:text-white transition">ELIMINAR</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// FORM
+const form = document.getElementById('productoForm');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const id = document.getElementById('editId').value;
+  const datos = {
+    nombre: document.getElementById('nombre').value.trim(),
+    precio: parseFloat(document.getElementById('precio').value),
+    marca: document.getElementById('marca').value.trim(),
+    categoria: document.getElementById('categoria').value,
+    categorias: [document.getElementById('categoria').value],
+    imagen: document.getElementById('imagen').value.trim(),
+    stock: true,
+    descripcion_corta: document.getElementById('desc_corta').value.trim(),
+    descripcion_larga: '',
+    tags: []
+  };
+  if (!datos.nombre || !datos.imagen || isNaN(datos.precio)) { showToast('⚠️ Completa nombre, precio e imagen'); return; }
+  
+  if (id) {
+    TragonesDB.update(Number(id), datos);
+    showToast('✅ Producto actualizado');
+  } else {
+    TragonesDB.add(datos);
+    showToast('✅ Producto agregado');
+  }
+  limpiarForm();
+  renderFiltros();
+  render();
+});
+
+function editar(id) {
+  const p = TragonesDB.getById(id);
+  if (!p) return;
+  document.getElementById('editId').value = p.id;
+  document.getElementById('nombre').value = p.nombre;
+  document.getElementById('precio').value = p.precio;
+  document.getElementById('marca').value = p.marca || '';
+  document.getElementById('categoria').value = p.categoria;
+  document.getElementById('imagen').value = p.imagen;
+  document.getElementById('desc_corta').value = p.descripcion_corta || '';
+  document.getElementById('formTitle').innerHTML = '<span class="w-2 h-2 bg-[#ffaa00] rounded-full animate-pulse inline-block"></span> Editando: ' + p.nombre.substring(0,35);
+  document.getElementById('btnGuardar').textContent = 'ACTUALIZAR PRODUCTO';
+  document.getElementById('previewImgTag').src = p.imagen;
+  document.getElementById('previewImg').classList.remove('hidden');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function eliminar(id) {
+  if (confirm('¿Eliminar este producto? Esta acción se guarda en localStorage.')) {
+    TragonesDB.delete(id);
+    renderFiltros();
+    render();
+    showToast('🗑️ Eliminado');
+  }
+}
+
+function limpiarForm() {
+  form.reset();
+  document.getElementById('editId').value = '';
+  document.getElementById('formTitle').innerHTML = '<span class="w-2 h-2 bg-[#25D366] rounded-full animate-pulse"></span> Agregar Producto';
+  document.getElementById('btnGuardar').textContent = 'GUARDAR EN LOCALSTORAGE';
+  document.getElementById('previewImg').classList.add('hidden');
+}
+
+function resetDB() {
+  if (confirm('¿Borrar todos los cambios y volver a los 194 originales del XML? Se borrará localStorage.')) {
+    localStorage.removeItem('tragones_db_v1');
+    location.reload();
+  }
+}
+
+function descargarJSON() {
+  const data = JSON.stringify(TragonesDB.getAll(), null, 2);
+  const blob = new Blob([data], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'productos.json'; a.click();
+  URL.revokeObjectURL(url);
+  showToast('📥 productos.json descargado (' + TragonesDB.getAll().length + ' productos)');
+}
+
+function descargarJS() {
+  const data = 'const PRODUCTOS_INICIALES = ' + JSON.stringify(TragonesDB.getAll(), null, 2) + ';';
+  const blob = new Blob([data], {type:'text/javascript'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'productos.db.js'; a.click();
+  URL.revokeObjectURL(url);
+  showToast('📥 productos.db.js descargado');
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.remove('hidden');
+  setTimeout(()=> t.classList.add('hidden'), 3000);
+}
+
+// Listeners
+document.getElementById('buscador').addEventListener('input', render);
+document.getElementById('orden').addEventListener('change', render);
+document.getElementById('imagen').addEventListener('input', (e) => {
+  const url = e.target.value.trim();
+  if (url.startsWith('http')) {
+    document.getElementById('previewImgTag').src = url;
+    document.getElementById('previewImg').classList.remove('hidden');
+  } else {
+    document.getElementById('previewImg').classList.add('hidden');
+  }
+});
+
+initApp();
+</script>
+</body>
+</html>

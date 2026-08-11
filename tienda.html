@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda - Tragones Licorería Delivery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body{font-family:'Roboto',sans-serif;background:#080808;color:#fff;overflow-x:hidden}
+    .font-oswald{font-family:'Oswald',sans-serif}
+    .line-clamp-2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    #tragones-header{position:sticky;top:0;z-index:100;display:block;width:100%;overflow:visible;background:#050505;}
+    #tragones-toolbar{position:relative;display:flex;width:100%;}
+  </style>
+</head>
+<body class="bg-[#080808] text-white">
+
+<!-- HEADER DINAMICO - NO DUPLICAR HEADER AQUI -->
+<div id="tragones-header"></div>
+
+<section class="bg-[#050505] border-b border-[#1a1a1a] py-8">
+  <div class="max-w-[1300px] mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+    <div>
+      <h1 class="font-oswald font-bold text-[32px] md:text-[44px] leading-none uppercase">TIENDA</h1>
+      <p class="text-[#555] text-[11px] mt-1"><span id="totalProductosHero">0</span> productos • <span id="totalCategoriasHero">0</span> categorías • GET ?slug=</p>
+    </div>
+    <div class="flex gap-2 w-full md:w-auto">
+      <div class="relative flex-1 md:w-[300px]">
+        <input id="searchInput" type="text" placeholder="Buscar licores, marca..." class="w-full bg-[#111] border border-[#222] rounded-full pl-10 pr-4 py-2.5 text-[13px] focus:border-[#ffaa00] outline-none">
+        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-[#555] text-[13px]"></i>
+      </div>
+      <select id="catSelect" class="bg-[#111] border border-[#222] rounded-full px-4 py-2.5 text-[13px] focus:border-[#ffaa00] outline-none">
+        <option value="all">Todas</option>
+      </select>
+      <button id="btnVerCategorias" class="hidden bg-[#ffaa00] text-black px-4 py-2.5 rounded-full text-[11px] font-bold">CATEGORIAS</button>
+    </div>
+  </div>
+</section>
+
+<main class="max-w-[1300px] mx-auto px-4 md:px-6 py-8 flex flex-col lg:flex-row gap-8">
+  <aside class="w-full lg:w-[280px] flex-shrink-0">
+    <div class="bg-[#111] border border-[#222] rounded-2xl p-5 sticky top-[110px]">
+      <h3 class="font-oswald font-bold text-[14px] tracking-widest uppercase mb-4">Filtrar</h3>
+      <input id="searchSidebar" type="search" placeholder="Búsqueda rápida..." class="w-full bg-[#0a0a0a] border border-[#222] rounded-full px-4 py-2.5 text-[13px] focus:border-[#ffaa00] outline-none">
+      <div class="mt-4 flex gap-2">
+        <input id="searchInputMobile" type="text" placeholder="Buscar..." class="flex-1 bg-[#0a0a0a] border border-[#222] rounded-full px-4 py-2.5 text-[13px] focus:border-[#ffaa00] outline-none md:hidden">
+      </div>
+      <h3 class="font-oswald font-bold text-[14px] uppercase mt-6 mb-3">Destacados</h3>
+      <div id="sidebarProductos" class="space-y-3"></div>
+      <div class="mt-6 p-3 bg-[#0a0a0a] border border-[#222] rounded-xl text-[11px] text-[#666] leading-4">
+        <p class="text-white font-bold text-[11px] mb-1">Tomar bebidas alcoholicas en exceso es dañino</p>
+      </div>
+    </div>
+  </aside>
+
+  <div class="flex-1">
+    <h2 id="tituloSeccion" class="font-oswald font-bold text-[18px] uppercase mb-6">Categorías</h2>
+    <div id="catGrid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div class="col-span-full text-center py-10 text-[#666]"><i class="fas fa-spinner fa-spin mr-2"></i>Cargando desde productos.db.js...</div>
+    </div>
+    <div id="productGrid" class="hidden grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4"></div>
+    <div id="emptyState" class="hidden text-center py-16 text-[#666]">No hay productos con ese filtro</div>
+  </div>
+</main>
+
+<!-- LEGAL WARNING - TEXTO REAL -->
+<section class="bg-[#151515] text-center py-8 px-4 border-y border-[#333]">
+  <p class="text-white font-bold text-[14px] md:text-[18px] uppercase tracking-wide">TOMAR BEBIDAS ALCOHÓLICAS EN EXCESO ES DAÑINO. ESTÁ PROHIBIDA LA VENTA DE ALCOHOL A MENORES DE 18 AÑOS.</p>
+</section>
+
+<!-- TRUST BAR - MISMO ESTILO QUE INDEX -->
+<section class="bg-[#f9f9f9] py-6 md:py-8 px-4 flex flex-wrap md:flex-nowrap justify-center items-start md:items-center gap-6 md:gap-16 border-y border-[#eee]">
+  <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left flex-1 max-w-[200px] md:max-w-[300px]">
+    <div class="text-[24px] md:text-[32px]">🚀</div>
+    <div><h4 class="text-[#333] font-bold text-[10px] md:text-[14px] uppercase">Delivery Express</h4><p class="text-[#666] text-[9px] md:text-[12px]">Envios de 15 a 25 minutos</p></div>
+  </div>
+  <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left flex-1 max-w-[200px] md:max-w-[300px]">
+    <div class="text-[24px] md:text-[32px]">🛡</div>
+    <div><h4 class="text-[#333] font-bold text-[10px] md:text-[14px] uppercase">Garantía Original</h4><p class="text-[#666] text-[9px] md:text-[12px]">Licores 100% originales</p></div>
+  </div>
+  <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left flex-1 max-w-[200px] md:max-w-[300px]">
+    <div class="text-[24px] md:text-[32px]">💳</div>
+    <div><h4 class="text-[#333] font-bold text-[10px] md:text-[14px] uppercase">Pago Flexible</h4><p class="text-[#666] text-[9px] md:text-[12px]">Aceptamos Yape, Plin, Visa, Master</p></div>
+  </div>
+</section>
+
+<!-- FOOTER TRAGONES -->
+<div id="tragones-footer"></div>
+<script src="footer.js"></script>
+
+<!-- DATOS PRIMERO, LUEGO HEADER, LUEGO LOGICA -->
+<script src="./productos.db.js"></script>
+<script src="./header.js"></script>
+<script>
+  function getProductosSync() {
+    if (typeof PRODUCTOS_INICIALES !== 'undefined' && Array.isArray(PRODUCTOS_INICIALES) && PRODUCTOS_INICIALES.length) return PRODUCTOS_INICIALES;
+    try { const l = localStorage.getItem('tragones_db_v1'); if (l) { const arr = JSON.parse(l); if (Array.isArray(arr) && arr.length) return arr; } } catch {}
+    return [];
+  }
+  function getCategoriasSync(productos) {
+    const cats = {};
+    productos.forEach(p=>{ const c=(p.categoria||'Sin Categoria').trim(); if(c) cats[c]=(cats[c]||0)+1; });
+    return Object.entries(cats).map(([nombre,total])=>({nombre,total})).sort((a,b)=>b.total-a.total);
+  }
+
+  let productosCache = [];
+  let categoriasCache = [];
+  let categoriaActiva = 'all';
+
+  const fallbackImgs = {
+    'Cerveza':'https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/02/twelvepack-437ml-291x291.jpg',
+    'Ron':'https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/02/flor-de-cana-4-anos-291x291.png.webp',
+    'Vinos':'https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/02/tabernero-gran-rose-291x291.png.webp',
+    'Whisky':'https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/02/whisky-291x291.png.webp',
+    'Pisco':'https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/02/queirolo-quebranta-291x291.png.webp',
+    'GIN':'https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/02/beefeater-pink-291x291.png.webp'
+  };
+
+  function safeGet(id){ return document.getElementById(id); }
+
+  function init() {
+    try {
+      productosCache = getProductosSync();
+      categoriasCache = getCategoriasSync(productosCache);
+
+      if (productosCache.length===0) {
+        const grid = safeGet('catGrid');
+        if (grid) grid.innerHTML = '<div class="col-span-full text-center py-10 text-[#ff4444]">No se cargó productos.db.js<br>Verifica que esté en misma carpeta que tienda.html y que defina PRODUCTOS_INICIALES</div>';
+        return;
+      }
+
+      const totalHero = safeGet('totalProductosHero');
+      const totalCatHero = safeGet('totalCategoriasHero');
+      if (totalHero) totalHero.textContent = productosCache.length;
+      if (totalCatHero) totalCatHero.textContent = categoriasCache.length;
+
+      const catSelect = safeGet('catSelect');
+      if (catSelect) {
+        catSelect.innerHTML = '<option value="all">Todas ('+productosCache.length+')</option>' + categoriasCache.map(c=>`<option value="${c.nombre}">${c.nombre} (${c.total})</option>`).join('');
+      }
+
+      renderSidebar();
+      renderCategorias();
+
+      const params = new URLSearchParams(window.location.search);
+      const catParam = params.get('cat');
+      const searchParam = params.get('search');
+      if (catParam) { abrirCategoria(catParam); if (catSelect) catSelect.value=catParam; }
+      if (searchParam) {
+        const s1 = safeGet('searchInput'); if (s1) s1.value=searchParam;
+        const s2 = safeGet('searchInputMobile'); if (s2) s2.value=searchParam;
+        const s3 = safeGet('searchSidebar'); if (s3) s3.value=searchParam;
+        filtrarDesdeBusqueda(searchParam);
+      }
+
+      console.log('Tienda init OK -', productosCache.length, 'productos');
+    } catch(e) {
+      console.error('Error init tienda:', e);
+      const grid = safeGet('catGrid');
+      if (grid) grid.innerHTML = '<div class="col-span-full text-center py-10 text-[#ff4444]">Error JS: '+e.message+'</div>';
+    }
+  }
+
+  function renderSidebar() {
+    const cont = safeGet('sidebarProductos');
+    if (!cont) return;
+    const dest = [...productosCache].sort(()=>0.5-Math.random()).slice(0,4);
+    cont.innerHTML = dest.map(p=>`
+      <a href="producto.html?slug=${encodeURIComponent(p.slug)}" class="flex gap-2 group">
+        <img src="${p.imagen}" class="w-[50px] h-[50px] rounded-xl object-cover bg-white p-1 flex-shrink-0">
+        <div class="min-w-0"><p class="text-white text-[12px] leading-tight group-hover:text-[#ffaa00] line-clamp-2">${p.nombre}</p><p class="text-[#ffaa00] font-bold text-[12px]">S/ ${Number(p.precio).toFixed(2)}</p></div>
+      </a>
+    `).join('');
+  }
+
+  function getImgCat(nombre) {
+    const prod = productosCache.find(p=>p.categoria===nombre && p.imagen);
+    return prod ? prod.imagen : (fallbackImgs[nombre] || 'https://via.placeholder.com/300x300?text='+encodeURIComponent(nombre));
+  }
+
+  function renderCategorias(filtro='') {
+    const grid = safeGet('catGrid');
+    const pGrid = safeGet('productGrid');
+    const titulo = safeGet('tituloSeccion');
+    const btnCat = safeGet('btnVerCategorias');
+    if (!grid || !pGrid) return;
+    grid.classList.remove('hidden'); pGrid.classList.add('hidden');
+    if (btnCat) btnCat.classList.add('hidden');
+    if (titulo) titulo.textContent = 'Categorías ('+categoriasCache.length+')';
+    let cats = [...categoriasCache];
+    if (filtro) {
+      const f = filtro.toLowerCase();
+      cats = cats.filter(c=>c.nombre.toLowerCase().includes(f));
+    }
+    if (cats.length===0) {
+      grid.innerHTML = '<div class="col-span-full text-center py-10 text-[#666]">No hay categorías con "'+filtro+'"</div>';
+      return;
+    }
+    grid.innerHTML = cats.map(cat=>`
+      <a href="#" onclick="abrirCategoria('${cat.nombre.replace(/'/g,"\'")}'); return false;" class="group bg-[#111] border border-[#222] rounded-2xl overflow-hidden hover:border-[#ffaa00]/30 hover:-translate-y-1 transition">
+        <div class="aspect-square bg-[#0a0a0a] overflow-hidden"><img src="${getImgCat(cat.nombre)}" alt="${cat.nombre}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
+        <div class="p-3 text-center"><h3 class="font-oswald font-bold text-[14px] uppercase">${cat.nombre} <span class="text-[#666] text-[11px]">(${cat.total})</span></h3></div>
+      </a>
+    `).join('');
+  }
+
+  window.abrirCategoria = function(nombre) {
+    categoriaActiva = nombre;
+    const productos = productosCache.filter(p=>p.categoria===nombre || (p.categorias && p.categorias.includes(nombre)));
+    renderProductos(productos, nombre);
+  }
+
+  function renderProductos(lista, nombreCat) {
+    const catGrid = safeGet('catGrid');
+    const productGrid = safeGet('productGrid');
+    const titulo = safeGet('tituloSeccion');
+    const btnCat = safeGet('btnVerCategorias');
+    const empty = safeGet('emptyState');
+    if (!catGrid || !productGrid) return;
+    catGrid.classList.add('hidden'); productGrid.classList.remove('hidden');
+    if (btnCat) btnCat.classList.remove('hidden');
+    if (titulo) titulo.textContent = nombreCat + ' ('+lista.length+')';
+    if (lista.length===0) {
+      productGrid.innerHTML='';
+      if (empty) empty.classList.remove('hidden');
+      return;
+    }
+    if (empty) empty.classList.add('hidden');
+    productGrid.innerHTML = lista.map(p=>`
+      <div class="group bg-[#111] border border-[#222] rounded-2xl overflow-hidden hover:border-[#ffaa00]/30 hover:-translate-y-1 transition flex flex-col">
+        <a href="producto.html?slug=${encodeURIComponent(p.slug)}" class="aspect-square bg-white overflow-hidden block"><img src="${p.imagen}" alt="${p.nombre}" class="w-full h-full object-contain p-2 group-hover:scale-105 transition"></a>
+        <div class="p-3 flex flex-col flex-1">
+          <a href="producto.html?slug=${encodeURIComponent(p.slug)}"><h3 class="font-oswald font-bold text-[11px] uppercase line-clamp-2 min-h-[32px] group-hover:text-[#ffaa00]">${p.nombre}</h3></a>
+          <p class="text-[#ffaa00] font-bold text-[13px] mt-1">S/ ${Number(p.precio).toFixed(2)}</p>
+          <div class="mt-2 flex gap-1">
+            <a href="producto.html?slug=${encodeURIComponent(p.slug)}" class="flex-1 bg-white text-black text-[10px] font-bold py-2 rounded-full text-center hover:bg-[#ffaa00] transition">VER</a>
+            <button onclick="addCartSafe(${p.id})" class="flex-1 bg-[#1a1a1a] border border-[#222] text-white text-[10px] font-bold py-2 rounded-full hover:bg-[#222] transition">AÑADIR</button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function filtrarDesdeBusqueda(q) {
+    if (!q) { renderCategorias(); return; }
+    const qq = q.toLowerCase();
+    const productosFiltrados = productosCache.filter(p=> 
+      (p.nombre && p.nombre.toLowerCase().includes(qq)) || 
+      (p.categoria && p.categoria.toLowerCase().includes(qq)) || 
+      (p.marca && p.marca.toLowerCase().includes(qq))
+    );
+    if (productosFiltrados.length>0) {
+      renderProductos(productosFiltrados, 'Búsqueda: '+q);
+    } else {
+      renderCategorias(q);
+    }
+  }
+
+  window.verCategorias = function() {
+    categoriaActiva='all';
+    const catSel = safeGet('catSelect'); if (catSel) catSel.value='all';
+    const s1 = safeGet('searchInput'); if (s1) s1.value='';
+    const s2 = safeGet('searchInputMobile'); if (s2) s2.value='';
+    const s3 = safeGet('searchSidebar'); if (s3) s3.value='';
+    renderCategorias();
+  }
+
+  window.addCartSafe = function(id) {
+    // Usa API del header.js si existe, si no fallback
+    if (window.TragonesCart && window.TragonesCart.add) {
+      window.TragonesCart.add(id, 1);
+    } else {
+      const p = productosCache.find(x=>x.id==id);
+      if (!p) return;
+      let cart=[]; try{cart=JSON.parse(localStorage.getItem('tragones_cart')||'[]');}catch{}
+      const ex=cart.find(c=>c.id==id); if(ex) ex.qty++; else cart.push({id:p.id,nombre:p.nombre,precio:p.precio,imagen:p.imagen,qty:1});
+      localStorage.setItem('tragones_cart',JSON.stringify(cart));
+      const cc = safeGet('cartCount'); if (cc) cc.textContent=cart.reduce((s,c)=>s+c.qty,0);
+      const cc2 = safeGet('tragonesCartCount'); if (cc2) cc2.textContent=cart.reduce((s,c)=>s+c.qty,0);
+    }
+  }
+
+  // Event listeners seguros (con ?. para no reventar)
+  safeGet('searchInput')?.addEventListener('input', e=>{ const v=e.target.value; const s3=safeGet('searchSidebar'); if(s3) s3.value=v; const s2=safeGet('searchInputMobile'); if(s2) s2.value=v; filtrarDesdeBusqueda(v); });
+  safeGet('searchInputMobile')?.addEventListener('input', e=>{ const v=e.target.value; const s1=safeGet('searchInput'); if(s1) s1.value=v; filtrarDesdeBusqueda(v); });
+  safeGet('searchSidebar')?.addEventListener('input', e=>{ const v=e.target.value; const s1=safeGet('searchInput'); if(s1) s1.value=v; filtrarDesdeBusqueda(v); });
+  safeGet('catSelect')?.addEventListener('change', e=>{ if(e.target.value==='all') verCategorias(); else abrirCategoria(e.target.value); });
+  safeGet('btnVerCategorias')?.addEventListener('click', verCategorias);
+
+  // Actualiza contador inicial (compatible con header.js)
+  try{
+    const c=JSON.parse(localStorage.getItem('tragones_cart')||'[]');
+    const total = c.reduce((s,x)=>s+(x.qty||0),0);
+    const el1 = safeGet('cartCount'); if (el1) el1.textContent=total;
+    const el2 = safeGet('tragonesCartCount'); if (el2) el2.textContent=total;
+  }catch{}
+
+  // Espera a que header.js cargue y luego inicia
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    // Pequeño delay para asegurar que PRODUCTOS_INICIALES ya esté
+    setTimeout(init, 100);
+  }
+
+  // También intenta cargar productos.json en background para actualizar
+  fetch('./productos.json?t='+Date.now()).then(r=>r.json()).then(data=>{
+    if (Array.isArray(data) && data.length>0) {
+      console.log('productos.json background:', data.length);
+      // No sobrescribe PRODUCTOS_INICIALES, solo localStorage
+      try { localStorage.setItem('tragones_db_v1', JSON.stringify(data)); } catch {}
+    }
+  }).catch(()=>{});
+</script>
+</body>
+</html>

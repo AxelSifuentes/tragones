@@ -1,0 +1,3675 @@
+const PRODUCTOS_INICIALES = [
+  {
+    "id": 5024,
+    "slug": "espumante-riccadonna-asti-botella-750ml",
+    "nombre": "Espumante Riccadonna Asti Botella 750ml | Tragones Licoreria",
+    "precio": 85,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Ricadona-Asti-750ml.jpg",
+    "categoria": "Champagne",
+    "categorias": [
+      "Champagne"
+    ],
+    "marca": "Riccadonna",
+    "stock": true,
+    "descripcion_corta": "Espumante Riccadonna Asti 750 ml , dulce y burbujeante, ideal para brindar. Delivery en Lima toda la madrugada desde tu licorería cerca de ti.",
+    "descripcion_larga": "Espumante Riccadonna Asti Botella 750ml | Tragones Licoreria El Espumante Riccadonna Asti de 750 ml es una joya italiana con burbujas finas y un sabor naturalmente dulce. Elaborado con uvas Moscato de la región de Asti, este espumante es perfecto para celebraciones, brindis especiales o simplemente para disfrutar algo elegante en casa. Espumante Riccadonna Asti Botella 750ml Especificaciones Tipo. Vinos Formato Botella 750 mL En Tragones Licorería Delivery te lo llevamos a la puerta de tu casa, ",
+    "tags": [
+      "750ml",
+      "Riccadonna"
+    ]
+  },
+  {
+    "id": 5027,
+    "slug": "champagne-moet-chandon-750ml",
+    "nombre": "Champagne Moet & Chandon 750ml | Tragones Licorería Delivery",
+    "precio": 480,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Moet-Chandon-750ml.png",
+    "categoria": "Champagne",
+    "categorias": [
+      "Champagne"
+    ],
+    "marca": "Moet",
+    "stock": true,
+    "descripcion_corta": "Champagne Moët & Chandon 750ml , el toque de lujo para cualquier celebración. Delivery rápido en Lima, toda la madrugada. ¡Haz tu pedido en tu licorería cerca de ti!",
+    "descripcion_larga": "Champagne Moet & Chandon 750ml | Tragones Licorería Delivery El Champagne Moët & Chandon 750ml es sinónimo de elegancia, lujo y tradición. Este icónico champagne francés ofrece una mezcla perfecta de frescura, fruta y una burbuja elegante que lo convierte en la elección ideal para cualquier ocasión especial. Con su sabor suave y sofisticado, es perfecto para celebraciones, brindis y momentos inolvidables. Especificaciones Nivel de Azúcar del espumante Brut Color del espumante Blanco Denominación",
+    "tags": [
+      "750ml",
+      "Champagne",
+      "Champaña",
+      "Moet &amp; Chandon"
+    ]
+  },
+  {
+    "id": 5029,
+    "slug": "espumante-riccadonna-ruby-botella-750ml",
+    "nombre": "Espumante Riccadonna Ruby Botella 750ml | Tragones Licorería",
+    "precio": 85,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/17532909_1.jpg",
+    "categoria": "Champagne",
+    "categorias": [
+      "Champagne"
+    ],
+    "marca": "Riccadonna",
+    "stock": true,
+    "descripcion_corta": "Espumante Riccadonna Ruby 750ml , burbujeante y afrutado, ideal para disfrutar en cualquier ocasión. Delivery en Lima toda la madrugada. ¡Pide desde tu licorería cerca de ti!",
+    "descripcion_larga": "Espumante Riccadonna Ruby Botella 750ml | Tragones Licorería Delivery El Espumante Riccadonna Ruby 750ml es una opción vibrante y afrutada, perfecta para quienes buscan una bebida espumosa con un toque dulce y fresco. Con sus delicadas burbujas y un sabor equilibrado que resalta notas de frutas rojas, es ideal para celebraciones informales o un brindis especial. Especificaciones Nivel de Azúcar del espumante Dulce Color del espumante Tinto Denominación/Variedad Ruby Dolce País de origen Italia L",
+    "tags": [
+      "Riccadonna"
+    ]
+  },
+  {
+    "id": 5031,
+    "slug": "espumante-martini-asti-botella-750ml",
+    "nombre": "Espumante MARTINI Asti Botella 750ml | Tragones Licorería Delivery",
+    "precio": 75,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/4048252-1.jpg",
+    "categoria": "Champagne",
+    "categorias": [
+      "Champagne"
+    ],
+    "marca": "Martini",
+    "stock": true,
+    "descripcion_corta": "Espumante MARTINI Asti 750ml , el toque burbujeante y dulce para tus celebraciones. Delivery rápido en Lima, toda la madrugada. ¡Haz tu pedido en tu licorería cerca de ti!",
+    "descripcion_larga": "Espumante MARTINI Asti Botella 750ml | Tragones Licorería Delivery El Espumante MARTINI Asti 750ml es una elección de lujo para quienes buscan disfrutar de una experiencia burbujeante y refrescante. Con su sabor dulce y afrutado, y sus delicadas burbujas, este espumante italiano es perfecto para brindar en cualquier ocasión especial, desde cumpleaños hasta celebraciones de fin de año. Especificaciones Nivel de Azúcar del espumante Dulce Color del espumante Blanco Denominación/Variedad Asti País ",
+    "tags": [
+      "Martini"
+    ]
+  },
+  {
+    "id": 5033,
+    "slug": "vermouth-martini-rosso-botella-750ml",
+    "nombre": "Vermouth MARTINI Rosso Botella 750ml | Tragones Licorería Delivery",
+    "precio": 85,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Martini-Rosso-750ml.png",
+    "categoria": "Vermouth",
+    "categorias": [
+      "Vermouth"
+    ],
+    "marca": "Martini",
+    "stock": true,
+    "descripcion_corta": "Vermouth MARTINI Rosso 750ml Sabor clásico, intenso y aromático. Ideal para cócteles o disfrutar solo con hielo. Delivery nocturno en Lima (10:00 p.m. a 5:00 a.m.) ⚠️ Solo para mayores de 18 años. Tom",
+    "descripcion_larga": "Vermouth MARTINI Rosso Botella 750ml | Tragones Licorería Delivery El Vermouth MARTINI Rosso 750ml es una bebida icónica con más de 150 años de historia. Con su color rojo rubí, su sabor equilibrado entre lo dulce y lo amargo, y sus notas herbales y especiadas, es perfecto para disfrutar solo con hielo o como base de clásicos cócteles como el Negroni o el Manhattan. Su receta original, creada en 1863 en Italia, mezcla vinos seleccionados con una cuidada combinación de hierbas aromáticas, lo que ",
+    "tags": [
+      "Martini"
+    ]
+  },
+  {
+    "id": 5052,
+    "slug": "gaseosa-coca-cola-botella-2-25l",
+    "nombre": "Gaseosa Coca Cola Botella 2.25L | Tragones Licorería Delivery",
+    "precio": 12,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/coca-cola-2.25-600x600-1.jpg",
+    "categoria": "Gaseosas",
+    "categorias": [
+      "Gaseosas"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "Gaseosa Coca Cola Botella 2.25L , la gaseosa clásica para acompañar tus tragos o compartir. Delivery en Lima toda la madrugada. ¡Desde tu licorería cerca de ti!",
+    "descripcion_larga": "Gaseosa Coca Cola Botella 2.25L | Tragones Licorería Delivery La Gaseosa Coca-Cola 2.25L es la bebida perfecta para refrescar cualquier momento. Su inconfundible sabor original es ideal para acompañar tus comidas, mezclas con trago o simplemente para disfrutarla bien fría en cualquier ocasión. Especificaciones Presentación Botella Porción Sugerida 200ml Azúcares Por Porción 22g Carbohidratos Por Porción 22g Descripción Nutricional NO es una fuente SIgnificativa de grasas trans ni fibra. Grasas P",
+    "tags": [
+      "2.25L",
+      "Coca Cola"
+    ]
+  },
+  {
+    "id": 5057,
+    "slug": "gaseosa-evervess-ginger-ale-1-5-l",
+    "nombre": "Gaseosa Evervess Ginger Ale 1.5 L | Tragones Licorería",
+    "precio": 12,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/evervess_15.jpg",
+    "categoria": "Gaseosas",
+    "categorias": [
+      "Gaseosas"
+    ],
+    "marca": "1.5 L",
+    "stock": true,
+    "descripcion_corta": "Evervess Ginger Ale 1.5L, burbujeante y refrescante, con un toque de jengibre perfecto para mezclar con pisco, ron o disfrutar solo bien frío.",
+    "descripcion_larga": "Gaseosa Evervess Ginger Ale 1.5 L | Tragones Licorería Evervess 1.5 Litros es una bebida carbonatada con un suave sabor a jengibre, ideal para refrescarte en cualquier momento o para preparar tragos clásicos como el chilcano de pisco . Su equilibrio entre dulzor y un ligero picor la convierte en la opción perfecta para combinar con destilados o disfrutar sola con bastante hielo. Gracias a su presentación de 1.5 litros, es ideal para compartir en reuniones, celebraciones o simplemente tener en ca",
+    "tags": [
+      "1.5 L",
+      "Evervess"
+    ]
+  },
+  {
+    "id": 5063,
+    "slug": "frugos-citrus-naranja-3-lt",
+    "nombre": "Frugos Citrus Naranja 3 Lt | Tragones Licorería Delivery",
+    "precio": 14,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Frugos_citrus_naranja_3_lt.jpg",
+    "categoria": "Gaseosas",
+    "categorias": [
+      "Gaseosas"
+    ],
+    "marca": "3 Lt",
+    "stock": true,
+    "descripcion_corta": "Frugos Citrus Naranja 3L , un refresco de sabor intenso y refrescante, perfecto para disfrutar solo o acompañar tus tragos favoritos. ¡Un toque cítrico en cada sorbo!",
+    "descripcion_larga": "Frugos Citrus Naranja 3 Lt | Tragones Licorería Delivery Frugos Citrus Naranja 3L es el refresco ideal para los amantes del sabor cítrico. Con su sabor refrescante y afrutado, esta bebida es perfecta para disfrutar sola, con hielo o acompañando tus cócteles favoritos. Su presentación de 3 litros lo convierte en una opción práctica para compartir en reuniones, celebraciones o simplemente para tener siempre a mano cuando necesites un toque de frescura. El sabor de la naranja resalta con su equilib",
+    "tags": [
+      "3 Lt",
+      "Citrus",
+      "Frugos del Valle",
+      "Naranja"
+    ]
+  },
+  {
+    "id": 5064,
+    "slug": "agua-tonica-evervess-1-5lt",
+    "nombre": "Agua Tónica Evervess 1.5 Lt| Tragones Licorería Delivery",
+    "precio": 12,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/evervess-tonica.png",
+    "categoria": "Gaseosas",
+    "categorias": [
+      "Gaseosas"
+    ],
+    "marca": "2L",
+    "stock": true,
+    "descripcion_corta": "Refrescante y burbujeante, el Agua Tónica Evervess 1.5 Lt es la opción perfecta para disfrutar sola o como mixer en tus cócteles favoritos. ¡Ideal para compartir y realzar el sabor de tus bebidas!",
+    "descripcion_larga": "Agua Tónica Evervess 1.5 Lt | Tragones Licorería Delivery toda la madrugada El Agua Tónica Backus en su presentación de 1.5 litros ofrece una experiencia refrescante con un sabor ligeramente amargo y notas cítricas, característico de una auténtica tónica premium. Su fórmula equilibrada y su burbujeo intenso la convierten en el acompañante ideal para disfrutar sola o como base perfecta para cócteles como el clásico gin tonic, vodka tonic, o incluso mezclas sin alcohol. Elaborada por Backus, una d",
+    "tags": [
+      "2L",
+      "Backus"
+    ]
+  },
+  {
+    "id": 5067,
+    "slug": "bebida-energizante-red-bull-250ml",
+    "nombre": "Bebida energizante Red Bull 250ml | Tragones Licorería",
+    "precio": 11,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/redbull.webp",
+    "categoria": "Complementos",
+    "categorias": [
+      "Complementos"
+    ],
+    "marca": "250ml",
+    "stock": true,
+    "descripcion_corta": "Red Bull 250ml te da alas cuando más lo necesitas. Energía instantánea para el cuerpo y la mente, ideal para estudiar, trabajar o rendir al máximo en el deporte.",
+    "descripcion_larga": "Bebida energizante Red Bull 250ml Red Bull 250ml | Tragones Licorería Delivery Red Bull Energy Drink en su clásica presentación de 250ml es la bebida energizante favorita en todo el mundo. Diseñada para revitalizar cuerpo y mente, combina cafeína, taurina, vitaminas del grupo B y azúcares cuidadosamente seleccionados para ofrecerte un impulso inmediato de energía y concentración. Ya sea que necesites mantenerte despierto durante largas jornadas de estudio, concentrarte en el trabajo, conducir la",
+    "tags": [
+      "250ml",
+      "Bebida Energizante",
+      "RedBull"
+    ]
+  },
+  {
+    "id": 5197,
+    "slug": "vino-blanco-marques-de-riscal-rueda",
+    "nombre": "Vino Blanco Marqués de Riscal Rueda 750ml | Licorería",
+    "precio": 69,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/marques-de-riscal.png",
+    "categoria": "Vino Blanco",
+    "categorias": [
+      "Vino Blanco"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Fresco, afrutado y elegante, el Vino Blanco Marqués de Riscal Rueda 750ml es ideal para acompañar mariscos, pescados o simplemente disfrutarlo bien frío. ¡Un clásico de la D.O. Rueda!",
+    "descripcion_larga": "Vino Blanco Marqués de Riscal Rueda 750ml | Licorería El Vino Blanco Marqués de Riscal Rueda 750ml es una exquisita expresión de la prestigiosa Denominación de Origen Rueda, elaborada principalmente con uva Verdejo , variedad emblemática de esta región española. De color amarillo pálido con reflejos verdosos, destaca por su aroma intenso a frutas tropicales, cítricos y hierbas frescas, combinando juventud y carácter en perfecta armonía. En boca es fresco, ligero y bien equilibrado, con una acide",
+    "tags": [
+      "750ml",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5198,
+    "slug": "vino-blanco-intipalka-chardonnay-750ml",
+    "nombre": "Vino Blanco Intipalka Chardonnay 750ml | Tragones Licorería",
+    "precio": 48,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/intipalka-chardonnay.png",
+    "categoria": "Vino Blanco",
+    "categorias": [
+      "Vino Blanco"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Vino Blanco Intipalka Chardonnay 750ml , elegante y refrescante, con notas frutales y un toque suave de madera. Perfecto para acompañar pescados, mariscos o pastas cremosas.",
+    "descripcion_larga": "Vino Blanco Intipalka Chardonnay 750ml | Tragones Licorería Delivery El Vino Blanco Intipalka Chardonnay 750ml es una expresión elegante y moderna de la viticultura peruana, elaborado en el Valle de Ica por la reconocida bodega Viñas Queirolo . Producido a partir de uvas Chardonnay cuidadosamente seleccionadas, este vino destaca por su frescura, equilibrio y carácter frutal. A la vista, presenta un color amarillo brillante con reflejos dorados. En nariz, ofrece una atractiva combinación de aroma",
+    "tags": [
+      "750ml",
+      "Chardonnay",
+      "Seco",
+      "Vino Blanco"
+    ]
+  },
+  {
+    "id": 5204,
+    "slug": "tequila-1800-reposado-750ml",
+    "nombre": "Tequila 1800 Reposado 750ml | Tragones Licorería Delivery",
+    "precio": 150,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/1800.png",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Tequila 1800 Reposado 750ml , 100% agave azul y reposado en barricas de roble americano y francés. Suave, con notas de vainilla, caramelo y especias. Perfecto para tomar solo o en cócteles premium.",
+    "descripcion_larga": "Tequila 1800 Reposado 750ml | Tragones Licorería Delivery El Tequila 1800 Reposado 750ml es una joya mexicana elaborada con 100% agave azul Weber , cuidadosamente seleccionado y destilado bajo métodos tradicionales. Este tequila es reposado por un mínimo de seis meses en barricas de roble americano y francés, lo que le confiere un perfil de sabor suave, complejo y perfectamente equilibrado. De color dorado brillante, en nariz ofrece notas de madera tostada, vainilla, caramelo y un sutil toque es",
+    "tags": [
+      "750ml",
+      "Reposado",
+      "Tequila"
+    ]
+  },
+  {
+    "id": 5205,
+    "slug": "tequila-jose-cuervo",
+    "nombre": "Tequila José Cuervo | Tragones Licorería Delivery",
+    "precio": 85,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/tequila_cuervo.webp",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Tequila José Cuervo Especial Reposado 750ml , el clásico de México. Suave, con notas de agave cocido, caramelo y especias. Ideal para cócteles o para tomarlo solo.",
+    "descripcion_larga": "Tequila José Cuervo | Tragones Licorería Delivery El Tequila José Cuervo Especial Reposado 750ml es uno de los tequilas más icónicos y consumidos en el mundo. Elaborado en Jalisco, México, con agave azul y una cuidada mezcla de tequilas reposados, ofrece un sabor equilibrado y auténtico que lo hace perfecto para disfrutar solo, en las rocas o en tus cócteles favoritos. Reposado en barricas de roble, su color dorado y su perfil aromático resaltan con notas de agave cocido, caramelo, vainilla y un",
+    "tags": [
+      "750ml",
+      "Tequila"
+    ]
+  },
+  {
+    "id": 6078,
+    "slug": "?post_type=product&p=6078",
+    "nombre": "Tabernero Pisco Sour Limón 700ml | Tragones Licorería",
+    "precio": 30,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/03/253d6d9d1bcd9fe6458c12e3f6a3eff8.jpg",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "Tabernero",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Tabernero Pisco Sour Limón 700ml , una deliciosa fusión de pisco y limón que ofrece un sabor tropical y refrescante. Listo para servir y disfrutar en cualquier ocasión.",
+    "descripcion_larga": "Tabernero Pisco Sour Limón 700ml El Tabernero Pisco Sour Limón 700ml es la combinación perfecta de la tradición del pisco y la frescura tropical del limón. Elaborado con uvas seleccionadas y con una graduación alcohólica de 14°GL , este cóctel listo para servir ofrece un equilibrio perfecto entre dulzura y acidez, con una textura suave y espuma ligera. Ideal para compartir en reuniones o para disfrutar en un momento de relax, solo necesitas agitar, servir bien frío y degustar su exquisito sabor.",
+    "tags": [
+      "700ml",
+      "limón",
+      "otras bebidas",
+      "Pisco Sour"
+    ]
+  },
+  {
+    "id": 5245,
+    "slug": "ron-cartavio-oro-anejo-750ml",
+    "nombre": "Ron Pomalca Oro Añejo 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 39,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/ron-pomalca.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "Disfruta el auténtico sabor del Ron Pomalca Oro Añejo 750ml , un ron peruano con cuerpo y carácter, añejado en barricas de roble para un sabor inigualable. Ahora en un pack especial con + Coca Cola 2.",
+    "descripcion_larga": "Ron Pomalca Oro Añejo 750ml Es un ron peruano de calidad premium, elaborado con los mejores ingredientes y añejado cuidadosamente en barricas de roble , lo que le otorga un sabor intenso y equilibrado con notas de caramelo, vainilla y especias . Su suavidad lo hace perfecto para disfrutar solo, con hielo o en cócteles. Este pack especial incluye + Coca Cola 2.25 Lt + Hielo 1.5 Kg , brindándote la combinación ideal para preparar los mejores tragos y compartir con amigos o familiares. Compra ahora",
+    "tags": [
+      "750ml",
+      "Añejo",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5264,
+    "slug": "ron-carupano-extra-700ml",
+    "nombre": "Ron Carúpano Extra Venezolano 700ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 45,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Ron-carupano.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "Descubre el Ron Carúpano Extra Venezolano 700ml , un ron de calidad superior con un sabor equilibrado y notas dulces y especiadas. Ahora en un pack especial con + Coca Cola 2.25 Lt + Hielo 1.5 Kg . ¡C",
+    "descripcion_larga": "Ron Carúpano Extra Venezolano 700ml + Coca Cola 2.25 Lt + Hielo El Ron Carúpano Extra Venezolano 700ml es una expresión refinada de la tradición ronera de Venezuela, elaborado con una cuidadosa selección de caña de azúcar y envejecido en barricas de roble . Su sabor es suave y equilibrado, con notas de caramelo, vainilla y especias , lo que lo convierte en una opción ideal para disfrutar solo, con hielo o en cócteles. Para una experiencia completa, este pack especial incluye + Coca Cola 2.25 Lt ",
+    "tags": [
+      "700ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5266,
+    "slug": "ron-calazan-venezolano",
+    "nombre": "Ron Calazan Venezolano 700ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 45,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Ron-calazan.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "Disfruta el auténtico sabor del Ron Calazan Venezolano 700ml , un ron de calidad premium con un carácter suave y equilibrado. Ahora en un pack especial con + Coca Cola 2.25Lt + Hielo 1.5 Kg . ¡Encuént",
+    "descripcion_larga": "Ron Calazan Venezolano 700ml Es una exquisita muestra de la tradición ronera de Venezuela, reconocido por su sabor suave y bien equilibrado. Elaborado con los mejores ingredientes y añejado cuidadosamente en barricas de roble , este ron ofrece notas dulces y especiadas que lo convierten en la opción ideal para disfrutar solo, con hielo o en cócteles. Este pack especial incluye + Coca Cola 2.25 Lt + Hielo 1.5 Kg , brindándote todo lo necesario para preparar los mejores tragos y compartir con amig",
+    "tags": [
+      "700ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5268,
+    "slug": "ron-cartavio-black-botella-750ml",
+    "nombre": "Ron Cartavio Black Botella 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 49,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Ron-Cartavio-Black.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Cartavio",
+    "stock": true,
+    "descripcion_corta": "Disfruta el inconfundible Ron Cartavio Black 750ml , un ron peruano de gran carácter, ahora en un pack especial con + Coca Cola 2.25 Lt + Hielo 1.5 Kg . La combinación perfecta para tus mejores moment",
+    "descripcion_larga": "Ron Cartavio Black Botella 750ml Es un ron peruano de sabor intenso y equilibrado, resultado de un cuidadoso proceso de añejamiento en barricas de roble . Su perfil destaca por notas de caramelo, vainilla y especias , ofreciendo una experiencia única en cada sorbo. Perfecto para disfrutar solo, con hielo o en cócteles. Para que disfrutes al máximo, este pack especial incluye + Coca Cola 2.25 Lt + Hielo 1.5 Kg , brindándote la mejor combinación para preparar tragos y compartir con amigos. Compra ",
+    "tags": [
+      "750ml",
+      "Black",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5270,
+    "slug": "ron-cartavio-black-barrel",
+    "nombre": "Ron Cartavio Black Barrel 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 54,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Ron-cartavio-barrel.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Cartavio",
+    "stock": true,
+    "descripcion_corta": "Disfruta el Ron Cartavio Black Barrel 750ml en un pack especial que incluye + Coca Cola 2.25 Lt + Hielo 1.5 Kg . Un ron premium añejado en barricas de roble , perfecto para compartir. ¡Cómpralo ahora ",
+    "descripcion_larga": "El Ron Cartavio Black Barrel 750ml Es una verdadera joya del ron peruano, añejado en barricas de roble para ofrecer un sabor sofisticado con notas de vainilla, caramelo y especias . Su suavidad e intensidad equilibrada lo hacen ideal para disfrutar solo, con hielo o en cócteles. Ahora, este exclusivo ron viene en un pack especial que incluye + Coca Cola 2.25 Lt + Hielo 1.5 Kg , para que prepares los mejores tragos con la combinación perfecta. ¡No dejes pasar esta oportunidad! Compra ahora en tra",
+    "tags": [
+      "750ml",
+      "Black Barrel",
+      "Cartavio Black Barrel",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5272,
+    "slug": "ron-appleton-kingston-62",
+    "nombre": "Appleton Kingston 62 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 59,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Ron-appleton-kingston-1.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "Descubre la auténtica esencia de Jamaica con el Ron Appleton Kingston 62 750ml , un ron de calidad premium con un sabor inconfundible. En cada sorbo, disfrutarás de notas dulces de vainilla y caramelo",
+    "descripcion_larga": "Appleton Kingston 62 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg ¡El combo perfecto para una noche inolvidable! Disfruta del Ron Appleton Kingston 62 750ml , un ron jamaicano de sabor intenso y notas de vainilla, caramelo y especias, ideal para tomar solo o en cócteles. Este pack incluye todo lo que necesitas: 1 Appleton Kingston 62 (750ml) 1 Coca-Cola de 2.5L para tus mezclas favoritas 1 bolsa de hielo de 1.5 kg para mantener tu trago bien frío Disponible en Tragones Licorería Delivery . ¡Haz tu p",
+    "tags": [
+      "750ml",
+      "Kingston 62",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5282,
+    "slug": "ron-cartavio-selecto-5-anos",
+    "nombre": "Ron Cartavio Selecto 5 años 750 ml + Coca-Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 59,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Ron-selecto-5-anos.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Cartavio",
+    "stock": true,
+    "descripcion_corta": "¡Un pack para compartir y disfrutar! El Ron Cartavio Selecto 5 años 750ml es un ron peruano de alta calidad, elaborado con caña de azúcar y añejado en barriles de roble blanco para ofrecer un sabor su",
+    "descripcion_larga": "Ron Cartavio Selecto 5 años 750 ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg Disfruta de la tradición y calidad peruana con el Ron Cartavio Selecto 5 años 750ml , un destilado excepcional elaborado a partir de la mejor caña de azúcar y añejado durante 5 años en barriles de roble blanco . Su sabor es suave y equilibrado , con notas de caramelo, vainilla y sutiles toques de madera que realzan su carácter refinado. Para que disfrutes la mejor experiencia, este pack incluye: ✔️ 1 botella de Ron Cartavio Se",
+    "tags": [
+      "5 años",
+      "750ml",
+      "Ron",
+      "Selecto"
+    ]
+  },
+  {
+    "id": 5284,
+    "slug": "ron-capitan-morgan-700-ml",
+    "nombre": "Ron Capitan Morgan 700 ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 68,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Ron-capitan-morgan.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "¡El combo ideal para compartir y disfrutar al máximo! Ron Capitan Morgan 700ml , el icónico ron especiado de Jamaica, con un sabor inconfundible y una textura suave que lo hace perfecto para mezclar. ",
+    "descripcion_larga": "Ron Capitan Morgan 700 ml + Coca Cola 2.5 Lt + Hielo 1.5 Kg Embárcate en una aventura de sabor con el Ron Capitan Morgan 700ml , un clásico destilado caribeño elaborado con caña de azúcar y añejado en barricas de roble , lo que le otorga un carácter suave, especiado y con un toque dulce de vainilla y caramelo . Su perfil versátil lo hace ideal para disfrutar solo, con hielo o en cócteles legendarios como el Cuba Libre o el Mojito . Este pack incluye todo lo que necesitas para la mejor experienci",
+    "tags": [
+      "700ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5286,
+    "slug": "ron-havana-special-1lt",
+    "nombre": "Ron Havana Special 1 Lt + Coca-Cola 2.5L + Hielo 1.5Kg",
+    "precio": 69,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Ron-havana-club-special.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Havana",
+    "stock": true,
+    "descripcion_corta": "¡Disfruta del auténtico sabor cubano con este combo imperdible! Ron Havana Special 1L , un ron rubio de cuerpo suave con notas de vainilla, canela, tabaco y roble seco , perfecto para combinar con Coc",
+    "descripcion_larga": "Ron Havana Special 1LT + Coca-Cola 2.5L + Hielo 1.5Kg Disfruta de la esencia del Caribe con el Ron Havana Special 1L , un ron rubio de calidad excepcional con notas de vainilla, canela, tabaco, piel de naranja y roble seco , obtenidas gracias a su doble añejamiento. Su sabor equilibrado y su suavidad lo convierten en la opción perfecta para disfrutar solo, con hielo o en cócteles clásicos como el Cuba Libre o el Mojito. Este pack incluye todo lo necesario para una experiencia completa: ✔️ 1 bote",
+    "tags": [
+      "1 Lt",
+      "Ron",
+      "Special"
+    ]
+  },
+  {
+    "id": 5288,
+    "slug": "ron-medellin-3-anos-750-ml",
+    "nombre": "Ron Medellin 3 años 750 ml + Coca-Cola 2.25 Lt + Hielo 1.5Kg",
+    "precio": 64,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Ron-medellin.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "3 años",
+    "stock": true,
+    "descripcion_corta": "¡El combo perfecto para compartir y disfrutar con los mejores sabores de Colombia! Ron Medellín 3 años 750ml , un ron añejo de sabor suave y equilibrado, añejado en barricas de roble blanco americano ",
+    "descripcion_larga": "Ron Medellín 3 años 750 ml + Coca-Cola 2.25 Lt + Hielo 1.5Kg Descubre el inconfundible sabor del Ron Medellín 3 años , un ron añejo colombiano elaborado con caña de azúcar y añejado en barricas de roble blanco americano por tres años, logrando un perfil suave, equilibrado y con notas sutiles de madera y caramelo . Su versatilidad lo convierte en una opción ideal para disfrutar solo, con hielo o en cócteles como el clásico Cuba Libre . Este pack incluye todo lo necesario para una experiencia comp",
+    "tags": [
+      "3 años",
+      "750ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5290,
+    "slug": "ron-flor-de-cana-4-anos-750m",
+    "nombre": "Ron Flor de Caña 4 Años 750ml + Coca-Cola 2.25 Lt + Hielo 1.5Kg",
+    "precio": 69,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Ron-flor-4-anos.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Flor de Caña",
+    "stock": true,
+    "descripcion_corta": "¡El combo perfecto para disfrutar con amigos y celebrar con el mejor sabor! Ron Flor de Caña 4 años Añejo Oro 750ml , un ron premium de Nicaragua , con un añejamiento de cuatro años en barricas de rob",
+    "descripcion_larga": "Ron Flor de Caña 4 Años 750ml + Coca-Cola 2.25 Lt + Hielo 1.5Kg Disfruta del inconfundible sabor del Ron Flor de Caña 4 años Añejo Oro , un destilado nicaragüense de calidad premium, añejado en barricas de roble blanco durante cuatro años para lograr un perfil suave, equilibrado y con notas de caramelo, vainilla y un toque sutil de especias . Su versatilidad lo convierte en la opción ideal para disfrutar solo, con hielo o en cócteles como el clásico Cuba Libre . Este pack incluye todo lo necesar",
+    "tags": [
+      "4 Años",
+      "750ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5292,
+    "slug": "ron-barcelo-anejo-750ml",
+    "nombre": "Ron Barceló Añejo 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 66,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/barcelo-anejo.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Barceló",
+    "stock": true,
+    "descripcion_corta": "¡Un combo perfecto para compartir y disfrutar con el mejor sabor dominicano! Ron Barceló Añejo 750ml , un ron premium elaborado con caña de azúcar y añejado en barricas de roble , que le otorgan un sa",
+    "descripcion_larga": "Ron Barceló Añejo 750ml + Coca-Cola 2.25L + Hielo 1.5Kg Sumérgete en el auténtico sabor del Caribe con Ron Barceló Añejo , un destilado dominicano de alta calidad, elaborado con la mejor caña de azúcar y añejado en barricas de roble para desarrollar un carácter suave, equilibrado y con notas sutiles de vainilla, caramelo y madera tostada . Este pack incluye todo lo necesario para disfrutar de una experiencia completa: ✔️ 1 botella de Ron Barceló Añejo (750ml) ✔️ 1 Coca-Cola de 2.25L , el complem",
+    "tags": [
+      "750ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5294,
+    "slug": "ron-barcelo-anejo-1-lt",
+    "nombre": "Ron Barceló Añejo 1 Lt + Coca-Cola 2.25 Lt + Hielo 1.5Kg",
+    "precio": 79,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Barcelo-anejo-1lt.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Barceló",
+    "stock": true,
+    "descripcion_corta": "¡El combo ideal para compartir y disfrutar al máximo! Ron Barceló Añejo 1 Lt , un ron dominicano extra añejado en barricas de roble, con un sabor suave y equilibrado, resaltando notas de caramelo y es",
+    "descripcion_larga": "Ron Barceló Añejo 1 Lt + Coca-Cola 2.25L + Hielo 1.5Kg Disfruta de la excelencia del Ron Barceló Añejo 1 Lt , un destilado premium de la República Dominicana , elaborado con la mejor caña de azúcar y madurado en barricas de roble durante 8 años. Su proceso de doble destilado le otorga un carácter refinado, con notas dulces y complejas de caramelo, especias y madera tostada . Este pack incluye todo lo que necesitas para un momento especial: ✔️ 1 botella de Ron Barceló Añejo (1L) ✔️ 1 Coca-Cola de",
+    "tags": [
+      "1 Lt",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5296,
+    "slug": "ron-bacardi-carta-oro-750ml",
+    "nombre": "Ron Bacardí Carta Oro 750ml + Coca-Cola 2.25 Lt + Hielo 1.5Kg",
+    "precio": 67,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/ron-bacardi-oro.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "¡El combo ideal para cualquier ocasión! Ron Bacardí Carta Oro 750ml , un ron dorado de Puerto Rico , con un sabor suave y balanceado , gracias a su añejamiento en barriles de roble . Notas de caramelo",
+    "descripcion_larga": "Ron Bacardí Carta Oro 750ml + Coca-Cola 2.5L + Hielo 1.5Kg Descubre el inconfundible sabor, un destilado emblemático de Puerto Rico , elaborado a partir de la mejor caña de azúcar y añejado en barriles de roble para lograr su distintivo color dorado. Su sabor es suave y equilibrado , con notas de vainilla, caramelo y almendras tostadas , ideal para disfrutarlo solo o en cócteles. Este pack incluye todo lo necesario para un brindis perfecto: ✔️ 1 botella de Ron Bacardí Carta Oro (750ml) ✔️ 1 Coca",
+    "tags": [
+      "750ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5298,
+    "slug": "ron-cartavio-reserva-8-anos-750ml",
+    "nombre": "Ron Cartavio Reserva 8 años 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 73,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/ron-cartavio-8-anos.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Cartavio",
+    "stock": true,
+    "descripcion_corta": "¡Disfruta de un ron peruano de lujo con este combo exclusivo! El Ron Cartavio Reserva 8 años 750ml es un destilado suave y equilibrado , con un toque de caramelo, vainilla y especias , gracias a su añ",
+    "descripcion_larga": "Ron Cartavio Reserva 8 años 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg Descubre la excelencia del Ron Cartavio Reserva 8 años 750ml , un ron peruano de calidad superior, elaborado con la mejor caña de azúcar y añejado cuidadosamente en barriles de roble americano tostados durante 8 años . Su proceso de maduración le otorga un sabor intenso y refinado , con notas de vainilla, caramelo, roble y especias , que se disfrutan mejor solo o en cócteles sofisticados. Este pack incluye: ✔️ 1 botella de Ron ",
+    "tags": [
+      "750ml",
+      "8 años",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5300,
+    "slug": "ron-flor-de-cana-5-anos-750ml",
+    "nombre": "Ron Flor de Caña 5 años 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 79,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/ron-flor-de-cana-5-anos.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Flor de Caña",
+    "stock": true,
+    "descripcion_corta": "El Ron Flor de Caña 5 años 750ml es un ron añejo clásico de Nicaragua, elaborado a partir de caña de azúcar y envejecido durante 5 años en barricas de roble blanco . Su sabor suave y equilibrado combi",
+    "descripcion_larga": "Ron FLOR DE CAÑA 5 años 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg El Ron Flor de Caña 5 años 750ml es un ron premium de Centroamérica , originario de Nicaragua , con un proceso de añejamiento natural que le otorga un sabor excepcionalmente suave y equilibrado. Envejecido durante 5 años en barricas de roble blanco , desarrolla una compleja combinación de aromas y sabores, destacando notas de vainilla, caramelo, frutos secos y un ligero toque amaderado . Su composición a base de caña de azúcar y su",
+    "tags": [
+      "5 años",
+      "750ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5302,
+    "slug": "ron-appleton-estate-signature",
+    "nombre": "Appleton Estate Signature + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 84,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/ron-aplpeton-state.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "¡Lleva la esencia de Jamaica a tu copa con este increíble combo! Appleton Estate Signature es un ron de 40% de alcohol , con un perfil suave y afrutado, ideal para disfrutar solo o mezclado. Este pack",
+    "descripcion_larga": "Ron Appleton Estate Signature + Coca Cola 2.5 Lt + Hielo 1.5 Kg Descubre el auténtico sabor del Caribe con Appleton Estate Signature , un ron premium de Jamaica elaborado con una cuidadosa mezcla de destilados añejados en barricas de roble . Su sabor equilibrado con notas de caramelo, frutas tropicales y especias lo convierten en una opción perfecta para disfrutar solo o en cócteles clásicos. Este pack incluye: ✔️ 1 botella de Ron Appleton Estate Signature (750ml) ✔️ 1 Coca-Cola de 2.5L , la com",
+    "tags": [
+      "750ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5304,
+    "slug": "ron-abuelo-anejo-1lt",
+    "nombre": "Ron Abuelo Añejo 1 Lt + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 95,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/ron-abuelo-anejo.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "¡El clásico sabor del Ron Abuelo Añejo en un pack listo para compartir! Destilado en Panamá y añejado 5 años en barriles de roble blanco , este ron ofrece una mezcla perfecta de dulzura y cuerpo , ide",
+    "descripcion_larga": "Ron Abuelo Añejo 1 lt+ Coca Cola 2.25 Lt + Hielo 1.5 Kg Sumérgete en la tradición y calidad del Ron Abuelo Añejo , un destilado panameño excepcional elaborado con la mejor caña de azúcar y añejado durante 5 años en barriles de roble blanco . Su sabor suave y equilibrado ofrece notas de caramelo, vainilla y especias , perfectas para disfrutarlo solo o en cócteles clásicos como el Cuba Libre. Este pack incluye: ✔️ 1 botella de Ron Abuelo Añejo (750ml) ✔️ 1 Coca-Cola de 2.25L , la combinación perfe",
+    "tags": [
+      "750ml",
+      "Añejo",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5306,
+    "slug": "ron-malibu-750ml",
+    "nombre": "Ron Malibú 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 99,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/ron-malibu.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "El Ron Malibú 750ml es un licor caribeño originario de Barbados, elaborado con extracto natural de coco y ron blanco. Su sabor dulce y exótico combina coco, almendras y especias, ideal para disfrutar ",
+    "descripcion_larga": "Ron Malibú 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg El Ron Malibú 750ml es una bebida espirituosa icónica de origen caribeño, elaborada en Barbados con extracto natural de coco y ron blanco de alta calidad. Su inconfundible sabor dulce y tropical combina notas de coco, almendras y especias, ofreciendo una experiencia refrescante y exótica en cada sorbo. Este pack incluye una Coca-Cola de 2.25 Lt y 1.5Kg de hielo , brindando todo lo necesario para preparar cócteles deliciosos y disfrutar al máxim",
+    "tags": [
+      "750ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5308,
+    "slug": "ron-barcelo-gran-anejo-1-lt",
+    "nombre": "Ron Barceló Gran Añejo 1 Lt + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 98,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/barcelo-gran-anejo-1lt.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Barceló",
+    "stock": true,
+    "descripcion_corta": "Disfruta del inconfundible sabor del Ron Barceló Gran Añejo , un ron caribeño con un 37.5% de alcohol , añejado en barricas de roble para un sabor suave y con cuerpo. Ideal para compartir y preparar C",
+    "descripcion_larga": "Ron Barceló Gran Añejo 1 Lt Sumérgete en la tradición del Caribe con Ron Barceló Gran Añejo 1 Lt , un destilado dominicano añejado en barricas de roble que le otorgan su carácter robusto y notas suaves de caramelo, vainilla y especias . Su equilibrio y suavidad lo convierten en el compañero ideal para cócteles clásicos como el Cuba Libre . Este pack incluye: ✔️ 1 botella de Ron Barceló Gran Añejo (1L) ✔️ 1 Coca-Cola de 2.25L , el complemento perfecto para mezclar ✔️ 1 bolsa de hielo de 1.5 kg , ",
+    "tags": [
+      "1 Lt",
+      "Añejo",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5311,
+    "slug": "ron-santa-teresa-750ml",
+    "nombre": "Ron Santa Teresa 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 98,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/ron-santa-teresa.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Ron Santa Teresa 750ml , un ron venezolano añejado en barricas de roble americano, con un sabor inigualable y auténtico. Este pack incluye Coca-Cola 2.25 Lt y 1.5Kg de hielo , ideal para ",
+    "descripcion_larga": "Ron Santa Teresa 750ml + Coca Cola 2.5 Lt + Hielo 1.5 Kg El Ron Santa Teresa 750ml es una verdadera joya de Venezuela, elaborado con un proceso de añejamiento en barricas de roble americano , lo que le otorga un sabor equilibrado y suave con notas amaderadas y dulces. Perfecto para disfrutar solo, con hielo o en cócteles, este ron es una elección ideal para quienes buscan calidad y tradición en cada sorbo. Este pack especial incluye Coca-Cola 2.25 Lt y 1.5Kg de hielo , ofreciéndote todo lo neces",
+    "tags": [
+      "750ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5313,
+    "slug": "ron-flor-de-cana-7-anos-750ml",
+    "nombre": "Ron Flor de Caña 7 años 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 109,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/flor-de-cana-7-anos.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Flor de Caña",
+    "stock": true,
+    "descripcion_corta": "Descubre el Ron Flor de Caña 7 años 750ml , un ron nicaragüense de calidad premium, añejado en barricas de roble blanco para lograr un perfil suave y vibrante con notas de cacao, vainilla y frutos roj",
+    "descripcion_larga": "Ron Flor de Caña 7 años 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg Sumérgete en la tradición y el sabor excepcional del Ron Flor de Caña 7 años , un ron Gran Reserva de origen nicaragüense, añejado de manera natural durante 7 años en barricas de roble blanco . Su proceso de envejecimiento le otorga un carácter robusto con notas envolventes de cacao, vainilla y frutos rojos , logrando una experiencia de degustación equilibrada y sofisticada. Su botella elegante y refinada refleja la herencia y cali",
+    "tags": [
+      "7 años",
+      "750ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5315,
+    "slug": "ron-havana-club-7-anos-700ml",
+    "nombre": "Ron Havana Club 7 años 700ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 108,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/havana-club-7-anos.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Havana",
+    "stock": true,
+    "descripcion_corta": "Disfruta del auténtico sabor cubano con el Ron Havana Club 7 años 700ml , un ron elegante y complejo con notas de cacao, vainilla, caña de azúcar y frutos tropicales caramelizados . Este pack incluye ",
+    "descripcion_larga": "Ron Havana Club 7 años 700ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg El Ron Havana Club Añejo 7 años es una verdadera obra maestra del ron cubano, elaborado con pasión y tradición para ofrecer una experiencia de sabor única. Su añejamiento durante 7 años en barricas de roble le confiere un cuerpo voluptuoso y sedoso , con un paladar extraordinariamente complejo y equilibrado. Cada sorbo revela notas vibrantes de cacao caliente, vainilla, caña de azúcar, castañas y frutos tropicales caramelizados , co",
+    "tags": [
+      "7 años",
+      "700ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5317,
+    "slug": "ron-cartavio-solera-12-anos-750ml",
+    "nombre": "Ron Cartavio Solera 12 años 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 122,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/ron-cartavio-solera-12-anos.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Cartavio",
+    "stock": true,
+    "descripcion_corta": "Descubre la excelencia del Ron Cartavio Solera 12 años 750ml , un ron peruano premium, añejado en barriles de roble durante 12 años para lograr un sabor sofisticado y equilibrado. Disfruta sus notas s",
+    "descripcion_larga": "Ron Cartavio Solera 12 años 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg El Ron Cartavio Solera 12 años es una joya de la destilería peruana, elaborado con un meticuloso proceso de añejamiento en barriles de roble bajo el método Solera, lo que le otorga un carácter suave, elegante y equilibrado . Su perfil de sabor destaca por notas dulces y especiadas, con matices de vainilla, caramelo, frutos secos y madera , logrando una experiencia de degustación compleja y sofisticada. Con un volumen de 750ml y",
+    "tags": [
+      "12 años",
+      "750ml",
+      "Ron",
+      "Solera"
+    ]
+  },
+  {
+    "id": 5321,
+    "slug": "ron-flor-de-cana-12-anos-750ml",
+    "nombre": "Ron Flor de Caña 12 años botella 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 190,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/flor-12-anos.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Flor de Caña",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Ron Flor de Caña 12 años en presentación de 750ml, un ron premium añejado en barricas de roble blanco por 12 años. Acompañado de Coca-Cola 2.25 Lt y 1.5Kg de hielo , perfecto para compart",
+    "descripcion_larga": "Ron Flor de Caña 12 años botella 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg Vive una experiencia de sabor excepcional con el Ron Flor de Caña 12 años , un ron premium de origen nicaragüense, elaborado a partir de caña de azúcar y añejado de manera natural en barricas de roble blanco por 12 años , logrando un sabor suave y refinado con notas a caramelo, vainilla y frutos secos. Con 40°GL de graduación alcohólica , es perfecto para disfrutar solo, en las rocas o en cócteles. Para que disfrutes al má",
+    "tags": [
+      "12 años",
+      "750ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5323,
+    "slug": "ron-diplomatico-mantuano-750ml",
+    "nombre": "Ron Diplomatico Mantuano 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 180,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/ron-diplomatico-mantuano.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Ron Diplomático Mantuano 750ml , un ron venezolano de carácter complejo y versátil, perfecto para cócteles o disfrutar solo. Con notas de caramelo, frutos secos y especias , este destilad",
+    "descripcion_larga": "El Ron Diplomático Mantuano 750ml es una expresión auténtica de la tradición venezolana, elaborado con una mezcla de rones añejados hasta por 8 años en barricas de roble blanco. Su sabor equilibrado y sofisticado lo convierte en una opción ideal para disfrutar puro, con hielo o en cócteles premium . Notas de Cata: ✔ Aromas : Caramelo, ciruelas pasas y vainilla. ✔ Sabor : Frutos secos, especias dulces y un toque de madera tostada. ✔ Final : Largo y suave, con un equilibrio perfecto entre dulzura ",
+    "tags": [
+      "750ml",
+      "Mantuano",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5325,
+    "slug": "ron-flor-de-cana-18-anos-750ml",
+    "nombre": "Ron Flor de Caña 18 años 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 299,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Flor-18-anos.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Flor de Caña",
+    "stock": true,
+    "descripcion_corta": "Disfruta de la elegancia y suavidad del Ron Flor de Caña 18 Años 750ml , un destilado premium de Nicaragua , añejado naturalmente en barricas de roble blanco por 18 años . Con notas de caramelo, vaini",
+    "descripcion_larga": "El Ron Flor de Caña 18 Años 750ml es una joya de la destilación nicaragüense, elaborado de manera sostenible y con añejamiento natural sin azúcar añadida . Este ron de categoría ultra-premium se madura lentamente en barricas de roble blanco , lo que le otorga un sabor profundo y balanceado, con un carácter excepcional. Notas de Cata: ✔ Aromas : Caramelo, vainilla y roble tostado. ✔ Sabor : Equilibrio perfecto entre frutos secos, chocolate amargo y un toque especiado. ✔ Final : Largo, suave y ele",
+    "tags": [
+      "18 años",
+      "750ml",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5327,
+    "slug": "ron-zacapa-solera-23-anos-750ml",
+    "nombre": "Ron Zacapa Solera 23 años 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 280,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/zacapa-23-anos-1.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Ron Zacapa Solera 23 Años 750ml , un destilado premium de Guatemala , añejado mediante el exclusivo Sistema Solera para lograr una suavidad y complejidad inigualables. Con notas de carame",
+    "descripcion_larga": "El Ron Zacapa Solera 23 Años 750ml es una obra maestra de la destilación guatemalteca, elaborado con caña de azúcar de alta calidad y envejecido a más de 2,300 metros sobre el nivel del mar mediante el exclusivo Sistema Solera . Este proceso permite que el ron pase por diferentes barricas, previamente utilizadas para envejecer whisky, vinos y jerez, otorgándole un sabor profundo y equilibrado . Notas de Cata: ✔ Aromas : Caramelo tostado, vainilla, frutos secos y madera. ✔ Sabor : Mezcla armonios",
+    "tags": [
+      "23 años",
+      "750ml",
+      "Ron",
+      "Solera"
+    ]
+  },
+  {
+    "id": 5331,
+    "slug": "ron-cartavio-xo-750ml",
+    "nombre": "Ron Cartavio XO 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 289,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/cartavio-xo.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Cartavio",
+    "stock": true,
+    "descripcion_corta": "Descubre el Ron Cartavio XO 750ml , un ron premium de Perú , añejado durante 18 años en barricas de roble americano, francés y esloveno para lograr un perfil de sabor sofisticado y complejo. Disfruta ",
+    "descripcion_larga": "El Ron Cartavio XO 750ml es la máxima expresión de la destilación peruana, elaborado con los más altos estándares de calidad y añejado durante 18 años en una combinación de barricas de roble americano, francés y esloveno . Este proceso único aporta un equilibrio perfecto entre suavidad y carácter, ofreciendo una experiencia de degustación incomparable. Notas de Cata: Cada sorbo de Cartavio XO despierta los sentidos con su compleja combinación de sabores: ✔ Aromas : Vainilla, frutos secos y roble",
+    "tags": [
+      "750ml",
+      "Ron",
+      "XO"
+    ]
+  },
+  {
+    "id": 5333,
+    "slug": "ron-zacapa-xo-750ml",
+    "nombre": "Ron Zacapa XO 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 629,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/ron-zacapa-xo.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "Disfruta la excelencia del Ron Zacapa XO 750ml , un ron premium de Guatemala , elaborado con el exclusivo Sistema Solera para lograr un sabor complejo y sofisticado. Con notas de chocolate oscuro, fru",
+    "descripcion_larga": "El Ron Zacapa XO 750ml es una verdadera joya de la destilería guatemalteca, elaborado con caña de azúcar de la más alta calidad y añejado mediante el exclusivo Sistema Solera en barricas seleccionadas, lo que le otorga una suavidad y complejidad inigualables. Perfil de Sabor: Cada sorbo de Zacapa XO es una explosión de sabores refinados, con notas de chocolate oscuro, frutos secos, especias y un fondo de roble tostado , que aportan un carácter elegante y equilibrado. Su textura aterciopelada y s",
+    "tags": [
+      "750ml",
+      "Ron",
+      "XO"
+    ]
+  },
+  {
+    "id": 5335,
+    "slug": "ron-mandatario-solera-700ml",
+    "nombre": "Ron Mandatario Solera 700ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 140,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/manadtario-solera.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "Descubre el Ron Mandatario Solera 700ml , un ron sofisticado de color ámbar intenso con notas de naranja, almendras, frutos secos y vainilla , culminando en un final suavemente amaderado. Su sabor equ",
+    "descripcion_larga": "El Ron Mandatario Solera 700ml es una obra maestra en el arte de la destilación, elaborado bajo el método Solera , que garantiza una complejidad y suavidad inigualables. Su carácter refinado lo convierte en una opción excepcional tanto para degustar solo como para combinar en cócteles sofisticados. Notas de Cata: ✔ Aroma : Notas frescas de naranja, almendras, frutos secos y vainilla , con un toque final de madera tostada. ✔ Sabor : Ligeramente dulce y equilibrado , con matices de vainilla, miel ",
+    "tags": [
+      "700ml",
+      "Ron",
+      "Solera"
+    ]
+  },
+  {
+    "id": 5337,
+    "slug": "ron-barcelo-imperial-750ml",
+    "nombre": "Ron Barceló Imperial 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 185,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/barcelo-imperial.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Barceló",
+    "stock": true,
+    "descripcion_corta": "Déjate conquistar por el Ron Barceló Imperial , un ron dominicano de alta calidad , con una graduación alcohólica de 40% , añejado en barricas de roble para un sabor refinado y equilibrado. Ideal para",
+    "descripcion_larga": "Ron Barceló Imperial 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg Experimenta la excelencia con Ron Barceló Imperial , un destilado dominicano premium , elaborado con los mejores jugos de caña de azúcar y añejado en barricas de roble para un sabor excepcionalmente suave y complejo. Sus notas de caramelo, vainilla, frutas secas y roble tostado lo convierten en la elección perfecta para disfrutar solo o en cócteles clásicos. Este pack incluye: ✔️ 1 botella de Ron Barceló Imperial (750ml) ✔️ 1 Coca-Col",
+    "tags": [
+      "750ml",
+      "Imperial",
+      "Ron"
+    ]
+  },
+  {
+    "id": 5339,
+    "slug": "ron-flor-de-cana-25-anos-750ml",
+    "nombre": "Ron Flor de Caña 25 años 750ml",
+    "precio": 0,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/flor-de-cana-25-anos.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Flor de Caña",
+    "stock": true,
+    "descripcion_corta": "Muy Pronto",
+    "descripcion_larga": "",
+    "tags": [
+      "Ron"
+    ]
+  },
+  {
+    "id": 5341,
+    "slug": "ron-diplomatico-reserva-exclusiva-750ml",
+    "nombre": "Ron Diplomático Reserva Exclusiva 750ml",
+    "precio": 0,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/diplomatico-reserva-exclusiva.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Ron",
+    "stock": true,
+    "descripcion_corta": "MUY PRONTO",
+    "descripcion_larga": "",
+    "tags": [
+      "Ron"
+    ]
+  },
+  {
+    "id": 5343,
+    "slug": "whisky-old-times-750ml",
+    "nombre": "Whisky Old Times 750ml + Evervess 1.5LT + Hielo 1.5 Kg",
+    "precio": 44,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/old-times.jpg",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "Old Times",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Whisky Old Times Red 750ml , un blend de color miel oscura con notas doradas brillantes y un carácter suavemente amaderado. Incluye Evervess 1.5LT y Hielo 1.5Kg , ideal para compartir. Tr",
+    "descripcion_larga": "Whisky Old Times 750ml + Evervess 1.5LT + Hielo 1.5 Kg Sumérgete en una experiencia única con el Whisky Old Times Red 750ml , un exquisito Blended Red de 40°GL que destaca por su color miel oscura con reflejos dorados brillantes. Su aroma tiene una gran presencia, con notas amaderadas equilibradas que brindan un sabor suave y placentero sin ser demasiado fuerte. Este pack incluye: ✅ Whisky Old Times Red 750ml – Suave y con notas amaderadas. ✅ Evervess 1.5LT – Refrescante y con un toque dulce par",
+    "tags": [
+      "750ml",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5345,
+    "slug": "whisky-vat-69-700ml",
+    "nombre": "Whisky Vat 69 700ml + Evervess 1.5LT+ Hielo 1.5 Kg",
+    "precio": 45,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/vat-69.jpg",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "700ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Whisky Vat 69 700ml , un Scotch whisky suave y equilibrado con notas de malta, miel y un sutil toque especiado. Este pack incluye Evervess 1.5 LT y Hielo 1.5Kg , ideal para compartir en c",
+    "descripcion_larga": "Whisky Vat 69 700ml + Evervess 1.5LT + Hielo 1.5 Kg El Whisky Vat 69 700ml es un clásico blended Scotch whisky , reconocido por su suavidad y equilibrio en cada sorbo. Elaborado con una cuidadosa selección de maltas y granos, ofrece un perfil de sabor armonioso con notas de malta, miel, frutas y un sutil toque especiado . Su acabado es suave y ligeramente ahumado, lo que lo convierte en una opción ideal para disfrutar solo, con hielo o en cócteles . Este pack incluye: ✅ Whisky Vat 69 700ml – Sua",
+    "tags": [
+      "700ml",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5347,
+    "slug": "whisky-passport-scotch-700ml",
+    "nombre": "Whisky Passport Scotch 700ml + Evervess 1.5LT + Hielo 1.5 Kg",
+    "precio": 49,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/passport-scotch.jpg",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "700ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta de una experiencia única con el Whisky Passport Scotch 700ml , acompañado de Evervess 1.5LT y Hielo 1.5Kg . Un combo perfecto para compartir, con la suavidad y notas afrutadas de este whisky ",
+    "descripcion_larga": "Whisky Passport Scotch 700ml + Evervess 1.5LT + Hielo 1.5 Kg El Whisky Passport Scotch 700ml es un whisky escocés tipo blended, elaborado con una cuidadosa selección de maltas de las Tierras Altas y Tierras Bajas de Escocia, que le otorgan su inconfundible suavidad y notas afrutadas. Su color ámbar intenso y su aroma dulce con toques de frutos secos lo convierten en una opción ideal para quienes disfrutan de un whisky equilibrado y versátil. Disponible en Tragones Licorería Delivery . ¡Haz tu pe",
+    "tags": [
+      "700ml",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5349,
+    "slug": "whisky-ballantines-finest-700ml",
+    "nombre": "Whisky Ballantine's Finest 700ml + Evervess 1.5 Lt + Hielo 1.5 Kg",
+    "precio": 64,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/ballatines.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "700ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta de la elegancia del Whisky Ballantine's Finest 700ml , acompañado de Evervess 1.5L y Hielo 1.5Kg . Un whisky escocés refinado y versátil, perfecto para tomar solo o en tu cóctel favorito. ¡Or",
+    "descripcion_larga": "Whisky Ballantine's Finest 700ml + Evervess 1.5 Lt + Hielo 1.5 Kg El Whisky Ballantine's Finest 700ml es un blended scotch whisky de carácter refinado y elegante, elaborado con una cuidadosa mezcla de maltas y cereales seleccionados. Su distintivo color dorado claro y su sabor suave lo hacen ideal para disfrutar solo, con hielo o en cócteles. Su versatilidad lo convierte en una excelente opción para cualquier ocasión. Este pack incluye además una botella de Evervess 1.5L , la gaseosa perfecta pa",
+    "tags": [
+      "700ml",
+      "Finest",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5351,
+    "slug": "whisky-something-special-750ml",
+    "nombre": "Whisky Something Special 750ml + Evervess 1.5 lt + Hielo 1.5 Kg",
+    "precio": 74,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/something-special.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Descubre la elegancia del Whisky Something Special 750ml , un escocés añejado 10 años con un sabor equilibrado y notas suaves. Acompañado de Evervess 1.5 Lt y Hielo 1.5Kg , este combo es perfecto para",
+    "descripcion_larga": "Whisky Something Special 750ml + Evervess 1.5 Lt + Hielo 1.5 Kg El Whisky Something Special 750ml es una obra maestra del whisky escocés, añejado por 10 años en barricas de roble , logrando un equilibrio perfecto entre suavidad y carácter. Su combinación de granos y maltas seleccionadas ofrece una experiencia sensorial única, con un toque de dulzura y una complejidad que seduce a los amantes del whisky. Su elegante botella refleja la tradición y calidad que lo distingue. Este exclusivo pack incl",
+    "tags": [
+      "750ml",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5353,
+    "slug": "whisky-johnnie-walker-red-label-750ml",
+    "nombre": "Whisky Johnnie Walker Red Label 750ml + Evervess 1.5LT + Hielo 1.5 Kg",
+    "precio": 79,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/red-label.jpg",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "Johnnie",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Whisky Johnnie Walker Red Label 750ml , una mezcla vibrante con notas especiadas, frutales y un toque ahumado. Este pack incluye Evervess 1.5LT y Hielo 1.5Kg , ideal para disfrutar solo o",
+    "descripcion_larga": "Whisky Johnnie Walker Red Label 750ml + Evervess 1.5LT + Hielo 1.5 Kg El Whisky Johnnie Walker Red Label 750ml es un escocés de carácter enérgico y versátil, reconocido por su sabor especiado y afrutado con toques de canela, pimienta, manzana fresca y malta Speyside . Su final ahumado y sofisticado es el sello distintivo de la marca, haciendo de este whisky una opción clásica para cualquier ocasión. Este exclusivo combo incluye Evervess 1.5LT , una bebida gasificada con extracto natural, perfect",
+    "tags": [
+      "750ml",
+      "Red Label",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5357,
+    "slug": "whisky-chivas-regal-12-anos-700ml",
+    "nombre": "Whisky Chivas Regal 12 años 700ml + Hielo 1.5 Kg",
+    "precio": 145,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/chivas-12-anos.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "Chivas",
+    "stock": true,
+    "descripcion_corta": "Disfruta de la elegancia del Whisky Chivas Regal 12 años 700ml , un blend escocés refinado con notas de hierbas, miel y frutas . Este pack incluye Hielo 1.5Kg , ideal para degustarlo solo o en cóctele",
+    "descripcion_larga": "Whisky Chivas Regal 12 años 700ml + Hielo 1.5 Kg El Whisky Chivas Regal 12 años 700ml es una expresión icónica de la destilería escocesa, conocida por su suavidad y equilibrio perfecto . Con un añejamiento de 12 años en barricas de roble, este whisky combina notas aromáticas de hierbas frescas, miel y frutas maduras , logrando un sabor sofisticado y un final redondo y satisfactorio. Este exclusivo pack incluye Hielo 1.5Kg , asegurando la temperatura perfecta para cada trago. Disponible en Tragon",
+    "tags": [
+      "12 años",
+      "700ml",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5359,
+    "slug": "whisky-old-parr-12-anos-750ml",
+    "nombre": "Whisky Old Parr 12 años 750ml + Hielo 1.5 Lt",
+    "precio": 139,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/old-aprr-12-anos.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "12 años",
+    "stock": true,
+    "descripcion_corta": "Descubre la tradición y exclusividad del Whisky Old Parr 12 años 750ml , un blend excepcional de hasta 40 whiskies finos envejecidos por al menos 12 años. Este pack incluye Hielo 1.5 Kg , ideal para d",
+    "descripcion_larga": "Whisky Old Parr 12 años 750ml + Hielo 1.5 Lt El Whisky Old Parr 12 años 750ml es una mezcla refinada de hasta 40 whiskies cuidadosamente seleccionados , cada uno añejado por al menos 12 años en barricas de roble. Su sabor suave y equilibrado ofrece notas de frutas maduras, miel y un sutil toque ahumado , brindando una experiencia única para los amantes del buen whisky. Este exclusivo pack incluye Hielo 1.5 Kg , asegurando la temperatura ideal para disfrutar de su complejidad aromática y su final",
+    "tags": [
+      "12 años",
+      "750ml",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5361,
+    "slug": "whisky-jack-daniels-tennessee-honey-750ml",
+    "nombre": "Whisky Jack Daniel's Tennessee Honey 750ml + Hielo 1.5 Kg",
+    "precio": 145,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-25-at-11.17.36-PM.jpeg",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Whisky Jack Daniel's Tennessee Honey 750ml , una fusión perfecta entre el clásico Jack Daniel’s Old No. 7 y miel pura , creando un sabor suave y aterciopelado. Este pack incluye Hielo 1.5",
+    "descripcion_larga": "Whisky Jack Daniel's Tennessee Honey 750ml + Hielo 1.5 Kg Descubre la suavidad y dulzura del Whisky Jack Daniel's Tennessee Honey 750ml , una mezcla excepcional del icónico Jack Daniel’s Old No. 7 con miel pura , que le aporta un toque sedoso y un final equilibrado. Con notas de miel real, vainilla y nueces tostadas , esta variante es perfecta para quienes buscan un whisky más dulce y fácil de disfrutar. Este pack exclusivo incluye: ✅ Hielo 1.5 Kg , ideal para servirlo bien frío y potenciar su s",
+    "tags": [
+      "750ml",
+      "Tennessee Honey",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5363,
+    "slug": "whisky-jack-daniels-old-no7-750ml",
+    "nombre": "Whisky Jack Daniel´s Old Nº7 750ml + Hielo 1.5 Kg",
+    "precio": 145,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/fe04a4a5-e43e-4788-8eff-44b026cb60a3.jpg",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del icónico Whisky Jack Daniel's Old No. 7 750ml , un clásico americano con notas de caramelo, vainilla y roble tostado , filtrado con carbón de arce para una suavidad inigualable. Este pack ",
+    "descripcion_larga": "Whisky Jack Daniel´s Old Nº7 750ml + Hielo 1.5 Kg Sumérgete en la tradición del auténtico Whisky Jack Daniel's Old No. 7 750ml , un ícono del Tennessee Whiskey reconocido por su proceso de filtrado en carbón de arce, que le otorga un carácter suave y distintivo. Con un perfil de sabor equilibrado entre caramelo, vainilla y un sutil toque de roble tostado, este whisky es perfecto para disfrutar solo, en las rocas o en combinaciones clásicas. Este exclusivo pack incluye: ✅ Hielo 1.5 Kg , para mant",
+    "tags": [
+      "750ml",
+      "Old Nº7",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5365,
+    "slug": "whisky-johnnie-walker-black-label-750ml",
+    "nombre": "Whisky Johnnie Walker Black Label 750ml + Evervess 1.5 Lt + Hielo 1.5 Kg",
+    "precio": 147,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/etk-negra.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "Johnnie",
+    "stock": true,
+    "descripcion_corta": "Disfruta del prestigioso Whisky Johnnie Walker Black Label 750ml , una mezcla de 12 años con notas de frutas oscuras, vainilla, toffee y un sutil ahumado . Este pack incluye Evervess 1.5L y Hielo 1.5 ",
+    "descripcion_larga": "Whisky Johnnie Walker Black Label 750ml + Evervess 1.5 Lt + Hielo 1.5 Kg Descubre la excelencia del Whisky Johnnie Walker Black Label 750ml , un blend escocés de 12 años que combina la riqueza y profundidad de los mejores whiskies de malta y grano. Con un equilibrio perfecto entre frutas oscuras, vainilla, toffee y un toque ahumado , cada sorbo ofrece una experiencia única y refinada. Este pack exclusivo incluye: ✅ Evervess 1.5L , el complemento perfecto para cócteles vibrantes. ✅ Hielo 1.5 Kg ,",
+    "tags": [
+      "750ml",
+      "Black Label",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5367,
+    "slug": "whisky-buchanans-deluxe-12-anos-750ml",
+    "nombre": "Whisky Buchanan's Deluxe 12 años 750ml + Evervess 1.5lt + Hielo",
+    "precio": 195,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/buachamans.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "12 años",
+    "stock": true,
+    "descripcion_corta": "Descubre la suavidad y elegancia del Whisky Buchanan's Deluxe 12 años 750ml , una mezcla refinada con notas de cítricos, chocolate y un toque floral. Este exclusivo pack incluye Evervess 1.5L y Hielo ",
+    "descripcion_larga": "Whisky Buchanan's Deluxe 12 años 750ml + Evervess 1.5lt + Hielo 1.5 kg El Whisky Buchanan’s Deluxe 12 años 750ml es una obra maestra escocesa, reconocida por su suavidad y equilibrio excepcional. Elaborado con una mezcla de los mejores whiskies de malta y grano, ofrece un perfil de sabor rico y complejo , donde destacan las notas de cítricos, chocolate y delicados toques florales . Su final es cálido y persistente, convirtiéndolo en una elección perfecta para los amantes del buen whisky. Este pa",
+    "tags": [
+      "12 años",
+      "750ml",
+      "Deluxe",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5369,
+    "slug": "whisky-johnnie-walker-double-black-label-750ml",
+    "nombre": "Whisky Johnnie Walker Double Black Label 750ml + 1 Red Bull 250ml + Hielo 1.5 Kg",
+    "precio": 187,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/double-black.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "Johnnie",
+    "stock": true,
+    "descripcion_corta": "Explora la intensidad del Whisky Johnnie Walker Double Black Label 750ml , una versión más ahumada y robusta del clásico Black Label. Con notas profundas de turba, especias y dulzor equilibrado , este",
+    "descripcion_larga": "Whisky Johnnie Walker Double Black Label 750ml + 1 Red Bull 250ml + Hielo 1.5 Kg Descubre la fuerza y profundidad del Whisky Johnnie Walker Double Black Label 750ml , una mezcla audaz que lleva el carácter del Black Label a un nivel superior. Elaborado con whiskies de malta y grano envejecidos en barricas de roble carbonizado, ofrece un perfil de sabor más ahumado, intenso y especiado , con toques de turba, frutas secas y dulzor sutil . Este pack exclusivo incluye: ✅ Red Bull 250ml , para quiene",
+    "tags": [
+      "750ml",
+      "Double Black Label",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5371,
+    "slug": "whisky-johnnie-walker-gold-label-750ml",
+    "nombre": "Whisky Johnnie Walker Gold Label 750ml + Red Bull 250ml + Hielo 1.5 Kg",
+    "precio": 295,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/etk-dorada.jpg",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "Johnnie",
+    "stock": true,
+    "descripcion_corta": "Déjate seducir por la elegancia del Whisky Johnnie Walker Gold Label Reserve 750ml , una mezcla refinada con notas de miel, crema y frutos tropicales . Este exclusivo pack incluye Evervess 1.5LT y Hie",
+    "descripcion_larga": "Whisky Johnnie Walker Gold Label 750ml + Red Bull 250ml+ Hielo 1.5 Kg El Whisky Johnnie Walker Gold Label Reserve 750ml es una obra maestra de la destilería escocesa, diseñado para los paladares más exigentes. Su equilibrio perfecto de miel dulce, crema sedosa y frutos tropicales culmina en un final suave y elegante, brindando una experiencia de lujo en cada sorbo. Este pack exclusivo incluye: ✅ Red Bull 250ml ✅ Hielo 1.5 Kg , para disfrutar tu whisky a la temperatura perfecta. Con su presentaci",
+    "tags": [
+      "750ml",
+      "Gold Label",
+      "Gold Label Reserve",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5373,
+    "slug": "whisky-johnnie-walker-green-label-750ml",
+    "nombre": "Whisky Johnnie Walker Green Label 750ml +Red Bull 250ml + Hielo 1.5 Kg",
+    "precio": 315,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/etk-verde.jpg",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "Johnnie",
+    "stock": true,
+    "descripcion_corta": "Explora la autenticidad del Whisky Johnnie Walker Green Label 750ml , una mezcla de maltas añejadas 15 años con notas de roble, pimienta y frutas , culminando en un final ahumado. Este pack incluye Re",
+    "descripcion_larga": "Whisky Johnnie Walker Green Label 750ml + Evervess 1.5LT + Hielo 1.5 Kg Sumérgete en la esencia de Escocia con el Whisky Johnnie Walker Green Label 750ml , una mezcla única de maltas puras maduradas por 15 años. Su perfil de sabor destaca por la armonía entre roble, pimienta, frutas frescas y un sutil ahumado , brindando una experiencia de degustación rica y equilibrada. Este exclusivo pack incluye: ✅ Red Bull 250ml , ideal para quienes buscan intensidad y energía en cada combinación. ✅ Hielo 1.",
+    "tags": [
+      "750ml",
+      "Green Label",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5375,
+    "slug": "whisky-johnnie-walker-blue-label-750ml",
+    "nombre": "Whisky Johnnie Walker Blue Label 750ml + 2 Red Bull 250ml + Hielo 1.5 Kg",
+    "precio": 1250,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/etk-azul.jpg",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "Johnnie",
+    "stock": true,
+    "descripcion_corta": "Experimenta la exclusividad del Whisky Johnnie Walker Blue Label 750ml , una mezcla de los whiskies más raros de Escocia con notas de miel, frutas secas, especias y un sutil ahumado . Este pack incluy",
+    "descripcion_larga": "Whisky Johnnie Walker Blue Label 750ml + 2 Red Bull 250ml + Hielo 1.5 Kg Sumérgete en la excelencia con el Whisky Johnnie Walker Blue Label 750ml , la joya de la destilería Johnnie Walker. Creado con algunos de los whiskies más exclusivos y escasos de Escocia, ofrece una experiencia inigualable con su compleja combinación de miel, frutas secas, especias y sutiles notas ahumadas . Su textura aterciopelada y su final prolongado lo convierten en una verdadera obra maestra. Este exclusivo pack inclu",
+    "tags": [
+      "750ml",
+      "Blue Label",
+      "whisky"
+    ]
+  },
+  {
+    "id": 5377,
+    "slug": "whisky-johnnie-walker-platinum-label-750ml",
+    "nombre": "Whisky Johnnie Walker Platinum Label 750ml",
+    "precio": 0,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/platinum-label.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "Johnnie",
+    "stock": true,
+    "descripcion_corta": "MUY PRONTO",
+    "descripcion_larga": "",
+    "tags": [
+      "whisky"
+    ]
+  },
+  {
+    "id": 5379,
+    "slug": "whisky-johnnie-walker-18-anos-750ml",
+    "nombre": "Whisky Johnnie Walker 18 años 750ml",
+    "precio": 0,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/18-anos-gold.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "Johnnie",
+    "stock": true,
+    "descripcion_corta": "MUY PRONTO",
+    "descripcion_larga": "",
+    "tags": [
+      "whisky"
+    ]
+  },
+  {
+    "id": 5381,
+    "slug": "whisky-the-macallan-12-anos-750ml",
+    "nombre": "Whisky The Macallan 12 años 750ml",
+    "precio": 0,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/the-macallan.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "whisky",
+    "stock": true,
+    "descripcion_corta": "MUY PRONTO",
+    "descripcion_larga": "",
+    "tags": [
+      "whisky"
+    ]
+  },
+  {
+    "id": 5383,
+    "slug": "whisky-johnnie-walker-swing-750ml",
+    "nombre": "Whisky Johnnie Walker Swing 750ml",
+    "precio": 0,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/SWING.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "Johnnie",
+    "stock": true,
+    "descripcion_corta": "MUY PRONTO",
+    "descripcion_larga": "",
+    "tags": [
+      "whisky"
+    ]
+  },
+  {
+    "id": 5385,
+    "slug": "whisky-sandy-mac-750ml",
+    "nombre": "Whisky Sandy Mac 750ml",
+    "precio": 0,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/sandy-mac.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "whisky",
+    "stock": true,
+    "descripcion_corta": "MUY PRONTO",
+    "descripcion_larga": "",
+    "tags": [
+      "whisky"
+    ]
+  },
+  {
+    "id": 5388,
+    "slug": "whisky-black-peru-700ml",
+    "nombre": "Whisky Black Peru 700ml",
+    "precio": 0,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/black-whisky.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "whisky",
+    "stock": true,
+    "descripcion_corta": "MUY PRONTO",
+    "descripcion_larga": "",
+    "tags": [
+      "whisky"
+    ]
+  },
+  {
+    "id": 5390,
+    "slug": "vodka-russkaya-azul-750ml",
+    "nombre": "Vodka Russkaya Azul 750ml + Frugos Fresh 3L + Hielo 1.5kg",
+    "precio": 49,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/russkaya.png",
+    "categoria": "Vodka",
+    "categorias": [
+      "Vodka"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "¡Combo refrescante y listo para la fiesta! Incluye Vodka Russkaya Azul 750ml, Frugos Fresh 3L y 1.5kg de hielo . ¡Solo sirve y disfruta! Refresca tus momentos con el sabor clásico y elegante trago. Id",
+    "descripcion_larga": "Vodka Russkaya Azul 750ml + Frugos Fresh 3L + Hielo 1.5kg Lleva la diversión a otro nivel con este combo pensado para compartir y disfrutar sin complicaciones. Incluye: Vodka Russkaya Azul 750ml : Un vodka clásico, suave y equilibrado, ideal para tragos largos o para tomarlo bien frío. Frugos Fresh 3L : Jugo en presentación grande para mezclar, refrescar y darle un toque frutal al vodka. Disponible en sabores como durazno, mango o tropical. ❄️ Hielo 1.5kg : El infaltable para mantener todo helad",
+    "tags": [
+      "750ml",
+      "Azul",
+      "vodka"
+    ]
+  },
+  {
+    "id": 5392,
+    "slug": "vodka-smirnoff-manzana-700ml",
+    "nombre": "Vodka Smirnoff Green Apple Botella 700ml + Frugos Fresh 3L + Hielo 1.5kg",
+    "precio": 65,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/smirnoff-verde.png",
+    "categoria": "Vodka",
+    "categorias": [
+      "Vodka"
+    ],
+    "marca": "Smirnoff",
+    "stock": true,
+    "descripcion_corta": "¡Combo con sabor y frescura! Incluye Vodka Smirnoff de Manzana 700ml, Frugos Fresh 3L y 1.5kg de hielo . ¡Perfecto para preparar tragos frutales al instante! Refresca tus momentos con el sabor clásico",
+    "descripcion_larga": "Vodka Smirnoff Green Apple Botella 700ml + Frugos Fresh 3L + Hielo 1.5kg Disfruta de un combo lleno de sabor y listo para compartir en cualquier ocasión. Vodka Smirnoff Green Apple Botella 700ml Incluye: Vodka Smirnoff Manzana 700ml : Un vodka suave, con un refrescante toque a manzana verde que combina perfecto en cócteles frutales o con jugos. Frugos Fresh 3L : Ideal para mezclar y refrescar. Disponible en sabores como durazno, tropical o mango, que combinan perfectamente con el vodka saborizad",
+    "tags": [
+      "700ml",
+      "Botella",
+      "Green Apple",
+      "vodka"
+    ]
+  },
+  {
+    "id": 5394,
+    "slug": "vodka-smirnoff-rojo-700ml",
+    "nombre": "Vodka Smirnoff Rojo 700ml + Frugos Fresh 3L + Hielo 1.5kg",
+    "precio": 55,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/smirnoff-rojo.png",
+    "categoria": "Vodka",
+    "categorias": [
+      "Vodka"
+    ],
+    "marca": "Smirnoff",
+    "stock": true,
+    "descripcion_corta": "¡El clásico que nunca falla! Combo con Vodka Smirnoff Rojo 700ml, Frugos Fresh 3L y 1.5kg de hielo . ¡Ideal para armar la previa o disfrutar en casa! Refresca tus momentos con el sabor clásico y elega",
+    "descripcion_larga": "Vodka Smirnoff Rojo 700ml + Frugos Fresh 3L + Hielo 1.5kg Un combo clásico y versátil, ideal para cualquier ocasión, desde una previa con amigos hasta una noche de celebración. Incluye: Vodka Smirnoff Rojo 700ml : Vodka premium, triple destilado y ultra filtrado, reconocido por su suavidad y pureza. Perfecto para todo tipo de cócteles o tomarlo solo. Frugos Fresh 3L : Jugo en gran presentación, ideal para mezclar con vodka y crear tragos frescos y sabrosos. Disponible en sabores como durazno, ma",
+    "tags": [
+      "700ml",
+      "Rojo",
+      "vodka"
+    ]
+  },
+  {
+    "id": 5396,
+    "slug": "vodka-lithuanian-1-lt",
+    "nombre": "Vodka Lithuanian 1 Lt + Frugos Fresh 3L + Hielo 1.5kg",
+    "precio": 65,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/lithuaniam.png",
+    "categoria": "Vodka",
+    "categorias": [
+      "Vodka"
+    ],
+    "marca": "1 Lt",
+    "stock": true,
+    "descripcion_corta": "¡Combo rendidor y listo para la fiesta! Vodka Lithuanian 1L, Frugos Fresh 3L y Hielo 1.5kg . Ideal para compartir y preparar tus tragos favoritos. Refresca tus momentos con el sabor clásico y elegante",
+    "descripcion_larga": "Vodka Lithuanian 1 Lt + Frugos Fresh 3L + Hielo 1.5kg Arma la previa, la reunión o el fin de semana con este combo completo y rendidor. Vodka Lithuanian 1 Lt Incluye: Vodka Lithuanian 1L : Un vodka de origen europeo, suave y cristalino, perfecto para preparar cócteles clásicos o mezclar con jugos. Su buena relación calidad-precio lo convierte en una opción ideal para reuniones. Frugos Fresh 3L : Refrescante y en gran cantidad. Mezcla fácilmente con el vodka y rinde para varios vasos. Disponible ",
+    "tags": [
+      "1 Lt",
+      "https://lithuanian.vodka/en/age-agreement/",
+      "vodka"
+    ]
+  },
+  {
+    "id": 5398,
+    "slug": "vodka-skyy-botella-750ml",
+    "nombre": "Vodka SKYY Botella 750ml + Frugos Fresh 3L + Hielo 1.5kg",
+    "precio": 71,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/sky.png",
+    "categoria": "Vodka",
+    "categorias": [
+      "Vodka"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "¡Elegancia y frescura en un solo combo! Vodka SKYY Botella 750ml, Frugos Fresh 3L y Hielo 1.5kg . Ideal para cócteles suaves y refrescantes. Refresca tus momentos con el sabor clásico y elegante trago",
+    "descripcion_larga": "Vodka SKYY Botella 750ml + Frugos Fresh 3L + Hielo 1.5kg Disfruta de un combo con estilo, ideal para reuniones, previas o una noche especial. Vodka SKYY Botella 750ml Incluye: Vodka SKYY 750ml : Vodka premium de origen estadounidense, conocido por su suavidad y pureza gracias a su cuádruple destilación y triple filtrado. Perfecto para cócteles elegantes o mezclas simples pero sabrosas. Vodka SKYY Botella 750ml Frugos Fresh 3L : Gran presentación para rendir más. Sus sabores frutales como durazno",
+    "tags": [
+      "750ml",
+      "vodka"
+    ]
+  },
+  {
+    "id": 5400,
+    "slug": "vodka-absolut-azul-750ml",
+    "nombre": "Vodka Absolut Azul 750ml + Frugos Fresh 3L + Hielo 1.5kg",
+    "precio": 79,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/absolut.png",
+    "categoria": "Vodka",
+    "categorias": [
+      "Vodka"
+    ],
+    "marca": "Absolut",
+    "stock": true,
+    "descripcion_corta": "¡Calidad y sabor en cada trago! Incluye Vodka Absolut Azul 750ml, Frugos Fresh 3L y Hielo 1.5kg . Ideal para cócteles premium en casa.",
+    "descripcion_larga": "Vodka Absolut Azul 750ml + Frugos Fresh 3L + Hielo 1.5kg Disfruta de una experiencia premium con este combo ideal para reuniones especiales o para darte un gusto con estilo. Incluye: Vodka Absolut Azul 750ml : Vodka sueco de alta calidad, elaborado 100% con trigo de invierno y agua pura. Suave, puro y con carácter, es perfecto para cócteles sofisticados o para tomarlo solo bien frío. Frugos Fresh 3L : Jugo frutal en presentación grande, ideal para combinar y preparar tragos frescos. Sabores como",
+    "tags": [
+      "750ml",
+      "vodka"
+    ]
+  },
+  {
+    "id": 5402,
+    "slug": "vodka-skyy-raspberry-750ml",
+    "nombre": "Vodka SKYY Raspberry 750ml + Frugos Fresh 3L + Hielo 1.5kg",
+    "precio": 75,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/sky-frambuessas.png",
+    "categoria": "Vodka",
+    "categorias": [
+      "Vodka"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "¡Frutal, fresco y listo para el tono! Vodka SKYY Raspberry 750ml, Frugos Fresh 3L y Hielo 1.5kg . El combo ideal para tragos con sabor y actitud. Ideal para cualquier ocasión, con la calidad garantiza",
+    "descripcion_larga": "Vodka SKYY Raspberry 750ml + Frugos Fresh 3L + Hielo 1.5kg Súbele el nivel a tus reuniones con este combo frutal, refrescante y perfecto para compartir. Incluye: Vodka SKYY Raspberry 750ml : Vodka con un delicioso sabor a frambuesa, suave y equilibrado. Ideal para preparar cócteles divertidos, frutales y con un toque diferente. Frugos Fresh 3L : Jugo en gran presentación, con sabores como durazno, mango o tropical, que mezclan increíble con el sabor a frambuesa del vodka. ❄️ Hielo 1.5kg : El toq",
+    "tags": [
+      "750ml",
+      "Raspberry",
+      "vodka"
+    ]
+  },
+  {
+    "id": 5404,
+    "slug": "vodka-nuvo-750ml",
+    "nombre": "Vodka NUVO 750ml + Frugos Fresh 3L + Hielo 1.5kg",
+    "precio": 179,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/nuvo.png",
+    "categoria": "Vodka",
+    "categorias": [
+      "Vodka"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "¡Elegancia en cada trago! Vodka NUVO 750ml, Frugos Fresh 3L y Hielo 1.5kg . Un combo chic, fresco y listo para disfrutar. Refresca tus momentos con el sabor clásico y elegante trago. Ideal para cualqu",
+    "descripcion_larga": "Vodka NUVO 750ml + Frugos Fresh 3L + Hielo 1.5kg Dale un toque de glamour a tus reuniones con este combo sofisticado y refrescante. Incluye: Vodka NUVO 750ml ✨ Vodka NUVO 750ml : Un exclusivo licor espumante con base de vodka francés premium y vino espumoso, con un toque dulce y afrutado. Perfecto para celebraciones o para quienes disfrutan de algo diferente y elegante. Frugos Fresh 3L : Ideal para mezclar y lograr tragos suaves y frutales. Disponible en sabores como durazno, mango o tropical, q",
+    "tags": [
+      "750ml",
+      "vodka"
+    ]
+  },
+  {
+    "id": 5406,
+    "slug": "vodka-grey-goose-750ml",
+    "nombre": "Vodka Grey Goose 750ml + Frugos Fresh 3L + Hielo 1.5kg",
+    "precio": 250,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/greygoosd.png",
+    "categoria": "Vodka",
+    "categorias": [
+      "Vodka"
+    ],
+    "marca": "vodka",
+    "stock": true,
+    "descripcion_corta": "¡Premium y con estilo! Vodka Grey Goose 750ml, Frugos Fresh 3L y Hielo 1.5kg . Un combo de alto nivel para tragos elegantes y llenos de sabor. Refresca tus momentos con el sabor clásico y elegante tra",
+    "descripcion_larga": "Vodka Grey Goose 750ml + Frugos Fresh 3L + Hielo 1.5kg Si buscas un combo con clase, este es para ti. Ideal para celebraciones especiales o para quienes no se conforman con menos que lo mejor. Incluye: Vodka Grey Goose 750ml : Vodka francés ultra premium, elaborado con trigo blando de invierno y agua pura de manantial. Reconocido mundialmente por su suavidad excepcional y su sabor refinado. Ideal para cócteles elegantes o para disfrutar solo, bien frío. Frugos Fresh 3L : Gran presentación para r",
+    "tags": [
+      "vodka"
+    ]
+  },
+  {
+    "id": 5408,
+    "slug": "pisco-marques-de-ica-750ml-evervess-1-5lt-hielo-1-5kg",
+    "nombre": "Pisco Marques de Ica 750ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 43,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/marquez-de-ica.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "pisco",
+    "stock": true,
+    "descripcion_corta": "¡El sabor peruano que buscas! Pisco Marqués de Ica 750ml, Evervess 1.5LT y Hielo 1.5kg. El combo ideal para disfrutar un buen pisco sour o tu cóctel favorito. Refresca tus momentos con el sabor clásic",
+    "descripcion_larga": "Pisco Marques de Ica 750ml + Evervess 1.5LT + Hielo 1.5kg Disfruta de lo mejor del Perú con este combo pensado para los amantes del pisco y los cócteles refrescantes. Incluye: Pisco Marqués de Ica 750ml : Pisco premium de la región de Ica, elaborado con uvas seleccionadas y destilado para ofrecer un sabor suave y afrutado, perfecto para cócteles clásicos como el pisco sour. Evervess 1.5LT : Gasificada, refrescante y de excelente calidad, ideal para combinar con el pisco y crear bebidas burbujean",
+    "tags": [
+      "pisco"
+    ]
+  },
+  {
+    "id": 5410,
+    "slug": "pisco-pancho-fierro-quebranta-750ml",
+    "nombre": "Pisco Pancho Fierro Quebranta 750ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 55,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/pancho-fierro.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Combo perfecto para Chilcanos: Pisco Pancho Fierro Quebranta 750ml , Evervess Ginger Ale 1.5L y Hielo 1.5kg. ¡Todo lo que necesitas para disfrutar un buen brindis!**",
+    "descripcion_larga": "Pisco Pancho Fierro Quebranta 750ml + Evervess 1.5LT + Hielo 1.5kg Prepara el chilcano perfecto con este combo ideal para compartir. El Pisco Pancho Fierro Quebranta 750ml , elaborado con uvas de la variedad quebranta, destaca por su pureza, cuerpo suave y notas frutales sutiles. Es el destilado perfecto para combinar con el Evervess Ginger Ale 1.5L , que aporta burbujas refrescantes y un toque de jengibre que realza el sabor del pisco. Para completar la experiencia, el combo incluye 1.5 kg de h",
+    "tags": [
+      "750ml",
+      "pisco",
+      "Quebranta"
+    ]
+  },
+  {
+    "id": 5412,
+    "slug": "pisco-queirolo-quebranta-750ml",
+    "nombre": "Pisco Queirolo Quebranta 750ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 59,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/queirolo-quebranta.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "Queirolo",
+    "stock": true,
+    "descripcion_corta": "¡El sabor del Perú en un combo! Pisco Queirolo Quebranta 750ml, Evervess 1.5LT y Hielo 1.5kg . Perfecto para disfrutar de un delicioso pisco sour o cualquier cóctel refrescante. Refresca tus momentos ",
+    "descripcion_larga": "Pisco Queirolo Quebranta 750ml + Evervess 1.5LT + Hielo 1.5kg Disfruta de la tradición y calidad peruana con este combo ideal para preparar los mejores cócteles o disfrutar del pisco en su máxima expresión. Incluye: Pisco Queirolo Quebranta 750ml : Un pisco de alta calidad, elaborado con uvas Quebranta seleccionadas de la región de Ica. Su sabor suave y afrutado lo convierte en la opción perfecta para preparar un pisco sour o degustarlo solo. Evervess 1.5LT : Agua gasificada que aporta el toque ",
+    "tags": [
+      "pisco"
+    ]
+  },
+  {
+    "id": 5414,
+    "slug": "pisco-queirolo-acholado-750ml",
+    "nombre": "Pisco Queirolo Acholado 750ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 59,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/queirolo-acholado.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "Queirolo",
+    "stock": true,
+    "descripcion_corta": "¡El clásico pisco peruano con un toque especial! Pisco Queirolo Acholado 750ml, Evervess 1.5LT y Hielo 1.5kg . El combo perfecto para preparar un delicioso pisco sour o tu cóctel favorito. Refresca tu",
+    "descripcion_larga": "Pisco Queirolo Acholado 750ml + Evervess 1.5LT + Hielo 1.5kg Celebra el sabor auténtico del Perú con este combo único, ideal para preparar cócteles con el mejor pisco. Incluye: Pisco Queirolo Acholado 750ml Pisco Queirolo Acholado 750ml : Un pisco premium elaborado con una mezcla de las mejores uvas Quebranta, Negra Criolla y Mollar. Su sabor balanceado y afrutado lo convierte en la elección perfecta para preparar un pisco sour o disfrutar en cualquier bebida. Evervess 1.5LT : Agua gasificada qu",
+    "tags": [
+      "750ml",
+      "Acholado",
+      "pisco"
+    ]
+  },
+  {
+    "id": 5416,
+    "slug": "pisco-queirolo-italia-750ml",
+    "nombre": "Pisco Queirolo Italia 750ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 59,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/queirolo-italia.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "Queirolo",
+    "stock": true,
+    "descripcion_corta": "Combo perfecto para preparar chilcanos: incluye Pisco Queirolo Italia 750 ml, Evervess Ginger Ale 1.5 L y 1.5 kg de hielo . Refresca tus momentos con el sabor clásico y elegante del pisco peruano. Ide",
+    "descripcion_larga": "Pisco Queirolo Italia 750ml + Evervess 1.5LT + Hielo 1.5kg Disfruta de la combinación ideal para preparar uno de los cócteles más emblemáticos del Perú: el chilcano. Este combo incluye una botella de Pisco Queirolo Italia 750 ml , reconocido por su aroma intenso y notas afrutadas; una Evervess Ginger Ale 1.5 L , que aporta un toque burbujeante y ligeramente picante gracias al jengibre; y 1.5 kg de hielo cristalino , perfecto para mantener tus bebidas frías y deliciosas por más tiempo. Pisco Quei",
+    "tags": [
+      "750ml",
+      "Italia",
+      "pisco"
+    ]
+  },
+  {
+    "id": 5418,
+    "slug": "pisco-tabernero-la-botija-acholado-700ml",
+    "nombre": "Pisco Tabernero La Botija Acholado 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 63,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/botija-acholado.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "Tabernero",
+    "stock": true,
+    "descripcion_corta": "Pisco Tabernero La Botija Acholado 700 ml + Evervess 1.5LT + Hielo 1.5kg : una armoniosa mezcla de uvas Quebranta e Italia, que ofrece aromas semi-aromáticos con toques de Moscatel y un sabor equilibr",
+    "descripcion_larga": "Pisco Tabernero La Botija Acholado 700ml + Evervess 1.5LT + Hielo 1.5kg Descubre la esencia del pisco peruano con el Pisco Tabernero La Botija Acholado 700 ml , una cuidadosa combinación de las mejores uvas Quebranta e Italia. Esta fusión resulta en un destilado de calidad excepcional, que refleja la tradición y la innovación de la bodega Tabernero. ​ Pisco Tabernero La Botija Acholado 700ml Al acercarlo a la nariz, se perciben aromas semi-aromáticos con sutiles notas de Moscatel, que invitan a ",
+    "tags": [
+      "700ml",
+      "a Botija",
+      "Acholado",
+      "pisco"
+    ]
+  },
+  {
+    "id": 5420,
+    "slug": "pisco-tabenero-la-botija-italia-700ml",
+    "nombre": "Pisco Tabernero La Botija Italia 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 63,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/botija-italia.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "Tabernero",
+    "stock": true,
+    "descripcion_corta": "Disfruta de un chilcano perfecto con este combo que incluye Pisco Tabernero La Botija Italia 700 ml , Evervess Ginger Ale 1.5 L y Hielo 1.5 kg . Refrescante, elegante y lleno de sabor peruano. Refresc",
+    "descripcion_larga": "Pisco Tabernero La Botija Italia 700ml + Evervess 1.5LT + Hielo 1.5kg Combo Chilcano con Pisco Tabernero Italia** Pisco Tabernero La Botija Italia 700ml Vive la experiencia del verdadero chilcano con este completo pack que reúne todo lo necesario para sorprender el paladar. El Pisco Tabernero La Botija Italia 700 ml , elaborado con uvas Italia seleccionadas, ofrece un perfil aromático intenso con notas florales y frutales, ideal para cócteles frescos y equilibrados. Acompañado por una Evervess G",
+    "tags": [
+      "700ml",
+      "Italia",
+      "La Botija",
+      "pisco"
+    ]
+  },
+  {
+    "id": 5423,
+    "slug": "pisco-tabernero-la-botija-quebranta-700ml",
+    "nombre": "Pisco Tabernero La Botija Quebranta 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 63,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/botija-quebranta.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "Tabernero",
+    "stock": true,
+    "descripcion_corta": "Combo ideal para preparar chilcanos: Pisco Tabernero Quebranta 700 ml , Evervess 1.5 L y Hielo 1.5 kg . Sabor suave, clásico y refrescante, perfecto para cualquier ocasión. Ideal para cualquier ocasió",
+    "descripcion_larga": "Pisco Tabernero La Botija Quebranta 700ml + Evervess 1.5LT + Hielo 1.5kg Disfruta del auténtico sabor peruano con este combo perfecto para preparar chilcanos. El Pisco Tabernero La Botija Quebranta 700 ml está elaborado 100% con uvas Quebranta, ofreciendo un perfil seco, suave y equilibrado, ideal para quienes prefieren un pisco tradicional y elegante. La Evervess Ginger Ale 1.5 L añade burbujas y el toque picante del jengibre, mientras que el hielo de 1.5 kg mantiene cada trago frío y refrescan",
+    "tags": [
+      "700ml",
+      "La Botija",
+      "pisco",
+      "Quebranta"
+    ]
+  },
+  {
+    "id": 5425,
+    "slug": "pisco-4-gallos-acholado-700ml",
+    "nombre": "Pisco 4 Gallos Acholado 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 69,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/4-gallos-acholado.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "700ml",
+    "stock": true,
+    "descripcion_corta": "Combo perfecto para un chilcano refrescante: Pisco 4 Gallos Acholado 700 ml , Evervess 1.5 L y Hielo 1.5 kg . Un sabor equilibrado y burbujeante para disfrutar en cualquier momento. Refresca tus momen",
+    "descripcion_larga": "Pisco 4 Gallos Acholado 700ml + Evervess 1.5LT + Hielo 1.5kg El combo ideal para disfrutar de un delicioso chilcano o cócteles refrescantes en cualquier ocasión. El Pisco 4 Gallos Acholado 700 ml combina las mejores uvas Quebranta, Italia y Torontel, ofreciendo un perfil aromático suave con notas afrutadas y florales que realzan cualquier bebida. La Evervess Ginger Ale 1.5 L agrega el toque burbujeante y especiado del jengibre, mientras que el hielo de 1.5 kg mantiene tus bebidas frías y perfect",
+    "tags": [
+      "700ml",
+      "Acholado",
+      "pisco"
+    ]
+  },
+  {
+    "id": 5427,
+    "slug": "pisco-4-gallos-quebranta-700ml",
+    "nombre": "Pisco 4 Gallos Quebranta 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 69,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/4-gallos-qeubranta.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "700ml",
+    "stock": true,
+    "descripcion_corta": "Combo ideal para preparar chilcanos: Pisco 4 Gallos Quebranta 700 ml , Evervess 1.5 L y Hielo 1.5 kg . Un trago suave y refrescante con el auténtico sabor del pisco peruano. Refresca tus momentos con ",
+    "descripcion_larga": "Pisco 4 Gallos Quebranta 700ml + Evervess 1.5LT + Hielo 1.5kg Disfruta de la suavidad y tradición del Pisco 4 Gallos Quebranta 700 ml , elaborado 100% con uvas Quebranta, ofreciendo un sabor limpio, suave y equilibrado. Es perfecto para quienes buscan un pisco de carácter auténtico, ideal para cócteles frescos como el chilcano. Acompañado de Evervess Ginger Ale 1.5 L , que aporta la frescura y burbujeas que todo chilcano necesita, y 1.5 kg de hielo , que mantiene tus bebidas frías durante más ti",
+    "tags": [
+      "700ml",
+      "pisco",
+      "Quebranta"
+    ]
+  },
+  {
+    "id": 5429,
+    "slug": "pisco-4-gallos-italia-700ml",
+    "nombre": "Pisco 4 Gallos Italia 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 69,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/4-gallos-italia.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "700ml",
+    "stock": true,
+    "descripcion_corta": "Combo perfecto para un chilcano refrescante: Pisco 4 Gallos Italia 700 ml , Evervess 1.5 L y Hielo 1.5 kg . El sabor elegante del pisco Italia con la frescura burbujeante del ginger ale. Refresca tus ",
+    "descripcion_larga": "Pisco 4 Gallos Italia 700ml + Evervess 1.5LT + Hielo 1.5kg El Pisco 4 Gallos Italia 700 ml es una mezcla exquisita de uvas Italia, conocidas por su aroma floral y sabor suave y afrutado. Este pisco de alta calidad es perfecto para aquellos que disfrutan de un destilado elegante y refrescante. Ideal para preparar cócteles clásicos como el chilcano. Acompañado de Evervess Ginger Ale 1.5 L , que añade el toque burbujeante y ligeramente picante del jengibre, y 1.5 kg de hielo , que garantiza que tu ",
+    "tags": [
+      "700ml",
+      "Italia",
+      "pisco"
+    ]
+  },
+  {
+    "id": 5432,
+    "slug": "pisco-porton-quebranta-750ml",
+    "nombre": "Pisco Porton Quebranta 750ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 129,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/porton-quebranrta.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Combo ideal para un chilcano excepcional: Pisco Portón Quebranta 750 ml , Evervess 1.5 L y Hielo 1.5 kg . El pisco de alta calidad y la frescura burbujeante de ginger ale, perfecto para cualquier ocas",
+    "descripcion_larga": "Pisco Porton Quebranta 750ml + Evervess 1.5LT + Hielo 1.5kg El Pisco Portón Quebranta 750 ml es un destilado premium, elaborado 100% con uvas Quebranta, una de las variedades más emblemáticas del Perú. Su sabor suave, redondo y ligeramente seco lo convierte en la base perfecta para cócteles tradicionales como el chilcano. Este combo incluye también Evervess Ginger Ale 1.5 L , una bebida burbujeante que agrega un toque refrescante y picante gracias al jengibre, y 1.5 kg de hielo para mantener tus",
+    "tags": [
+      "750ml",
+      "pisco",
+      "Quebranta"
+    ]
+  },
+  {
+    "id": 5434,
+    "slug": "pisco-intipalka-quebranta-750ml",
+    "nombre": "Pisco Intipalka Quebranta 750ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 75,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/intipalka-quebranta.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Combo ideal para preparar un chilcano refrescante: Pisco Intipalka Quebranta 750 ml , Evervess 1.5 L y Hielo 1.5 kg . Un trago suave y balanceado para disfrutar en cualquier ocasión. Refresca tus mome",
+    "descripcion_larga": "Pisco Intipalka Quebranta 750ml + Evervess 1.5LT + Hielo 1.5kg El Pisco Intipalka Quebranta 750 ml es un destilado fino y elegante, elaborado 100% con uvas Quebranta, una variedad clásica del Perú. Su perfil suave y equilibrado lo convierte en la base perfecta para cócteles refrescantes, como el chilcano, que resalta su carácter afrutado y sutil. Acompañado por Evervess Ginger Ale 1.5 L , que aporta un toque burbujeante y un suave sabor a jengibre, y 1.5 kg de hielo , ideal para mantener tus beb",
+    "tags": [
+      "750ml",
+      "pisco",
+      "Quebranta"
+    ]
+  },
+  {
+    "id": 5436,
+    "slug": "pisco-vargas-4-lt",
+    "nombre": "Pisco Vargas 4 Lt + 2 Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 160,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/Pisco-vargas-4-Lt.png",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "4 Lt",
+    "stock": true,
+    "descripcion_corta": "Combo perfecto para grandes celebraciones: Pisco Vargas 4 lt , 2 Evervess 1.5 L y Hielo 1.5 kg . Un pisco de calidad con el toque burbujeante de ginger ale, ideal para compartir en cualquier ocasión.",
+    "descripcion_larga": "Pisco Vargas 4 Lt El Pisco Damajuana Máques de Ica 4 L es un destilado premium que destaca por su elaboración a partir de las mejores uvas de la región de Ica. Con su sabor suave y afrutado, este pisco es perfecto para grandes celebraciones, reuniones y para preparar cócteles como el chilcano, que resaltan su carácter único. Este combo también incluye 2 Evervess Ginger Ale 1.5 L , que aporta un toque fresco y burbujeante con su sabor a jengibre, y 1.5 kg de hielo , que garantiza mantener tus beb",
+    "tags": [
+      "4 Lt",
+      "Damajuana",
+      "pisco"
+    ]
+  },
+  {
+    "id": 5439,
+    "slug": "gin-antagonic-750ml",
+    "nombre": "Gin Antagonic 750ml + Tónica Evervess 1.5L + Hielo 1.5Kg",
+    "precio": 62,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.43-PM.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Descubre el Gin Antagonic 750ml , un destilado premium con una mezcla equilibrada de cítricos, especias dulces y notas de enebro . Este pack incluye Agua Tónica Evervess 1.5L y Hielo 1.5Kg , ideal par",
+    "descripcion_larga": "Gin Antagonic 750ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg El Gin Antagonic 750ml , elaborado por Cartavio Rum Company , es una ginebra excepcional con una receta cuidadosamente equilibrada que combina cítricos vibrantes, especias dulces y enebro clásico . Su perfil aromático y su suavidad en boca lo convierten en una excelente opción tanto para cócteles clásicos como para creaciones innovadoras. Este pack incluye: ✔ 1 botella de Gin Antagonic 750ml ✔ 1 botella de Agua Tónica Evervess 1.5L ✔ ",
+    "tags": [
+      "750ml",
+      "Gin"
+    ]
+  },
+  {
+    "id": 5441,
+    "slug": "gin-beefeater-dry-700ml",
+    "nombre": "Gin Beefeater Dry 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 98,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.43-PM-1.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "Beefeater",
+    "stock": true,
+    "descripcion_corta": "Disfruta del auténtico sabor del Gin Beefeater London Dry 700ml , una ginebra clásica con notas de enebro, cítricos y especias. Este pack incluye Agua Tónica Evervess 1.5L y Hielo 1.5Kg , ideal para p",
+    "descripcion_larga": "Gin Beefeater Dry 700ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg El Gin Beefeater London Dry 700ml es la esencia de la ginebra clásica, destilada en el corazón de Londres con una receta que ha perdurado por generaciones. Su perfil equilibrado, con predominio de enebro, notas cítricas y un sutil toque especiado , lo convierte en un imprescindible para los amantes del buen gin. Este pack exclusivo incluye: ✔ 1 botella de Gin Beefeater London Dry 700ml ✔ 1 botella de Agua Tónica Evervess 1.5L ✔ 1 ",
+    "tags": [
+      "700ml",
+      "Dry",
+      "Gin"
+    ]
+  },
+  {
+    "id": 5443,
+    "slug": "gin-bombay-sapphire-750ml",
+    "nombre": "Gin Bombay Sapphire 750ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 120,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.42-PM.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Experimenta la suavidad y sofisticación del Gin Bombay Sapphire London Dry 750ml , una ginebra premium con 10 botánicos exóticos. Este pack incluye Agua Tónica Evervess 1.5L y Hielo 1.5Kg , perfecto p",
+    "descripcion_larga": "Gin Bombay Sapphire 750ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg El Gin Bombay Sapphire London Dry 750ml es sinónimo de elegancia y equilibrio. Destilado al vapor con una selección de 10 botánicos de diferentes rincones del mundo, ofrece un perfil aromático y fresco, con notas de enebro, limón, almendras y especias . Su suavidad y carácter lo convierten en una opción perfecta para cócteles sofisticados. Este pack exclusivo incluye: ✔ 1 botella de Gin Bombay Sapphire London Dry 750ml ✔ 1 botel",
+    "tags": [
+      "750ml",
+      "Gin",
+      "Sapphire"
+    ]
+  },
+  {
+    "id": 5445,
+    "slug": "gin-tanqueray-700ml",
+    "nombre": "Gin Tanqueray 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 119,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.40-PM-3.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "Tanqueray",
+    "stock": true,
+    "descripcion_corta": "Disfruta de la autenticidad del Gin Tanqueray London Dry 700ml , una ginebra clásica con un equilibrio perfecto de enebro, cilantro, angélica y regaliz . Este pack incluye Agua Tónica Evervess 1.5L y ",
+    "descripcion_larga": "Gin Tanqueray 700ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg. El Gin Tanqueray London Dry 700ml es una ginebra icónica, reconocida por su calidad y su receta tradicional que ha resistido la prueba del tiempo. Su destilación con botánicos seleccionados cuidadosamente le otorga un sabor limpio, seco y perfectamente equilibrado , ideal para los amantes del gin clásico. Este pack exclusivo incluye: ✔ 1 botella de Gin Tanqueray London Dry 700ml ✔ 1 botella de Agua Tónica Evervess 1.5L ✔ 1 bolsa de H",
+    "tags": [
+      "700ml",
+      "Gin"
+    ]
+  },
+  {
+    "id": 5447,
+    "slug": "gin-beefeater-pink-700ml",
+    "nombre": "Gin Beefeater Pink 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 139,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.41-PM-1.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "Beefeater",
+    "stock": true,
+    "descripcion_corta": "Descubre el Gin Beefeater Pink 700ml , una ginebra vibrante y audaz que combina la tradición de Londres con un toque moderno y frutal. Su exquisito balance entre enebro, cítricos y dulces notas de fre",
+    "descripcion_larga": "Gin Beefeater Pink 700ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg El Gin Beefeater Pink 700ml es una ginebra premium que reinventa la clásica receta de Beefeater con un giro frutal y divertido. Manteniendo la esencia del gin londinense, esta versión infusionada con fresas naturales aporta un sabor dulce y refrescante que equilibra perfectamente las tradicionales notas de enebro y cítricos. Este pack exclusivo incluye: ✔ 1 botella de Gin Beefeater Pink 700ml ✔ 1 botella de Agua Tónica Evervess 1",
+    "tags": [
+      "700ml",
+      "Gin",
+      "Pink"
+    ]
+  },
+  {
+    "id": 5449,
+    "slug": "gin-beefeater-24-700ml",
+    "nombre": "Gin Beefeater 24 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 175,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.40-PM-4.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "Beefeater",
+    "stock": true,
+    "descripcion_corta": "Sumérgete en la sofisticación del Gin Beefeater 24 700ml , una ginebra premium infusionada con 12 botánicos exquisitos , incluyendo té Sencha japonés y té verde chino , que le otorgan un sabor refinad",
+    "descripcion_larga": "Gin Beefeater 24 700ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg El Gin Beefeater 24 700ml es una ginebra premium que lleva la destilación londinense a un nuevo nivel. Creada a partir de una cuidadosa selección de 12 botánicos , su ingrediente estrella es la combinación de té Sencha japonés y té verde chino , que aporta una suavidad única y un perfil de sabor sofisticado. Con una destilación lenta y precisa, esta ginebra ofrece un equilibrio perfecto entre notas clásicas de enebro, cítricos vibr",
+    "tags": [
+      "24",
+      "700ml",
+      "Gin"
+    ]
+  },
+  {
+    "id": 5451,
+    "slug": "gin-tanqueray-sevilla-700ml",
+    "nombre": "Gin Tanqueray Sevilla 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 135,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.41-PM-2.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "Tanqueray",
+    "stock": true,
+    "descripcion_corta": "Descubre el exquisito sabor de Gin Tanqueray Flor de Sevilla 700ml , una ginebra inspirada en la receta original de Charles Tanqueray , que combina la esencia agridulce de las naranjas sevillanas con ",
+    "descripcion_larga": "Gin Tanqueray Sevilla 700ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg El Gin Tanqueray Flor de Sevilla 700ml es una ginebra vibrante y sofisticada, inspirada en las soleadas tierras del sur de España. Basada en la receta original de Charles Tanqueray , esta ginebra captura la esencia única de las naranjas de Sevilla , logrando un equilibrio perfecto entre un sabor agridulce, cítrico y aromático , combinado con los cuatro botánicos esenciales de la icónica Tanqueray London Dry Gin . Cada sorbo of",
+    "tags": [
+      "700ml",
+      "Gin",
+      "Sevilla"
+    ]
+  },
+  {
+    "id": 5453,
+    "slug": "gin-bulldog-london-dry-750ml",
+    "nombre": "Gin Bulldog London Dry 750ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 212,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.43-PM-4.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Descubre la Gin Bulldog London Dry 750ml , un destilado audaz con una mezcla única de 12 botánicos de 8 países , incluyendo exóticos ingredientes como ojo de dragón y hojas de loto . Su perfil armonio",
+    "descripcion_larga": "Gin Bulldog London Dry 750ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg El Gin Bulldog London Dry 750ml es una ginebra premium creada en Londres que ha revolucionado el mundo de los destilados con su mezcla única de 12 botánicos provenientes de 8 países . Su receta innovadora incluye ingredientes exóticos como ojo de dragón, hojas de loto, amapola y lavanda , otorgándole un carácter distintivo y un sabor complejo. Su perfil aromático combina notas cítricas, florales y especiadas , ofreciendo una ",
+    "tags": [
+      "750ml",
+      "Gin",
+      "London Dry"
+    ]
+  },
+  {
+    "id": 5455,
+    "slug": "gin-hendricks-700ml",
+    "nombre": "Gin Hendrick's 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 220,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.40-PM.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "700ml",
+    "stock": true,
+    "descripcion_corta": "Descubre la inconfundible Gin Hendrick’s 700ml , una ginebra premium con una fusión única de pepino y pétalos de rosa , que le otorgan un sabor fresco y sofisticado. Destilada en Escocia en pequeños l",
+    "descripcion_larga": "Gin Hendrick's 700ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg. La Gin Hendrick’s 700ml es una de las ginebras más exclusivas del mundo, famosa por su combinación única de pepino y pétalos de rosa , que le otorgan una suavidad y frescura inigualables. Destilada en Escocia en pequeños lotes de solo 450 litros , cada producción es cuidadosamente supervisada por el maestro destilador, garantizando una ginebra premium de elaboración limitada . El proceso de destilación se realiza en dos alambiques h",
+    "tags": [
+      "700ml",
+      "Gin"
+    ]
+  },
+  {
+    "id": 5457,
+    "slug": "gin-the-longon-no1-700ml",
+    "nombre": "Gin The Longon Nº1 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 310,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.44-PM.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "700ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta de la elegancia y distinción del Gin The London Nº1 700ml , una ginebra premium con un característico color azul turquesa, resultado de su maceración con flores de gardenia. Elaborada con 12 ",
+    "descripcion_larga": "Gin The Longon Nº1 700ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg El Gin The London Nº1 700ml es una ginebra excepcional, conocida por su distintivo color azul turquesa , obtenido mediante la maceración de flores de gardenia . Su destilación artesanal en pequeños lotes utiliza grano inglés de alta calidad y una cuidadosa selección de 12 ingredientes botánicos , entre ellos enebro, cilantro, piel de limón y naranja, raíz de angélica, casia, canela, bergamota, regaliz, raíz de lirio, ajedrea y al",
+    "tags": [
+      "700ml",
+      "Gin"
+    ]
+  },
+  {
+    "id": 5459,
+    "slug": "gin-citadelle-botella-750ml",
+    "nombre": "Gin Citadelle Botella 750ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 290,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.43-PM-2.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Descubre la elegancia del Gin Citadelle 750ml , una ginebra artesanal con aromas florales y notas herbáceas únicas. Acompañada de Agua Tónica Evervess 1.5L y Hielo 1.5Kg , este pack es perfecto para p",
+    "descripcion_larga": "Gin Citadelle Botella 750ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg Sumérgete en la sofisticación del Gin Citadelle 750ml , una ginebra premium de origen francés, reconocida por su proceso de destilación artesanal y su delicado equilibrio de aromas y sabores. Su perfil aromático comienza con flores frescas, jazmín y madreselva , evolucionando hacia notas más intensas y especiadas de anís, granos del paraíso y canela , brindando una experiencia sensorial inigualable. Este pack incluye: ✔ 1 bote",
+    "tags": [
+      "750ml",
+      "Gin"
+    ]
+  },
+  {
+    "id": 5461,
+    "slug": "gin-bombay-bramble-700ml",
+    "nombre": "Gin Bombay Bramble 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 142,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.43-PM-3.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "700ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del sabor único de Gin Bombay Bramble 700ml , una ginebra infusionada con moras y frambuesas, ideal para cócteles frescos y vibrantes. Acompañada de Agua Tónica Evervess 1.5L y Hielo 1.5Kg , ",
+    "descripcion_larga": "Gin Bombay Bramble 700ml + Agua Tónica Evervess 1.5L y Hielo 1.5Kg Descubre la exquisita combinación de sabores de Gin Bombay Bramble 700ml , una ginebra innovadora que se distingue por su infusión natural de moras y frambuesas , sin colorantes ni azúcares añadidos. Su equilibrio perfecto entre la suavidad del enebro y la intensidad de los frutos rojos la convierte en una opción ideal para cócteles refrescantes. Este pack incluye: ✔ 1 botella de Gin Bombay Bramble 700ml ✔ 1 botella de Agua Tónic",
+    "tags": [
+      "700ml",
+      "Bramble",
+      "Gin"
+    ]
+  },
+  {
+    "id": 5463,
+    "slug": "gin-tanqueray-ten-750ml",
+    "nombre": "Gin Tanqueray Ten 750ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 172,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.40-PM-1.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "Tanqueray",
+    "stock": true,
+    "descripcion_corta": "Disfruta de la excelencia del Gin Tanqueray No. TEN 750ml , una ginebra premium con más de 170 años de historia, acompañada de Agua Tónica Evervess 1.5L y Hielo 1.5Kg para preparar el gin & tonic perf",
+    "descripcion_larga": "Gin Tanqueray Ten 750ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg Sumérgete en la sofisticación del Gin Tanqueray No. TEN 750ml , una ginebra de categoría mundial con un legado de más de 170 años . Creada en honor a la tradición de Charles Tanqueray desde 1830 , esta ginebra ha sido reconocida como una de las mejores del mundo y la primera bebida blanca en entrar en el Salón de la Fama de San Francisco . Este pack incluye: ✔ 1 botella de Gin Tanqueray No. TEN 750ml ✔ 1 botella de Agua Tónica Eve",
+    "tags": [
+      "750ml",
+      "Gin",
+      "Ten"
+    ]
+  },
+  {
+    "id": 5465,
+    "slug": "gin-greenalls-green-700ml",
+    "nombre": "Gin Greenall's Green 700ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 90,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.40-PM-2.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "700ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del auténtico sabor del Gin Greenall's Green 700ml , un clásico de la ginebra británica desde 1761, acompañado de Agua Tónica Evervess 1.5L y Hielo 1.5Kg para un gin tonic perfecto. Elaborado",
+    "descripcion_larga": "Gin Greenall's Green 700ml + Agua Tónica Evervess 1.5LT + Hielo 1.5kg Sumérgete en la tradición y calidad del Gin Greenall's Green 700ml , un destilado que ha sido el alma de la ginebra británica por más de 250 años . Perfectamente elaborado en la destilería de ginebra más antigua de Inglaterra, este London Dry Gin mantiene su receta original desde 1761, garantizando una suavidad única y un equilibrio perfecto entre el enebro y notas cítricas frescas. Este pack incluye: ✔ 1 botella de Gin Greena",
+    "tags": [
+      "700ml",
+      "Gin",
+      "Green"
+    ]
+  },
+  {
+    "id": 5467,
+    "slug": "gin-gordons-london-dry-750ml",
+    "nombre": "Gin Gordon's London Dry 750ml + Evervess 1.5LT + Hielo 1.5kg",
+    "precio": 75,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/WhatsApp-Image-2025-03-08-at-6.49.41-PM.jpeg",
+    "categoria": "GIN",
+    "categorias": [
+      "GIN"
+    ],
+    "marca": "Gordon",
+    "stock": true,
+    "descripcion_corta": "Disfruta del clásico Gin Gordon's London Dry 750ml , acompañado de Agua Tónica Evervess 1.5L y Hielo 1.5Kg para preparar el gin & tonic perfecto. Ideal para cualquier ocasión, con la calidad garantiza",
+    "descripcion_larga": "Gin Gordon's London Dry 750ml + Agua Tónica Evervess 1.5L + Hielo 1.5Kg Descubre la inconfundible calidad del Gin Gordon's London Dry 750ml , un destilado con más de 250 años de tradición, perfecto para los amantes del gin & tonic. Este pack incluye una botella de Gordon's London Dry Gin , una Agua Tónica Evervess 1.5L y Hielo 1.5Kg , ofreciéndote todo lo necesario para disfrutar de un trago refrescante en casa. Con un sabor equilibrado y botánicos cuidadosamente seleccionados, el Gin Gordon's e",
+    "tags": [
+      "750ml",
+      "Dry",
+      "Gin"
+    ]
+  },
+  {
+    "id": 5471,
+    "slug": "tequila-el-mariachi-1-lt",
+    "nombre": "Tequila El Mariachi 1 Lt | Tragones Licorería Delivery",
+    "precio": 48,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/mariachi.png",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "1 Lt",
+    "stock": true,
+    "descripcion_corta": "Tequila El Mariachi 1 Lt: sabor auténtico de México en cada trago. Elaborado con agave azul, ideal para cócteles o tomarlo solo. ¡El espíritu del mariachi en una botella!. Ideal para cualquier ocasión",
+    "descripcion_larga": "Tequila El Mariachi 1 Lt Descubre el auténtico sabor de México con Tequila El Mariachi 1 Litro , una bebida que rinde homenaje a la tradición y pasión del mariachi. Elaborado cuidadosamente con agave azul, este tequila ofrece un perfil suave, con notas dulces y ligeramente herbales que lo hacen perfecto tanto para disfrutarlo solo como para preparar los mejores cócteles. Con su presentación de 1 litro, es ideal para compartir en celebraciones, reuniones o simplemente para tener siempre un buen t",
+    "tags": [
+      "1 Lt",
+      "Tequila"
+    ]
+  },
+  {
+    "id": 5473,
+    "slug": "tequila-olmeca-blanco-700ml",
+    "nombre": "Tequila Olmeca Blanco 700ml | Tragones Licorería Delivery",
+    "precio": 95,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/olmeca-blanco.png",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "700ml",
+    "stock": true,
+    "descripcion_corta": "Tequila Olmeca Blanco 700 ml: la esencia pura del agave azul de Los Altos de Jalisco. Su sabor fresco y notas cítricas lo hacen perfecto para cócteles o para disfrutar solo. ​ Ideal para cualquier oca",
+    "descripcion_larga": "Tequila Olmeca Blanco 700ml | Tragones Licorería Delivery Sumérgete en la auténtica tradición mexicana con el Tequila Olmeca Blanco 700 ml , elaborado meticulosamente en Los Altos de Jalisco, México. Este tequila se produce a partir de agave Weber Azul seleccionado a mano, fermentado orgánicamente y destilado en alambiques de cobre, lo que garantiza una calidad excepcional. Su perfil aromático es intenso y afrutado, con una combinación de notas cítricas y de agave cocido. Al paladar, ofrece un s",
+    "tags": [
+      "700ml",
+      "Tequila"
+    ]
+  },
+  {
+    "id": 5475,
+    "slug": "tequila-jose-cuervo-blanco-750ml",
+    "nombre": "Tequila Jose Cuervo Blanco 750ml | Tragones Licorería",
+    "precio": 85,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/jsoe-cuervo-blanco.png",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "Jose Cuervo",
+    "stock": true,
+    "descripcion_corta": "Tequila Jose Cuervo Blanco 750 ml: la pureza del agave azul en un tequila cristalino y suave. Ideal para cócteles o para disfrutar solo, ofreciendo un equilibrio perfecto entre notas herbales y cítric",
+    "descripcion_larga": "Tequila Jose Cuervo Blanco 750ml | Tragones Licorería Delivery Sumérgete en la auténtica tradición tequilera con el Tequila Jose Cuervo Blanco 750 ml , una expresión que refleja más de dos siglos de maestría y dedicación. Elaborado con una cuidadosa selección de agave azul, este tequila presenta un perfil limpio y brillante, con aromas sutiles de agave fresco y ligeras notas herbales. Al paladar, ofrece un sabor suave y equilibrado, resaltando matices cítricos y un toque de especias, culminando ",
+    "tags": [
+      "750ml",
+      "Blanco",
+      "Tequila"
+    ]
+  },
+  {
+    "id": 5477,
+    "slug": "tequila-don-julio-750ml",
+    "nombre": "Tequila Don Julio 750ml | Tragones Licorería Delivery",
+    "precio": 470,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/don-julio.png",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "Don Julio",
+    "stock": true,
+    "descripcion_corta": "Tequila Don Julio 750 ml: la máxima expresión del agave azul, elaborado con esmero para ofrecer un sabor suave y refinado. Ideal para disfrutar solo o en cócteles, representa la tradición y calidad de",
+    "descripcion_larga": "Tequila Don Julio 750ml | Tragones Licorería Delivery Sumérgete en la excelencia del tequila con el Tequila Don Julio 750 ml , una bebida que encapsula la dedicación y maestría de Don Julio González, pionero en la producción de tequilas premium desde 1942. Elaborado con agave azul 100% de la más alta calidad, este tequila se presenta en diferentes expresiones: ​ Don Julio Blanco : Conocido como \"plata\", ofrece un perfil fresco y cítrico, resaltando las notas puras del agave. Tequila Don Julio 75",
+    "tags": [
+      "Tequila"
+    ]
+  },
+  {
+    "id": 5479,
+    "slug": "tequila-el-jimador-reposado-750ml",
+    "nombre": "Tequila El Jimador Reposado 750ml | Tragones Licorería",
+    "precio": 95,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/el-jimador.png",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Tequila El Jimador Reposado 750 ml: elaborado con 100% agave azul y reposado durante dos meses en barricas de roble americano. Presenta un color dorado brillante, aromas de agave cocido, vainilla y es",
+    "descripcion_larga": "Tequila El Jimador Reposado 750ml Sumérgete en la auténtica tradición tequilera con el Tequila El Jimador Reposado 750 ml , una expresión que refleja la pasión y el compromiso por la calidad. Este tequila es elaborado con 100% agave azul maduro, cuidadosamente seleccionado y cosechado a mano. Tras una doble destilación, reposa durante dos meses en barricas de roble blanco americano, adquiriendo su distintivo color dorado brillante. Tequila El Jimador Reposado 750ml En nariz, ofrece aromas predom",
+    "tags": [
+      "750ml",
+      "Reposado",
+      "Tequila"
+    ]
+  },
+  {
+    "id": 5481,
+    "slug": "tequila-herradura-anejo-750ml",
+    "nombre": "Tequila Herradura Añejo 750ml",
+    "precio": 0,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/herradura.png",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "Tequila",
+    "stock": true,
+    "descripcion_corta": "MUY PRONTO",
+    "descripcion_larga": "",
+    "tags": [
+      "Tequila"
+    ]
+  },
+  {
+    "id": 5483,
+    "slug": "tequila-patron-anejo-750ml",
+    "nombre": "Tequila Patron Añejo 750ml",
+    "precio": 0,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/patron.png",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "Patron",
+    "stock": true,
+    "descripcion_corta": "MUY PRONTO",
+    "descripcion_larga": "",
+    "tags": [
+      "Tequila"
+    ]
+  },
+  {
+    "id": 5488,
+    "slug": "vino-queirolo-rose-750ml",
+    "nombre": "Vino Queirolo Rosé 750ml | Tragones Licorería Delivery",
+    "precio": 29,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/queirolo-rose.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "Queirolo",
+    "stock": true,
+    "descripcion_corta": "El Vino Queirolo Rosé 750ml es una opción refrescante y equilibrada, elaborado con uvas Shiraz por la reconocida bodega Santiago Queirolo en Perú . Su carácter semi seco ofrece un balance perfecto ent",
+    "descripcion_larga": "Vino Queirolo Rosé 750ml | Tragones Licorería Delivery Descubre la frescura y suavidad del Vino Queirolo Rosé 750ml , una exquisita expresión de la uva Shiraz , elaborada por la bodega Santiago Queirolo , con tradición vinícola en Perú . Su estilo semi seco lo convierte en una opción versátil y placentera, ideal para quienes disfrutan de un equilibrio perfecto entre dulzura y acidez. Notas de cata: Vista: Color rosado brillante con destellos sutiles. Nariz: Aromas a frutos rojos frescos como fre",
+    "tags": [
+      "750ml",
+      "Rosé",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5490,
+    "slug": "vino-queirolo-borgona-750ml",
+    "nombre": "Vino Queirolo Borgoña 750ml | Tragones Licorería Delivery",
+    "precio": 29,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/queirolo-borgona.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "Queirolo",
+    "stock": true,
+    "descripcion_corta": "El Vino Queirolo Borgoña 750ml es una deliciosa opción semi seca , elaborada con uvas Borgoña por la prestigiosa bodega Santiago Queirolo en Perú . Su sabor frutal y dulce lo convierte en el acompañan",
+    "descripcion_larga": "Vino Queirolo Borgoña 750ml | Tragones Licorería Delivery Sumérgete en la dulzura y suavidad del Vino Queirolo Borgoña 750ml , una variedad clásica de la bodega Santiago Queirolo , elaborada con uvas Borgoña en Perú . Su carácter semi seco y su perfil frutal lo hacen perfecto para quienes buscan un vino suave y fácil de disfrutar. Notas de cata: Vista: Rojo intenso con destellos violáceos. Nariz: Aromas envolventes a frutas rojas maduras como cereza, frambuesa y ciruela. Boca: Dulce, suave y con",
+    "tags": [
+      "750ml",
+      "Borgoña",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5492,
+    "slug": "vino-queirolo-magdalena",
+    "nombre": "Vino Queirolo Magdalena 750ml | Tragones Licorería Delivery",
+    "precio": 29,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/queirolo-magdalena.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "Queirolo",
+    "stock": true,
+    "descripcion_corta": "Descubre el Vino Queirolo Magdalena 750ml , un exquisito blend de Malbec y Tannat , elaborado por la reconocida bodega Santiago Queirolo en Perú . Con un carácter semi seco , aromas frutales y una tex",
+    "descripcion_larga": "Vino Queirolo Magdalena 750ml | Tragones Licorería Delivery El Vino Queirolo Magdalena 750ml es una joya de la enología peruana, elaborada con una cuidadosa selección de Malbec y Tannat , dos cepas que aportan intensidad y complejidad a esta línea reserva de Santiago Queirolo . Su equilibrio entre dulzura y estructura lo convierte en un vino versátil y elegante. Notas de cata: Vista: Rojo profundo con reflejos violáceos. Nariz: Aromas a frutos rojos maduros, ciruelas y un ligero toque especiado.",
+    "tags": [
+      "750ml",
+      "Magdalena",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5494,
+    "slug": "vino-tabernero-gran-rose",
+    "nombre": "Vino Tabernero Gran Rosé 750ml | Tragones Licorería Delivery",
+    "precio": 29,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/tabernero-gran-rose.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "Tabernero",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Vino Tabernero Gran Rosé 750ml , un elegante blend de Merlot, Chenin y Muscat de Alejandría , con un delicioso equilibrio entre frescura y dulzura. Proveniente de Perú , este vino semi se",
+    "descripcion_larga": "Vino Tabernero Gran Rosé 750ml | Tragones Licorería Delivery El Vino Tabernero Gran Rosé 750ml es una refinada propuesta de la prestigiosa bodega Tabernero , que combina Merlot, Chenin y Muscat de Alejandría en un blend joven y semi seco , ideal para quienes buscan un vino versátil, fresco y con un toque frutal. Su delicado equilibrio entre acidez y dulzura lo convierte en una opción perfecta tanto para aperitivos como para acompañar una gran variedad de platos. Notas de cata: Vista: Color rosad",
+    "tags": [
+      "750ml",
+      "Gran Rosé",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5496,
+    "slug": "vino-tabernero-borgona-750ml",
+    "nombre": "Vino Tabernero Borgoña 750ml | Tragones Licorería Delivery",
+    "precio": 29,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/tabernero-borgona.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "Tabernero",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Vino Tabernero Borgoña 750ml , un exquisito vino joven y semi seco de la reconocida bodega Tabernero . Con un perfil afrutado y suave, este vino peruano es perfecto para acompañar postres",
+    "descripcion_larga": "Vino Tabernero Borgoña 750ml | Tragones Licorería Delivery El Vino Tabernero Borgoña 750ml es una excelente opción para quienes buscan un vino joven, semi seco y afrutado . Elaborado con la variedad Borgoña , se distingue por su carácter suave y equilibrado, con una dulzura natural que lo hace ideal para disfrutar en reuniones o celebraciones especiales. Notas de cata: Vista: Color rojo intenso con reflejos violáceos. Nariz: Aromas a frutos rojos maduros como fresas y cerezas, con ligeros toques",
+    "tags": [
+      "750ml",
+      "Borgoña",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5498,
+    "slug": "vino-intipalka-malbec-750ml",
+    "nombre": "Vino Intipalka Malbec 750ml | Tragones Licorería Delivery",
+    "precio": 49,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/intipalka-malbec.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Descubre el Vino Intipalka Malbec 750ml , un vino joven y seco de la prestigiosa bodega Santiago Queirolo . Con intensos aromas a frutos rojos y un cuerpo equilibrado, este Malbec peruano es perfecto ",
+    "descripcion_larga": "Vino Intipalka Malbec 750ml | Tragones Licorería Delivery El Vino Intipalka Malbec 750ml es una joya de la enología peruana, elaborado con uvas Malbec cuidadosamente seleccionadas. Este vino joven y seco destaca por su intensidad aromática, su carácter frutal y su estructura equilibrada, lo que lo convierte en una excelente opción para los amantes de los tintos elegantes y expresivos. Notas de cata: Vista: Color rojo profundo con matices violáceos. Nariz: Aromas intensos de frutos rojos como cir",
+    "tags": [
+      "750ml",
+      "Malbec",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5500,
+    "slug": "vino-frontera-merlot-750ml",
+    "nombre": "Vino Frontera Merlot 750ml | Tragones Licorería Delivery",
+    "precio": 42,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/frontera-merlot.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "El Vino Frontera Merlot 750ml es un tinto joven y seco de origen chileno, elaborado por la reconocida bodega Concha y Toro . Con aromas a frutos rojos y suaves notas especiadas, su sabor es equilibrad",
+    "descripcion_larga": "Vino Frontera Merlot 750ml | Tragones Licorería Delivery Sumérgete en la suavidad y elegancia del Vino Frontera Merlot 750ml , un vino tinto joven y seco, elaborado en Chile por la prestigiosa bodega Concha y Toro . Esta variedad se distingue por su carácter afrutado y sedoso, convirtiéndolo en una excelente opción para disfrutar en cualquier ocasión. Notas de Cata: ✔ Aroma : Predominan los frutos rojos como cerezas y ciruelas, con sutiles toques especiados y de vainilla. ✔ Sabor : Suave, redond",
+    "tags": [
+      "750ml",
+      "Merlot",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5502,
+    "slug": "vino-frontera-cabernet-sauvignon-750ml",
+    "nombre": "Vino Frontera Cabernet Sauvignon 750ml | Tragones Licorería",
+    "precio": 42,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/frontera-cabernet-sauvignon.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "El Vino Frontera Cabernet Sauvignon 750ml es un tinto joven y seco de origen chileno, elaborado por la prestigiosa bodega Concha y Toro . Con aromas a frutos rojos y notas especiadas, presenta un sabo",
+    "descripcion_larga": "Vino Frontera Cabernet Sauvignon 750ml | Tragones Licorería Descubre la intensidad y elegancia del Vino Frontera Cabernet Sauvignon 750ml , un clásico chileno elaborado por Concha y Toro , una de las bodegas más reconocidas de América Latina. Este vino tinto joven y seco ofrece una experiencia de sabor única, perfecta para quienes buscan calidad y autenticidad en cada copa. Notas de Cata: ✔ Aroma : Predominan los frutos rojos maduros como ciruelas y cerezas, con sutiles notas de especias y roble",
+    "tags": [
+      "750ml",
+      "Cabernet Sauvignon",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5504,
+    "slug": "vino-frontera-malbec-750ml",
+    "nombre": "Vino Frontera Malbec 750ml | Tragones Licorería Delivery",
+    "precio": 42,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/frontera-malbec.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Descubre el Vino Frontera Malbec 750ml , un tinto joven y seco de origen chileno. Con un perfil frutado e intenso, este Malbec ofrece una textura suave y equilibrada , ideal para acompañar carnes roja",
+    "descripcion_larga": "Vino Frontera Malbec 750ml | Tragones Licorería Delivery El Vino Frontera Malbec 750ml es una expresión auténtica de la cepa Malbec, elaborado por la reconocida bodega Concha y Toro en Chile. Este vino joven y seco se distingue por su intensidad frutal y su textura suave, convirtiéndolo en una excelente opción para cualquier ocasión. Notas de Cata: ✔ Aroma : Frutos rojos maduros como ciruelas y cerezas, con un sutil toque especiado. ✔ Sabor : Equilibrado, con taninos suaves y una acidez refresca",
+    "tags": [
+      "750ml",
+      "Malbec",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5506,
+    "slug": "vino-navarro-correa-malbec-750ml",
+    "nombre": "Vino Navarro Correa Malbec 750ml | Tragones Licorería Delivery",
+    "precio": 79,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/navarro-correa-malbec.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Vino Navarro Correas Malbec 750ml , un tinto argentino con aromas a ciruelas maduras y violetas. Con 6 meses en barricas de roble, ofrece un sabor equilibrado, taninos suaves y un final e",
+    "descripcion_larga": "Vino Navarro Correa Malbec 750ml | Tragones Licorería Delivery El Navarro Correas Malbec destaca por su atractivo color rojo intenso con matices violáceos. En nariz, predominan aromas a ciruelas maduras y flores como la violeta , que se complementan con sutiles notas de roble, aportadas por su paso de 6 meses en barricas de roble. En boca, ofrece una textura sedosa, taninos suaves y un final prolongado que deja una sensación placentera. Maridaje Perfecto Gracias a su equilibrio y carácter frutal",
+    "tags": [
+      "750ml",
+      "Malbec",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5508,
+    "slug": "vino-casillero-del-diablo-malbec",
+    "nombre": "Vino Casillero del Diablo Malbec 750ml",
+    "precio": 55,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/casillero-malbec.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Descubre el Vino Casillero del Diablo Malbec 750ml , un tinto chileno con intenso color rojo y un exquisito aroma a berries, ciruelas y cerezas negras. Su sabor combina notas de ciruela negra y especi",
+    "descripcion_larga": "Vino Casillero del Diablo Malbec 750ml | Tragones Licorería Delivery El Casillero del Diablo Malbec es una expresión elegante de esta cepa, proveniente de Chile. Su color rojo profundo cautiva a primera vista, mientras que en nariz despliega aromas intensos de berries, ciruelas y cerezas negras . Su paso por barricas de roble le aporta estructura y notas sutiles de vainilla y especias. En boca, su sabor es jugoso y equilibrado, con predominio de ciruela negra y un leve toque especiado que realza",
+    "tags": [
+      "750ml",
+      "Malbec",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5510,
+    "slug": "vino-trumpeter-malbec",
+    "nombre": "Vino Trumpeter Malbec 750ml | Tragones Licorería",
+    "precio": 84,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/05/trumpeter-malbec.jpg",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Vino Trumpeter Malbec 750ml , un tinto argentino con un profundo color rubí y reflejos violáceos. Su aroma combina notas de fruta roja con toques de cacao, tabaco y vainilla aportados por",
+    "descripcion_larga": "Vino Trumpeter Malbec 750ml | Tragones Licorería Delivery El Trumpeter Malbec es un vino excepcional de la bodega Rutini, elaborado en Argentina. Su color rubí intenso con matices violáceos anticipa una experiencia sensorial única. En nariz, ofrece aromas profundos de frutas rojas maduras , elegantemente fusionados con notas de cacao, tabaco y vainilla provenientes de su crianza en roble. En boca, su perfil es suave y equilibrado , con sabores dominantes de ciruelas maduras y cereza negra , que ",
+    "tags": [
+      "750ml",
+      "Cabernet Sauvignon",
+      "Trumpeter",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5512,
+    "slug": "vino-finca-las-moras-malbec",
+    "nombre": "Vino Finca Las Moras Malbec 750ml | Tragones Licorería",
+    "precio": 54,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/finca-las-moras-malbec.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Vino Finca Las Moras Malbec 750ml , un exquisito Malbec argentino con notas intensas de frutas maduras como ciruelas y moras, complementadas con un toque especiado y vainilla. Su sabor ro",
+    "descripcion_larga": "Vino Finca Las Moras Malbec 750ml | Tragones Licorería El Vino Tinto Malbec Finca Las Moras es una muestra excepcional de la vinicultura argentina. Proveniente de la soleada región de San Juan , este Malbec se elabora con uvas seleccionadas que expresan toda la riqueza y el carácter del terroir argentino. En nariz, destaca por sus aromas profundos de frutas maduras como ciruelas y moras , acompañados de sutiles notas especiadas y un toque de vainilla aportado por su crianza. En boca, su estructu",
+    "tags": [
+      "750ml",
+      "Malbec",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5514,
+    "slug": "vino-pasaporte-rosso-750ml",
+    "nombre": "Vino Pasaporte Rosso 750ml | Tragones Licorería Delivery",
+    "precio": 60,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/pasaporte-rosso-gran-rose.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Vino Pasaporte Rosso 750ml , un vino con carácter y personalidad única. Su equilibrado blend de uvas Merlot, Chenin y Muscat de Alejandría le otorga un sabor afrutado con un toque semi-se",
+    "descripcion_larga": "Vino Pasaporte Rosso 750ml | Tragones Licorería Delivery El Vino Pasaporte Rosso 750ml es una excelente opción para quienes buscan un vino de gran calidad y sabor refinado. Elaborado con una cuidadosa selección de uvas Merlot, Chenin y Muscat de Alejandría , este vino se distingue por su armoniosa combinación de aromas frutales y un dulzor sutil. Su perfil semi-seco lo convierte en una opción versátil para disfrutar solo o acompañado de una variedad de platos. Su color atractivo y su estructura ",
+    "tags": [
+      "750ml",
+      "Pasaporte Rosso",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5516,
+    "slug": "vino-casillero-del-diablo-cabernet-sauvignon",
+    "nombre": "Vino Casillero del Diablo Cabernet Sauvignon 750ml",
+    "precio": 58,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/casillero-CS.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Descubre el Vino Casillero del Diablo Cabernet Sauvignon 750ml , un tinto chileno de gran carácter y profundidad. Su intenso color rojo rubí y sus aromas a cerezas, ciruelas y un toque de vainilla lo ",
+    "descripcion_larga": "Vino Casillero del Diablo Cabernet Sauvignon 750ml El Casillero del Diablo Cabernet Sauvignon es la variedad más icónica de la bodega Concha y Toro. Su cosecha de 2005 fue calificada por la revista Decanter como la mejor del mundo. Este vino se distingue por su intensidad aromática , donde destacan notas de cerezas y ciruelas maduras , complementadas con matices de vainilla y tostado , aportados por su paso por barricas de roble americano. Su gran cuerpo y estructura lo convierten en una opción ",
+    "tags": [
+      "750ml",
+      "Cabernet Sauvignon",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5518,
+    "slug": "vino-tacama-gran-tinto-malbec",
+    "nombre": "Vino Tacama Gran Tinto Malbec 750ml | Tragones Licorería",
+    "precio": 47,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/tacama.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Vino Tacama Gran Tinto Malbec 750ml , un elegante blend de Malbec, Petit Verdot y Tannat , elaborado por la prestigiosa bodega Tacama. De carácter seco y gran estructura, este vino joven ",
+    "descripcion_larga": "Vino Tacama Gran Tinto Malbec 750ml | Tragones Licorería Delivery Sumérgete en la experiencia única del Vino Tacama Gran Tinto Malbec 750ml , una mezcla excepcional de Malbec, Petit Verdot y Tannat , creada por la renombrada bodega Tacama . Este vino joven y seco destaca por su intensidad aromática, con notas de frutas rojas maduras , ciruelas y un sutil toque especiado que aporta profundidad a cada sorbo. En boca, su estructura equilibrada y taninos redondos proporcionan una sensación sedosa y ",
+    "tags": [
+      "750ml",
+      "Gran Tinto",
+      "Malbec",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5520,
+    "slug": "vino-benjamin-malbec-750ml",
+    "nombre": "Vino Benjamin Malbec 750ml | Tragones Licorería Delivery",
+    "precio": 50,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/benjamin-malbec.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Vino Benjamín Malbec 750ml , una expresión joven y vibrante de la cepa Malbec , elaborada por la prestigiosa bodega Nieto Senetiner . Con un carácter seco y frutado, este vino presenta no",
+    "descripcion_larga": "Vino Benjamin Malbec 750ml | Tragones Licorería Delivery El Vino Benjamín Malbec 750ml es una excelente opción para quienes buscan un Malbec joven y expresivo , con el sello de calidad de la reconocida bodega argentina Nieto Senetiner . Proveniente de los viñedos de Argentina, este vino de carácter seco destaca por su equilibrio entre frescura y estructura. A nivel sensorial, presenta aromas intensos a frutos rojos como ciruelas y cerezas, con delicadas notas de vainilla y cacao aportadas por su",
+    "tags": [
+      "750ml",
+      "Malbec",
+      "Vino"
+    ]
+  },
+  {
+    "id": 5522,
+    "slug": "vino-intipalka-rose-syrah",
+    "nombre": "Vino Intipalka Rosé Syrah 750ml | Tragones Licorería Delivery",
+    "precio": 48,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/intipalka-rose.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "El Vino Intipalka Rosé Syrah 750ml es una deliciosa expresión de la cepa Syrah , con un atractivo color rosado y una personalidad fresca y vibrante. Elaborado en Perú por la reconocida bodega Santiago",
+    "descripcion_larga": "Vino Intipalka Rosé Syrah 750ml | Tragones Licorería Delivery El Vino Intipalka Rosé Syrah 750ml es una opción refrescante y sofisticada, perfecta para quienes buscan un vino joven y expresivo. Producido en Perú por la prestigiosa bodega Santiago Queirolo , este rosé seco ofrece una experiencia sensorial cautivadora desde el primer sorbo. Notas de cata: Vista: Presenta un hermoso color rosado brillante con destellos sutiles. Nariz: Aromas intensos a frutos rojos frescos como fresas y frambuesas,",
+    "tags": [
+      "750ml",
+      "Rosé Syrah",
+      "vinos"
+    ]
+  },
+  {
+    "id": 5527,
+    "slug": "vino-intipalka-sauvignon-blanc-750ml",
+    "nombre": "Vino Intipalka Sauvignon Blanc 750ml",
+    "precio": 48,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/intipalka-sauvignon-black.png",
+    "categoria": "Vino Blanco",
+    "categorias": [
+      "Vino Blanco"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Vino Intipalka Sauvignon Blanc 750 ml , un vino joven y seco de la reconocida bodega Santiago Queirolo. Con una graduación alcohólica de 12°GL, ofrece un sabor fresco y equilibrado, ideal para disfrut",
+    "descripcion_larga": "Vino Intipalka Sauvignon Blanc 750ml Descubre el Vino Intipalka Sauvignon Blanc 750 ml , un vino joven y seco de la prestigiosa bodega Santiago Queirolo , elaborado con la mejor selección de uvas Sauvignon Blanc en Perú. Su frescura y equilibrio lo convierten en la opción perfecta para quienes buscan una experiencia ligera y refrescante. Con una graduación alcohólica de 12°GL , este vino destaca por sus notas cítricas y florales, ofreciendo una sensación vivaz en el paladar. Se recomienda servir",
+    "tags": [
+      "750ml",
+      "Sauvignon Blanc",
+      "Vino Blanco"
+    ]
+  },
+  {
+    "id": 5529,
+    "slug": "vino-casillero-del-diablo-sauvignon-blanc-750ml",
+    "nombre": "Vino Casillero Del Diablo Sauvignon Blanc 750ml",
+    "precio": 49,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/casillero-sauvignon-blanc.png",
+    "categoria": "Vino Blanco",
+    "categorias": [
+      "Vino Blanco"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Vino Casillero del Diablo Sauvignon Blanc 750 ml , un vino reserva seco de Concha y Toro , con frescas notas cítricas y frutales. Su guarda en tanques de acero inoxidable resalta su pureza y elegancia",
+    "descripcion_larga": "Vino Casillero Del Diablo Sauvignon Blanc 750ml El Vino Casillero del Diablo Sauvignon Blanc 750 ml es un elegante vino reserva de la reconocida bodega Concha y Toro , elaborado con uvas Sauvignon Blanc de los mejores viñedos de Chile. Su fermentación y guarda en tanques de acero inoxidable le otorgan una frescura excepcional, resaltando sus notas cítricas, frutales y minerales. Con una graduación alcohólica de 13°GL , este vino seco presenta un carácter vibrante y refrescante, ideal para marida",
+    "tags": [
+      "750ml",
+      "Sauvignon Blanc",
+      "Vino Blanco"
+    ]
+  },
+  {
+    "id": 5531,
+    "slug": "vino-frontera-sauvignon-blanc-750ml",
+    "nombre": "Vino Frontera Sauvignon Blanc 750ml | Tragones Licorería",
+    "precio": 42,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/frontera-sauvignon-black.png",
+    "categoria": "Vino Blanco",
+    "categorias": [
+      "Vino Blanco"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Vino Frontera Sauvignon Blanc 750ml , un vino blanco de aroma frutado cítrico y sabor refrescante. Su acidez vibrante y cuerpo medio lo convierten en la opción ideal para acompañar marisc",
+    "descripcion_larga": "Vino Frontera Sauvignon Blanc 750ml El Vino Frontera Sauvignon Blanc 750ml es una excelente elección para quienes buscan frescura y equilibrio en cada copa. Con un perfil aromático dominado por frutas cítricas , su sabor resalta por notas refrescantes y una acidez vibrante que lo hace irresistiblemente ligero y placentero. Notas de Cata: ✔ Aroma : Intensos frutos cítricos , con un toque fresco y frutal. ✔ Sabor : Equilibrado y vibrante, con un marcado perfil cítrico . ✔ Cuerpo : Medio, con una t",
+    "tags": [
+      "750ml",
+      "Sauvignon Blanc",
+      "Vino Blanco"
+    ]
+  },
+  {
+    "id": 5551,
+    "slug": "jagermeister-700ml",
+    "nombre": "Jagermeister 700ml + Frugos del Valle Fresh + Hielo 1.5Kg",
+    "precio": 95,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/jagger.png",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "700ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del pack Jägermeister 700ml + Frugos del Valle Fresh + Hielo 1.5Kg , la combinación perfecta para una noche de sabor intenso y refrescante. Jägermeister, el icónico licor alemán con 56 ingred",
+    "descripcion_larga": "Jagermeister 700ml + Frugos del Valle Fresh + Hielo 1.5Kg Prepárate para una experiencia de sabor inigualable con el Pack Jägermeister 700ml + Frugos del Valle Fresh + Hielo 1.5Kg . Este combo incluye todo lo necesario para disfrutar de una bebida intensa y refrescante en cualquier ocasión. El Jägermeister es un licor alemán legendario, elaborado con 56 ingredientes botánicos , que le otorgan su inconfundible carácter especiado con notas de cítricos, hierbas y especias. Su graduación alcohólica ",
+    "tags": [
+      "700ml",
+      "otras bebidas"
+    ]
+  },
+  {
+    "id": 5553,
+    "slug": "jagermeister-1-75l",
+    "nombre": "Jagermeister 1.75L + Frugos del Valle Fresh + Hielo 1.5Kg",
+    "precio": 230,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/jagger-1750.png",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "1.75L",
+    "stock": true,
+    "descripcion_corta": "Disfruta del pack Jägermeister 1.75L + Frugos del Valle Fresh + Hielo 1.5Kg , la combinación ideal para una fiesta épica. Jägermeister, el icónico licor alemán con 56 ingredientes botánicos, ofrece un",
+    "descripcion_larga": "Jagermeister 1.75L + Frugos del Valle Fresh + Hielo 1.5Kg Vive una experiencia única con el Pack Jägermeister 1.75L + Frugos del Valle Fresh+ Hielo 1.5Kg , la opción perfecta para compartir con amigos en cualquier celebración. El Jägermeister es un licor alemán de renombre, elaborado con 56 ingredientes botánicos que le otorgan un sabor profundo con notas de cítricos, hierbas y especias . Su graduación alcohólica de 35°GL y su carácter versátil lo convierten en la elección ideal para disfrutar c",
+    "tags": [
+      "1.75L",
+      "otras bebidas"
+    ]
+  },
+  {
+    "id": 5561,
+    "slug": "jarabe-de-goma-sabogal",
+    "nombre": "Jarabe de Goma Sabogal | Tragones Licorería Delivery",
+    "precio": 13,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/sabogal-blanco.png",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "otras bebidas",
+    "stock": true,
+    "descripcion_corta": "El Jarabe de Goma Sabogal es el complemento ideal para la coctelería, aportando dulzura y una textura suave a tus bebidas favoritas. Perfecto para preparar chilcanos, pisco sour y otros cócteles con u",
+    "descripcion_larga": "Jarabe de Goma Sabogal | Tragones Licorería Delivery El Jarabe de Goma Sabogal es un sirope de azúcar esencial en la coctelería, ideal para aportar cuerpo y dulzura equilibrada a una gran variedad de cócteles. Su fórmula de alta calidad garantiza una disolución perfecta, realzando los sabores sin alterar la textura de las bebidas. Es un ingrediente clave para la preparación de chilcanos, pisco sour, mojitos y otros cócteles clásicos , ofreciendo un toque profesional a cada mezcla. Su consistenci",
+    "tags": [
+      "otras bebidas"
+    ]
+  },
+  {
+    "id": 5563,
+    "slug": "jarabe-de-granadina-sabogal",
+    "nombre": "Jarabe de Granadina Sabogal | Tragones Licorería Delivery",
+    "precio": 13,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/sabogal-granadina.png",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "otras bebidas",
+    "stock": true,
+    "descripcion_corta": "El Jarabe de Granadina Sabogal es el ingrediente perfecto para darle un toque dulce y vibrante a tus cócteles y bebidas. Elaborado con azúcar y extracto de granada, realza el color y sabor de cada pre",
+    "descripcion_larga": "Jarabe de Granadina Sabogal | Tragones Licorería Delivery El Jarabe de Granadina Sabogal es un sirope sin alcohol elaborado a base de azúcar y granada , ideal para endulzar y aportar un color intenso a cócteles y bebidas. Su sabor equilibrado y afrutado lo convierte en un ingrediente esencial en la mixología, perfecto para preparar Tequila Sunrise, Shirley Temple, San Francisco, entre otros clásicos . Además, es una excelente opción para refrescos y bebidas sin alcohol, aportando un toque dulce ",
+    "tags": [
+      "otras bebidas"
+    ]
+  },
+  {
+    "id": 5565,
+    "slug": "aperol-aperitivo-750-ml",
+    "nombre": "Aperol Aperitivo 750 ml | Tragones Licorería Delivery",
+    "precio": 70,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/X_licor-aperol-aperitivo-750-ml8961.png",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "El Aperol Aperitivo 750 ml es la esencia del aperitivo perfecto, con su vibrante color naranja y un equilibrio agridulce inconfundible. Ideal para preparar el clásico Aperol Spritz y disfrutar de mome",
+    "descripcion_larga": "Aperol Aperitivo 750 ml | Tragones Licorería Delivery El Aperol Aperitivo 750 ml es una bebida icónica que combina notas cítricas, herbales y un delicado dulzor , logrando un sabor refrescante y único. Su distintivo color naranja y su fórmula secreta, inalterada desde su creación, lo han convertido en el protagonista de innumerables celebraciones y reuniones. Ideal para disfrutar en aperitivos, el Aperol brilla especialmente en la preparación del Aperol Spritz , un cóctel ligero y burbujeante qu",
+    "tags": [
+      "750ml",
+      "Aperitivo",
+      "otras bebidas"
+    ]
+  },
+  {
+    "id": 5567,
+    "slug": "fernet-branca-750ml",
+    "nombre": "Fernet Branca 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 135,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/fernet.png",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "El Fernet Branca 750 ml es un licor aperitivo único, elaborado con una exclusiva combinación de hierbas, cortezas, raíces y frutos macerados en alcohol. Su intenso sabor amargo y su inconfundible cará",
+    "descripcion_larga": "Fernet Branca 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg El Fernet Branca 750 ml es un licor de renombre mundial, famoso por su inconfundible sabor amargo y su compleja mezcla de ingredientes naturales. Su receta secreta combina más de 27 hierbas, cortezas, raíces y especias provenientes de diferentes partes del mundo, maceradas en alcohol para lograr un equilibrio único entre amargor y frescura. Con una graduación alcohólica del 39% , Fernet Branca es perfecto para tomarse solo, con hielo o como ",
+    "tags": [
+      "750ml",
+      "otras bebidas"
+    ]
+  },
+  {
+    "id": 5569,
+    "slug": "aguardiente-antioqueno-sin-azucar-750ml",
+    "nombre": "Aguardiente Antioqueño Sin Azúcar 750ml | Tragones Licorería",
+    "precio": 50,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/antioqueno-e1761984054275.png",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "El Aguardiente Antioqueño Sin Azúcar 750 ml es una bebida tradicional colombiana con un sabor inconfundible, elaborado con alcohol extra neutro y un toque de anís. Su versión sin azúcar mantiene toda ",
+    "descripcion_larga": "Aguardiente Antioqueño Sin Azúcar 750ml | Tragones Licorería El Aguardiente Antioqueño Sin Azúcar 750 ml es la opción perfecta para quienes buscan el sabor auténtico del aguardiente colombiano con una propuesta más ligera. Elaborado con alcohol extra neutro, esencias naturales de anís y agua purificada , esta versión sin azúcar conserva el equilibrio de aromas y sabores que lo han convertido en un ícono de la cultura colombiana. Con una graduación alcohólica del 29% , es ideal para disfrutar en ",
+    "tags": [
+      "750ml",
+      "otras bebidas",
+      "Sin Azúcar"
+    ]
+  },
+  {
+    "id": 5879,
+    "slug": "cerveza-pilsen-12-latas",
+    "nombre": "Cerveza PILSEN 12 Latas Twelve Pack Lata 355ml",
+    "precio": 69,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/02/cerveza-pilsen-355ml-12-pack-6475.jpg",
+    "categoria": "Cerveza",
+    "categorias": [
+      "Cerveza"
+    ],
+    "marca": "Pilsen",
+    "stock": true,
+    "descripcion_corta": "Disfruta el auténtico sabor de Cerveza PILSEN en su Pack de 12 latas de 355ml . Una cerveza dorada con el equilibrio perfecto entre cebada y maíz , ideal para compartir. ¡Encuéntrala en Tragones Licor",
+    "descripcion_larga": "Cerveza PILSEN 12 Latas Twelve Pack Lata 355ml Es la elección perfecta para los amantes de una lager dorada , refrescante y de sabor equilibrado. Elaborada con una cuidadosa mezcla de cebada y maíz , esta cerveza tiene una graduación alcohólica de 5°GL , ofreciendo el balance ideal entre suavidad y carácter. Su presentación en pack de 12 latas es ideal para reuniones, celebraciones o simplemente para disfrutar de un momento de relax. Recuerda: Tomar bebidas alcohólicas en exceso es dañino . Comp",
+    "tags": [
+      "12 latas",
+      "12 pack",
+      "355ml",
+      "Pilsen",
+      "twelve pack"
+    ]
+  },
+  {
+    "id": 5884,
+    "slug": "cerveza-pilsen-lata-473ml",
+    "nombre": "Cerveza PILSEN LATON 473ml 12 Latas Twelve Pack",
+    "precio": 79,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/02/twelvepack-437ml-1.jpg",
+    "categoria": "Cerveza",
+    "categorias": [
+      "Cerveza"
+    ],
+    "marca": "Pilsen",
+    "stock": true,
+    "descripcion_corta": "Disfruta el auténtico sabor de Cerveza PILSEN en su Pack de 12 latas de 473ml . Una cerveza dorada con el equilibrio perfecto entre cebada y maíz , ideal para compartir. ¡Encuéntrala en Tragones Licor",
+    "descripcion_larga": "Cerveza PILSEN Lata 473ml 12 Latas Twelve Pack Es la elección perfecta para los amantes de una lager dorada , refrescante y de sabor equilibrado. Elaborada con una cuidadosa mezcla de cebada y maíz , esta cerveza tiene una graduación alcohólica de 5°GL , ofreciendo el balance ideal entre suavidad y carácter. Su presentación en pack de 12 latas es ideal para reuniones, celebraciones o simplemente para disfrutar de un momento de relax. Recuerda: Tomar bebidas alcohólicas en exceso es dañino . Comp",
+    "tags": [
+      "12 latas",
+      "12 pack",
+      "473ml",
+      "Pilsen",
+      "twelve pack"
+    ]
+  },
+  {
+    "id": 6041,
+    "slug": "smirnoff-ice-green-apple-350ml-6-latas",
+    "nombre": "Smirnoff Ice Green Apple 350ml 6 Latas | Tragones Licorería",
+    "precio": 59,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/02/Smirnoff-Ice-green-apple-350ml.jpeg",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "Smirnoff",
+    "stock": true,
+    "descripcion_corta": "Disfruta de la frescura y el toque ácido de Smirnoff Ice Green Apple 350ml en su presentación de 6 latas . Un cóctel listo para tomar, con el equilibrio perfecto entre vodka Smirnoff y un refrescante ",
+    "descripcion_larga": "Smirnoff Ice Green Apple 350ml 6 Latas | Tragones Licorería El Smirnoff Ice Green Apple 350ml (Pack de 6 latas) es la combinación ideal de vodka premium con un refrescante toque de manzana verde, brindando una experiencia única y deliciosa. Su sabor ligeramente ácido y dulce a la vez lo convierte en la opción perfecta para disfrutar en cualquier momento. Con una graduación alcohólica del 4% , es una bebida suave, fácil de beber y perfecta para compartir en reuniones, fiestas o simplemente para r",
+    "tags": [
+      "350ml",
+      "6 Latas",
+      "6 pack",
+      "Ice Green Apple",
+      "Latas",
+      "otras bebidas",
+      "Six Pack",
+      "Smirnoff"
+    ]
+  },
+  {
+    "id": 6042,
+    "slug": "piscano-chilcano-de-pisco-maracuya-355ml-6-latas",
+    "nombre": "Piscano Chilcano de Pisco Maracuya 355ml 6 Latas",
+    "precio": 59,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/02/Piscano-Maracuy-355ml.jpeg",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "355ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del auténtico sabor del Piscano Chilcano de Pisco Maracuyá 355ml en su práctica presentación de 6 latas . Elaborado con Pisco Quebranta y el exótico toque de maracuyá, es una bebida lista par",
+    "descripcion_larga": "Piscano Chilcano de Pisco Maracuya 355ml 6 Latas El Piscano Chilcano de Pisco Maracuyá 355ml (Pack de 6 latas) es la opción ideal para los amantes del chilcano, con el equilibrio perfecto entre la intensidad del Pisco Quebranta y la frescura tropical del maracuyá. Su sabor suave y ligeramente gasificado lo hace irresistible, ofreciendo una experiencia refrescante y lista para disfrutar en cualquier momento. Con una graduación alcohólica de 5.9% , es ideal para compartir en reuniones, celebracion",
+    "tags": [
+      "355ml",
+      "6 Latas",
+      "Chilcano",
+      "Chilcano de Pisco",
+      "Maracuya"
+    ]
+  },
+  {
+    "id": 6043,
+    "slug": "pisco-vargas-750ml",
+    "nombre": "Pisco Vargas 750ml + Hielo 1.5kg + Evervess 1.5Lt",
+    "precio": 45,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/02/Pisco-Vargas-Evervess-y-hielo.jpeg",
+    "categoria": "Pisco",
+    "categorias": [
+      "Pisco"
+    ],
+    "marca": "Eververss",
+    "stock": true,
+    "descripcion_corta": "Disfruta de un Pisco Vargas Acholado 750ml acompañado de 1.5 kg de hielo y una Evervess 1.5L , el combo perfecto para preparar tus mejores cócteles. Un pisco de calidad con 40° de alcohol , ideal para",
+    "descripcion_larga": "Pisco Vargas 750ml + Hielo 1.5kg + Evervess 1.5Lt El Pisco Vargas Acholado 750ml es una excelente elección para los amantes del pisco. Su cuidadosa mezcla de diferentes cepas de uva da como resultado un sabor equilibrado y aromático, ideal para disfrutar solo o en cócteles. Este combo incluye 1.5 kg de hielo y una botella de Evervess 1.5L , proporcionando todo lo necesario para preparar un delicioso Chilcano u otras bebidas refrescantes. Con una graduación alcohólica de 40°GL , este pisco puro r",
+    "tags": [
+      "Eververss",
+      "Hielo",
+      "pisco",
+      "Pisco Vargas",
+      "Promoción"
+    ]
+  },
+  {
+    "id": 6110,
+    "slug": "cerveza-corona-extra-twelve-pack-botella-355ml",
+    "nombre": "Cerveza CORONA Extra Twelve Pack Botella 355ml | Delivery",
+    "precio": 75,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/03/Cerveza-CORONA-Extra-twelve-Pack-Lata-355ml.jpg",
+    "categoria": "Cerveza",
+    "categorias": [
+      "Cerveza"
+    ],
+    "marca": "Corona",
+    "stock": true,
+    "descripcion_corta": "Refresca tus momentos con el Twelve Pack de Cerveza Corona Extra 355ml , una pilsener mexicana con 4.5% de alcohol. Su sabor suave y equilibrado, elaborado con agua, malta de cebada, maíz y lúpulo, la",
+    "descripcion_larga": "Cerveza CORONA Extra Twelve Pack Botella 355ml | Tragones Licorería Delivery Disfruta del inconfundible sabor de Corona Extra , la icónica cerveza mexicana en su presentación Twelve Pack de 355ml . De estilo pilsener y con un 4.5% de alcohol , esta cerveza es reconocida mundialmente por su frescura y su toque ligero y equilibrado. Elaborada con agua, malta de cebada, maíz y lúpulo , su sabor suave y refrescante la convierte en la compañera ideal para días soleados, reuniones con amigos o simplem",
+    "tags": [
+      "12 botellas",
+      "12 pack",
+      "355ml",
+      "Cerveza",
+      "Extra",
+      "twelve pack"
+    ]
+  },
+  {
+    "id": 6114,
+    "slug": "vino-navarro-correa-los-arboles",
+    "nombre": "Vino Navarro Correa Los Arboles Botella 750ml | Delivery",
+    "precio": 55,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/03/WhatsApp-Image-2025-03-05-at-10.28.19-PM.jpeg",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Disfruta del Vino Tinto Malbec Los Árboles 750ml de Navarro Correas , un vino argentino elegante y equilibrado. Con notas de ciruela y cereza , suaves toques de roble y una estructura redonda, es idea",
+    "descripcion_larga": "Vino Navarro Correa Los Arboles Botella 750ml | Tragones Licorería Delivery El Vino Tinto Malbec Los Árboles 750ml de Navarro Correas es una expresión auténtica del prestigioso terroir de Luján de Cuyo, Mendoza, Argentina . Con una graduación alcohólica del 13.3% , este vino destaca por su color profundo , sus aromas intensos a frutas rojas maduras como ciruela y cereza , y un sutil toque de roble que realza su complejidad. Su textura equilibrada y taninos suaves lo convierten en una opción perf",
+    "tags": [
+      "750ml",
+      "Botella",
+      "Los Arboles"
+    ]
+  },
+  {
+    "id": 6185,
+    "slug": "heineken-twelve-pack-310ml",
+    "nombre": "Heineken Twelve Pack 310ml – Cerveza Premium en Pack de 12latas",
+    "precio": 65,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/04/heineken-lata-310ml.png",
+    "categoria": "Cerveza",
+    "categorias": [
+      "Cerveza"
+    ],
+    "marca": "Heineken",
+    "stock": true,
+    "descripcion_corta": "Heineken Twelve Pack 310ml: más sabor, más momentos. Lleva 12 latass de la clásica cerveza holandesa a donde quieras. ¡Delivery rápido en Lima con Tragones Licorería!",
+    "descripcion_larga": "Heineken Twelve Pack 310ml – Cerveza Premium en Pack de 12 Botellas ¿Eres fan de Heineken? Entonces este Twelve Pack de 310ml es para ti. Lleva a casa 12 botellas de una de las cervezas más reconocidas del mundo, con su clásico sabor balanceado, refrescante y ligeramente amargo que conquista paladares desde 1873. Heineken es una cerveza lager premium elaborada con ingredientes 100% naturales: agua pura, malta de cebada y lúpulo. No contiene aditivos ni conservantes. Ideal para reuniones grandes,",
+    "tags": [
+      "12 pack",
+      "300ml",
+      "heineken",
+      "heineken 300ml",
+      "heineken sixpack",
+      "twelve pack"
+    ]
+  },
+  {
+    "id": 6186,
+    "slug": "stella-artois-twelve-pack-330ml",
+    "nombre": "Stella Artois Twelve Pack 330ml – Cerveza Belga Premium en Pack de 12",
+    "precio": 75,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/04/x12-stella.jpg",
+    "categoria": "Cerveza",
+    "categorias": [
+      "Cerveza"
+    ],
+    "marca": "Stella",
+    "stock": true,
+    "descripcion_corta": "Stella Artois Twelve Pack 330ml: cerveza belga con clase en presentación de 12 botellas. Ideal para reuniones elegantes o para darte un gusto. ¡Delivery rápido en Lima!",
+    "descripcion_larga": "Stella Artois Twelve Pack 330ml – Cerveza Belga Premium en Pack de 12 Sofisticación, tradición y sabor en cada sorbo. El Twelve Pack de Stella Artois 330ml es la elección perfecta para quienes buscan una cerveza importada de alta calidad para compartir en ocasiones especiales o simplemente disfrutar en casa. Originaria de Bélgica, Stella Artois es una lager dorada y refrescante con un sabor suave, notas de malta y un amargor delicado y equilibrado. Su receta se mantiene desde 1366, lo que la con",
+    "tags": [
+      "12 pack",
+      "330ml",
+      "Cerveza",
+      "sixpack",
+      "stella",
+      "Stella Artois",
+      "twelve pack"
+    ]
+  },
+  {
+    "id": 6303,
+    "slug": "ron-cartavio-blanco-botella-750ml",
+    "nombre": "Ron Cartavio Blanco Botella 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 49,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/04/ron-blanco.jpg",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Cartavio",
+    "stock": true,
+    "descripcion_corta": "Disfruta el inconfundible Ron Cartavio Blanco 750ml , un ron peruano de gran carácter, ahora en un pack especial con + Coca Cola 2.25 Lt + Hielo 1.5 Kg . La combinación perfecta para tus mejores momen",
+    "descripcion_larga": "Ron Cartavio Blanco Botella 750ml Es un ron peruano de sabor intenso y equilibrado, resultado de un cuidadoso proceso de añejamiento en barricas de roble . Perfecto para disfrutar solo, con hielo o en cócteles. Para que disfrutes al máximo, este pack especial incluye + Coca Cola 2.25 Lt + Hielo 1.5 Kg , brindándote la mejor combinación para preparar tragos y compartir con amigos. Compra ahora en tragoneslicoreriadelivery.com y lleva a casa un ron de calidad superior con todo lo necesario para un",
+    "tags": [
+      "750ml",
+      "Blanco",
+      "Ron"
+    ]
+  },
+  {
+    "id": 6324,
+    "slug": "ron-bacardi-blanco-750ml",
+    "nombre": "Ron Bacardí Blanco 750ml + Coca-Cola 2.25 Lt + Hielo 1.5Kg",
+    "precio": 67,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/05/bacardi-blanco-1.jpg",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "¡El combo ideal para cualquier ocasión! Ron Bacardí Blanco 750ml , un ron dorado de Puerto Rico , con un sabor suave y balanceado , gracias a su añejamiento en barriles de roble . Notas de caramelo, a",
+    "descripcion_larga": "Ron Bacardí Blanco 750ml + Coca-Cola 2.25L + Hielo 1.5Kg Descubre el inconfundible sabor, un destilado emblemático de Puerto Rico , elaborado a partir de la mejor caña de azúcar y añejado en barriles de roble para lograr su distintivo color dorado. Su sabor es suave y equilibrado , con notas de vainilla, caramelo y almendras tostadas , ideal para disfrutarlo solo o en cócteles. Este pack incluye todo lo necesario para un brindis perfecto: ✔️ 1 botella de Ron Bacardí Blanco (750ml) ✔️ 1 Coca-Cola",
+    "tags": [
+      "750ml",
+      "Blanco",
+      "Ron"
+    ]
+  },
+  {
+    "id": 6332,
+    "slug": "vino-tacama-origen-malbec-malbec-750ml-tragones-licoreria",
+    "nombre": "Vino Tacama Origen Malbec & Malbec 750ml | Tragones Licorería",
+    "precio": 94,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/05/tacama-O-malbec-malbec.jpg",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Vino Tacama Origen Malbec & Malbec es un vino tinto peruano de gran carácter, con intensos aromas a frutos negros, notas especiadas y taninos suaves. Perfecto para acompañar carnes rojas y platos gour",
+    "descripcion_larga": "Vino Tacama Origen Malbec & Malbec – Vino Malbec Peruano Premium 750ml – Un homenaje al carácter y la intensidad Déjate seducir por la fuerza y elegancia del Tacama Origen Malbec & Malbec , una joya enológica que combina dos expresiones distintas de la uva Malbec cultivadas en los mejores viñedos de Tacama, en Ica – Perú. Este vino tinto premium es el resultado de una cuidadosa selección de cepas, fermentadas y maduradas con esmero para resaltar lo mejor de su carácter frutado, su profundidad y ",
+    "tags": [
+      "750ml",
+      "Malbec",
+      "origen",
+      "Origen Malbec",
+      "vino peruano",
+      "vinos"
+    ]
+  },
+  {
+    "id": 6334,
+    "slug": "la-linda-malbec-750ml-vino-tinto-argentino-cosecha-2022-tragones-licoreria",
+    "nombre": "La Linda Malbec 750ml – Vino Tinto Argentino Cosecha 2022 | Tragones Licorería",
+    "precio": 65,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/05/la-linda-malbec.jpg",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "La Linda Malbec 750ml – Vino Tinto Argentino Cosecha 2022 es un vino tinto argentino de Mendoza, fresco y frutado, con 13.5% de alcohol. Cosecha 2022, ideal para parrillas y pastas.",
+    "descripcion_larga": "La Linda Malbec 750ml – Vino Tinto Argentino Cosecha 2022 – Sabor argentino con alma joven El vino La Linda Malbec 750ml es una expresión auténtica del terruño argentino, elaborado por la reconocida bodega Luigi Bosca. Proveniente de la región de Mendoza y con una cosecha reciente (por ejemplo, Cosecha 2022 ), este tinto joven y elegante refleja la frescura y riqueza de la uva Malbec en su forma más accesible y vibrante. A la vista presenta un color rojo violáceo brillante. En nariz, destacan ar",
+    "tags": [
+      "750ml",
+      "La linda Malbec",
+      "Malbec",
+      "Vino",
+      "vino tinto"
+    ]
+  },
+  {
+    "id": 6335,
+    "slug": "vino-marques-de-riscal-tempranillo-750ml-tragones-licoreria",
+    "nombre": "Vino Marqués de Riscal Tempranillo 750ml | Tragones Licorería",
+    "precio": 72,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/05/marquez-de-riscal-tempranillo.jpg",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "750ml",
+    "stock": true,
+    "descripcion_corta": "Vino Marqués de Riscal Tempranillo 750ml tinto español de la cosecha 2021, con aromas de frutas rojas y notas de roble. Ideal para maridar con carnes y quesos.",
+    "descripcion_larga": "Vino Marqués de Riscal Tempranillo 750ml – Elegancia y frescura en cada sorbo El Marqués de Riscal Tempranillo 750ml es un vino tinto español que destaca por su equilibrio entre tradición y modernidad. Elaborado con uvas Tempranillo de la región de Castilla y León, cosecha 2021, ofrece una experiencia sensorial única. A la vista, presenta un color cereza intenso con reflejos violáceos. En nariz, se perciben aromas de frutas rojas maduras, notas de chocolate tostado, pimienta negra y sutiles toqu",
+    "tags": [
+      "750ml",
+      "marqués de riscal",
+      "tinto tempranillo",
+      "Vino"
+    ]
+  },
+  {
+    "id": 6342,
+    "slug": "mikes-limon-maracuya-x6-355ml",
+    "nombre": "Mikes limón-maracuyá x6 355ml",
+    "precio": 55,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/05/mikes-1.jpg",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "limón",
+    "stock": true,
+    "descripcion_corta": "Bebida alcohólica lista para tomar que combina jugo real de limón y vodka. Presentación en lata de 355 ml con 5% de alcohol. Refrescante y fácil de disfrutar.",
+    "descripcion_larga": "Mike's Hard Lemonade x6 355ml – Refrescante y listo para disfrutar Mike's Hard Lemonade es una bebida alcohólica lista para tomar (RTD) que combina jugo real de limón con vodka, ofreciendo una experiencia refrescante y ligera. Con una graduación alcohólica del 5%, es ideal para quienes buscan una alternativa suave y sabrosa para compartir en reuniones o disfrutar en momentos de relajación. Disponible en una presentación de lata de 355 ml, Mike's Hard Lemonade se ha convertido en una opción popul",
+    "tags": [
+      "limón",
+      "Maracuya",
+      "mike's",
+      "vodka"
+    ]
+  },
+  {
+    "id": 6344,
+    "slug": "cusquena-laton-twelve-pack-trigo-473-ml",
+    "nombre": "Cusqueña laton twelve pack trigo 473 ml",
+    "precio": 79,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/05/cusquena-x12-trigo-1.jpg",
+    "categoria": "Cerveza",
+    "categorias": [
+      "Cerveza"
+    ],
+    "marca": "Cusqueña",
+    "stock": true,
+    "descripcion_corta": "Cerveza de trigo peruana con sabor puro y refrescante, elaborada con trigo Andrews y 100% pura malta. Lata de 473ml con 4.9% de alcohol",
+    "descripcion_larga": "Cusqueña laton twelve pack Trigo 473ml – Frescura y tradición en cada sorbo Cusqueña Trigo 473ml es una cerveza de trigo peruana que destaca por su sabor puro y refrescante, con finas notas florales. Elaborada con trigo Andrews y granos selectos de 100% pura malta, esta cerveza ofrece una experiencia única para los amantes de las cervezas tipo wheat beer . Tanganero +3 cusquena.com +3 cusquena.com +3 Estilo: Wheat Beer (Cerveza de Trigo) Contenido alcohólico: 4.9% ABV Amargor: 10 IBU Presentació",
+    "tags": [
+      "12 latas",
+      "12 pack",
+      "Cerveza",
+      "cusqueña",
+      "latón",
+      "twelve",
+      "twelve pack"
+    ]
+  },
+  {
+    "id": 6366,
+    "slug": "botran-12-anos-750ml-coca-cola-2-25-lt-hielo-1-5-kg",
+    "nombre": "Botran 12 años 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 165,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/08/BOTRAN-12-ANOS.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 6371,
+    "slug": "el-enemigo-malbec-750ml",
+    "nombre": "El Enemigo Malbec 750ml",
+    "precio": 138,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/08/enemigo-malbec.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "El Enemigo Malbec 750 ml es un vino argentino de cuerpo medio-alto, con intensas notas a ciruela, mora y especias dulces. Elaborado en Mendoza por la Bodega Aleanna, combina elegancia y carácter. Idea",
+    "descripcion_larga": "El Enemigo Malbec 750 ml – Elegancia argentina en cada copa El Enemigo Malbec 750 ml es un vino tinto argentino de alta gama, elaborado en Mendoza por la reconocida Bodega Aleanna , una colaboración entre el enólogo Alejandro Vigil y Adrianna Catena. Este vino encarna la perfecta unión entre tradición, pasión y carácter, con una identidad única que rinde homenaje al auténtico Malbec mendocino. Notas de cata De color rojo profundo con reflejos violáceos, El Enemigo Malbec deslumbra con aromas int",
+    "tags": []
+  },
+  {
+    "id": 6383,
+    "slug": "tacama-tinto-semiseco-750ml",
+    "nombre": "Tacama Tinto Semiseco 750ml",
+    "precio": 39,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/10/tacama-semiseco.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 6386,
+    "slug": "tacama-rose-semiseco-750ml",
+    "nombre": "Tacama Rose Semiseco 750ml",
+    "precio": 39,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/10/tacama-rose.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 6388,
+    "slug": "vino-pasaporte-rosso-borgona-750ml-tragones-licoreria-delivery",
+    "nombre": "Vino Pasaporte Rosso Borgoña 750ml | Tragones Licorería Delivery",
+    "precio": 60,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/10/pasaporte-rosso-borgona.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 6390,
+    "slug": "vino-mascota-malbec-750ml",
+    "nombre": "Vino Mascota Malbec 750ml | Tragones Licorería Delivery",
+    "precio": 89,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/10/mascota.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "Vino Mascota Malbec 750ml – Elegancia Argentina en tu Mesa Disfruta de la sofisticación del Vino La Mascota Malbec 750ml, un tinto premium de bodega de autor nacido en los prestigiosos viñedos de Cruz",
+    "descripcion_larga": "El Vino Mascota Malbec 750ml es un exponente premium de la vitivinicultura argentina, proveniente de viñedos seleccionados en Mendoza. Este Malbec destaca por su elegancia y su paso por barricas de roble, lo que le confiere una estructura robusta y una personalidad sofisticada. Perfil de Sabor: Mascota Malbec ofrece una experiencia sensorial intensa, con notas de frutos rojos maduros, ciruelas, toques de vainilla y regaliz , producto de su cuidadosa crianza en madera. En boca es equilibrado, con",
+    "tags": []
+  },
+  {
+    "id": 6392,
+    "slug": "luigi-bosca-malbec-750ml-tragones-licoreria-delivery",
+    "nombre": "Luigi Bosca Malbec 750ml | Tragones Licorería Delivery",
+    "precio": 115,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/10/luigi-bosca.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 6394,
+    "slug": "vino-sombrero-malbec",
+    "nombre": "Vino Sombrero Malbec 750ml | Tragones Licorería Delivery",
+    "precio": 80,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/10/Vino-Sombrero-750ml.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "Disfruta la Experiencia Premium del Vino Sombrero Malbec 750ml Si estás buscando un vino tinto argentino que combine elegancia, tradición y un sabor inigualable, el Vino Sombrero Malbec 750ml es la et",
+    "descripcion_larga": "Disfruta la Experiencia Premium del Vino Sombrero Malbec 750ml Si estás buscando un vino tinto argentino que combine elegancia, tradición y un sabor inigualable, el Vino Sombrero Malbec 750ml es la etiqueta que debe estar en tu mesa hoy mismo. Producido en las prestigiosas tierras del Valle de Uco, en Mendoza, este Malbec representa la máxima expresión de la vitivinicultura de altura. En Tragones Licorería Delivery, nos sentimos orgullosos de ofrecerte esta pieza maestra directamente en la puert",
+    "tags": []
+  },
+  {
+    "id": 6396,
+    "slug": "jagermeister-1-lt-frugos-fresh-3-lt-hielo-1-5kg",
+    "nombre": "Jagermeister 1 lt + Frugos Fresh 3 lt + Hielo 1.5Kg",
+    "precio": 118,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/10/litro-jagger.png",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 6398,
+    "slug": "kraken-750ml-coca-cola-2-25-ml-hielo-1-5-kg",
+    "nombre": "Kraken 750ml + Coca Cola 2.25 Lt + Hielo 1.5 kg",
+    "precio": 160,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/10/kraken-rum.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 6400,
+    "slug": "ron-barcelo-anejo-1750-ml-2-coca-cola-2-25-ml-2-hielo-1-5kg",
+    "nombre": "Ron Barceló Añejo 1750 Lt + 2 Coca-Cola 2.25 Lt + 2 Hielos 1.5Kg",
+    "precio": 135,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/10/barcelo-anejo-1750ml.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Barceló",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 7096,
+    "slug": "aperol-spritz-pack-delivery",
+    "nombre": "Aperol Spritz Pack",
+    "precio": 139,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/02/Aperol-spritz-Pack.png",
+    "categoria": "Otras Bebidas",
+    "categorias": [
+      "Otras Bebidas"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "Aperol Spritz Pack delivery El Pack Aperol + Cinzano es la elección ideal para quienes buscan disfrutar de un aperitivo clásico, elegante y refrescante sin salir de casa. Este combo ha sido pensado pa",
+    "descripcion_larga": "Aperol Spritz Pack delivery El Pack Aperol + Cinzano es la elección ideal para quienes buscan disfrutar de un aperitivo clásico, elegante y refrescante sin salir de casa. Este combo ha sido pensado para los amantes del buen beber que valoran la calidad, el equilibrio de sabores y la comodidad de un licorería delivery confiable en Lima . Aperol, reconocido mundialmente por su vibrante color naranja y su sabor ligeramente amargo con notas cítricas y herbales, se combina a la perfección con Cinzano",
+    "tags": []
+  },
+  {
+    "id": 7102,
+    "slug": "jose-cuervo-rubio",
+    "nombre": "Jose Cuervo Rubio",
+    "precio": 85,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/02/jose-cuervo-rubio.png",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "Jose Cuervo",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 7104,
+    "slug": "tequila-olmeca-rubio-700ml-tragones-licoreria-delivery",
+    "nombre": "Tequila Olmeca Rubio 700ml | Tragones Licorería Delivery",
+    "precio": 88,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/02/olmeca-rubio.png",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 7134,
+    "slug": "gran-mascota-malbec-750ml",
+    "nombre": "Gran Mascota Malbec 750ml",
+    "precio": 155,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/02/gran-mascota-malbec.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 5882,
+    "slug": "?post_type=product&p=5882",
+    "nombre": "Cerveza PILSEN Lata 473ml 6 Latas Six Pack",
+    "precio": 49,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/02/cerveza-pilsen-475ml-12-pack-473.jpg",
+    "categoria": "Cerveza",
+    "categorias": [
+      "Cerveza"
+    ],
+    "marca": "Pilsen",
+    "stock": true,
+    "descripcion_corta": "Disfruta el auténtico sabor de Cerveza PILSEN en su Pack de 6 latas de 473ml . Una cerveza dorada con el equilibrio perfecto entre cebada y maíz , ideal para compartir. ¡Encuéntrala en Tragones Licore",
+    "descripcion_larga": "Cerveza PILSEN Lata 473ml 6 Latas Six Pack Es la elección perfecta para los amantes de una lager dorada , refrescante y de sabor equilibrado. Elaborada con una cuidadosa mezcla de cebada y maíz , esta cerveza tiene una graduación alcohólica de 5°GL , ofreciendo el balance ideal entre suavidad y carácter. Su presentación en pack de 6 latas es ideal para reuniones, celebraciones o simplemente para disfrutar de un momento de relax. Recuerda: Tomar bebidas alcohólicas en exceso es dañino . Compra ah",
+    "tags": [
+      "473ml",
+      "6 Latas",
+      "6 pack",
+      "Pilsen",
+      "Six Pack"
+    ]
+  },
+  {
+    "id": 6108,
+    "slug": "?post_type=product&p=6108",
+    "nombre": "Cerveza CORONA Extra Six Pack Botella 355ml | Delivery",
+    "precio": 45,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/03/Cerveza-CORONA-Extra-Six-Pack-Lata-355ml.jpg",
+    "categoria": "Cerveza",
+    "categorias": [
+      "Cerveza"
+    ],
+    "marca": "Corona",
+    "stock": true,
+    "descripcion_corta": "Refresca tus momentos con el Six Pack de Cerveza Corona Extra 355ml , una pilsener mexicana con 4.5% de alcohol. Su sabor suave y equilibrado, elaborado con agua, malta de cebada, maíz y lúpulo, la ha",
+    "descripcion_larga": "Cerveza CORONA Extra Six Pack Botella 355ml | Tragones Licorería Delivery Disfruta del inconfundible sabor de Corona Extra , la icónica cerveza mexicana en su presentación Six Pack de 355ml . De estilo pilsener y con un 4.5% de alcohol , esta cerveza es reconocida mundialmente por su frescura y su toque ligero y equilibrado. Elaborada con agua, malta de cebada, maíz y lúpulo , su sabor suave y refrescante la convierte en la compañera ideal para días soleados, reuniones con amigos o simplemente p",
+    "tags": [
+      "355ml",
+      "6 botellas",
+      "6 pack",
+      "Cerveza",
+      "Extra",
+      "Six Pack"
+    ]
+  },
+  {
+    "id": 6172,
+    "slug": "?post_type=product&p=6172",
+    "nombre": "Stella Artois Six Pack 330ml – Cerveza Belga Premium a Domicilio",
+    "precio": 45,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/04/image-d1b48abb5a774f9a982f4f13c260644c.webp",
+    "categoria": "Cerveza",
+    "categorias": [
+      "Cerveza"
+    ],
+    "marca": "Stella",
+    "stock": true,
+    "descripcion_corta": "Stella Artois Six Pack 330ml: una cerveza belga elegante, suave y con notas ligeramente afrutadas. Ideal para ocasiones especiales. ¡Pide ya con delivery en Lima",
+    "descripcion_larga": "Stella Artois Six Pack 330ml – Cerveza Belga Premium a Domicilio Déjate conquistar por el sabor refinado de Stella Artois , una cerveza lager belga con más de 600 años de tradición. Su presentación en Six Pack de 330ml es perfecta para compartir en cenas elegantes, celebraciones o simplemente para disfrutar de una cerveza con clase. Elaborada con ingredientes de alta calidad, esta lager dorada ofrece un sabor suave, con sutiles notas de malta y un amargor equilibrado. Es una cerveza de cuerpo me",
+    "tags": [
+      "330ml",
+      "6 pack",
+      "Cerveza",
+      "Six Pack",
+      "sixpack",
+      "stella",
+      "Stella Artois"
+    ]
+  },
+  {
+    "id": 6343,
+    "slug": "?post_type=product&p=6343",
+    "nombre": "Cusqueña 473ml Six trigo laton",
+    "precio": 49,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2025/05/CUSQUENA-SIX-TRIGO-1.jpg",
+    "categoria": "Cerveza",
+    "categorias": [
+      "Cerveza"
+    ],
+    "marca": "Cusqueña",
+    "stock": true,
+    "descripcion_corta": "Cerveza de trigo peruana con sabor puro y refrescante, elaborada con trigo Andrews y 100% pura malta. Lata de 473ml con 4.9% de alcohol.",
+    "descripcion_larga": "Cusqueña Trigo 473ml – Frescura y tradición en cada sorbo Cusqueña Trigo 473ml es una cerveza de trigo peruana que destaca por su sabor puro y refrescante, con finas notas florales. Elaborada con trigo Andrews y granos selectos de 100% pura malta, esta cerveza ofrece una experiencia única para los amantes de las cervezas. Estilo: Wheat Beer (Cerveza de Trigo) Contenido alcohólico: 4.9% ABV Amargor: 10 IBU Presentación: Lata de 473ml Ingredientes: Agua, malta, trigo, lúpulo, levadura y azúcar Mar",
+    "tags": [
+      "6 Latas",
+      "6 pack",
+      "Cerveza",
+      "cusqueña",
+      "latón",
+      "Six Pack",
+      "sixpack"
+    ]
+  },
+  {
+    "id": 7136,
+    "slug": "gran-sombrero-malbec-750ml",
+    "nombre": "Gran Sombrero Malbec 750ml",
+    "precio": 147,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/02/gran-sombrero-malbec.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 7147,
+    "slug": "botran-5-anos-750ml",
+    "nombre": "Botran 5 años 750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 87,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/02/Botran-5-anos.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 7150,
+    "slug": "piqueo-snax-210g",
+    "nombre": "Piqueo Snax 210g",
+    "precio": 12,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/02/piqueo-snax-210g.png",
+    "categoria": "Complementos",
+    "categorias": [
+      "Complementos"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 7305,
+    "slug": "whisky-jack-daniels-apple-750ml",
+    "nombre": "Whisky Jack Daniel’s Apple 750ml",
+    "precio": 157,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/03/jack-daniels-apple.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 7307,
+    "slug": "whisky-jack-daniels-fire-750ml",
+    "nombre": "Whisky Jack Daniel’s Fire 750ml",
+    "precio": 157,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/03/jack-daniels-fire.png",
+    "categoria": "Whisky",
+    "categorias": [
+      "Whisky"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 7311,
+    "slug": "tequila-1800-blanco-750ml",
+    "nombre": "Tequila 1800 Blanco 750ml",
+    "precio": 150,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/03/tequila-1800-blanco.png",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 7313,
+    "slug": "kick-the-rules-strawberry",
+    "nombre": "Kick The Rules Strawberry",
+    "precio": 95,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/03/Kick-The-Rules-Fresa.png",
+    "categoria": "Tequila",
+    "categorias": [
+      "Tequila"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 7315,
+    "slug": "barcelo-gran-anejo-1750ml",
+    "nombre": "Barcelo Gran Añejo 1750ml + Coca Cola 2.25 Lt + Hielo 1.5 Kg",
+    "precio": 139,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/03/Barcelo-Gran-Anejo-1750ml.png",
+    "categoria": "Ron",
+    "categorias": [
+      "Ron"
+    ],
+    "marca": "Coca Cola",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 7317,
+    "slug": "vino-trivento-malbec-750ml",
+    "nombre": "Vino Trivento Malbec 750ml",
+    "precio": 57,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/03/Vino-trivento-malbec-750ml.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  },
+  {
+    "id": 7497,
+    "slug": "frontera-tinto-de-verano",
+    "nombre": "Frontera Tinto de Verano",
+    "precio": 45,
+    "imagen": "https://tragoneslicoreriadelivery.com/wp-content/uploads/2026/05/frontera-tinto-de-vernao.png",
+    "categoria": "Vinos",
+    "categorias": [
+      "Vinos"
+    ],
+    "marca": "",
+    "stock": true,
+    "descripcion_corta": "",
+    "descripcion_larga": "",
+    "tags": []
+  }
+];

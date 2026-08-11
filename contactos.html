@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactos - Tragones Licorería Delivery</title>
+  <meta name="description" content="¿Tiene alguna pregunta? Su dirección de correo electrónico no será publicada. Los campos requeridos están marcados*">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Yellowtail&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body{font-family:'Roboto',sans-serif;background:#080808;color:#fff;overflow-x:hidden}
+    .font-oswald{font-family:'Oswald',sans-serif}
+    .font-yellowtail{font-family:'Yellowtail',cursive}
+    input:focus,textarea:focus{outline:none;border-color:#ffaa00 !important;box-shadow:0 0 0 3px rgba(255,170,0,.15)}
+  </style>
+</head>
+<body class="bg-[#080808] text-white">
+
+<!-- HEADER TRAGONES -->
+<div id="tragones-header"></div>
+<script src="header.js"></script>
+
+<!-- HERO -->
+<section class="bg-[#050505] border-b border-[#1a1a1a] py-10 md:py-14 text-center">
+  <div class="max-w-[800px] mx-auto px-4">
+    <span class="font-yellowtail text-[#ffaa00] text-[22px] md:text-[32px] -rotate-2 block">Escríbenos</span>
+    <h1 class="font-oswald font-bold text-white text-[32px] md:text-[56px] leading-none uppercase mt-1">CONTACTOS</h1>
+    <p class="text-[#888] text-[12px] md:text-[14px] mt-3">Home / Page</p>
+  </div>
+</section>
+
+<!-- CONTENIDO -->
+<main class="bg-[#080808] py-10 md:py-16">
+  <div class="max-w-[1200px] mx-auto px-4 md:px-6">
+
+    <!-- CONTACT CARDS TOP -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-10">
+      <!-- ITEM 1 - WHATSAPP -->
+      <div class="bg-[#111] border border-[#222] rounded-2xl p-6 shadow hover:shadow-[0_0_20px_rgba(37,211,102,.15)] hover:border-[#25D366]/30 hover:-translate-y-1 transition duration-300 flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-[#25D366]/15 border border-[#25D366]/20 flex items-center justify-center text-[#25D366] text-xl"><i class="fab fa-whatsapp"></i></div>
+        <div>
+          <p class="text-[#666] text-[11px] uppercase tracking-[2px] font-oswald">WhatsApp Delivery</p>
+          <a href="https://wa.me/51933475638?text=Hola%20Tragones%20Licoreria,%20quisiera%20realizar%20un%20pedido%20de%20delivery" target="_blank" class="font-oswald font-bold text-white text-[16px] hover:text-[#25D366]">+51 933 475 638</a>
+        </div>
+      </div>
+      <!-- ITEM 2 - EMAIL -->
+      <div class="bg-[#111] border border-[#222] rounded-2xl p-6 shadow hover:shadow-[0_0_20px_rgba(255,170,0,.15)] hover:border-[#ffaa00]/30 hover:-translate-y-1 transition duration-300 flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-[#ffaa00]/15 border border-[#ffaa00]/20 flex items-center justify-center text-[#ffaa00] text-xl"><i class="fas fa-envelope"></i></div>
+        <div>
+          <p class="text-[#666] text-[11px] uppercase tracking-[2px] font-oswald">Consultas</p>
+          <p class="font-oswald font-bold text-white text-[14px]">info@tragoneslicoreriadelivery.com</p>
+        </div>
+      </div>
+      <!-- ITEM 3 - ZONA -->
+      <div class="bg-[#111] border border-[#222] rounded-2xl p-6 shadow hover:shadow-[0_0_20px_rgba(255,170,0,.15)] hover:border-[#ffaa00]/30 hover:-translate-y-1 transition duration-300 flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-[#222] border border-[#333] flex items-center justify-center text-white text-xl"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <p class="text-[#666] text-[11px] uppercase tracking-[2px] font-oswald">Cobertura</p>
+          <p class="font-bold text-white text-[13px] leading-tight">Surquillo, Miraflores, San Isidro, Lince y más</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-[0.5fr_0.9fr] gap-8 md:gap-10 items-start">
+
+      <!-- ITEM 4 - FORMULARIO REAL -->
+      <div class="bg-[#f9f9f9] rounded-2xl shadow p-6 md:p-8 text-[#222]">
+        <h2 class="font-oswald font-bold text-[#111] text-[28px] md:text-[32px] leading-none uppercase">¿Tiene alguna pregunta?</h2>
+        <p class="text-[#777] text-[13px] mt-3 mb-6">Su dirección de correo electrónico no será publicada. Los campos requeridos están marcados*</p>
+        
+        <form action="/contactos/#wpcf7-f5-p616-o1" method="post" class="space-y-4">
+          <div>
+            <input type="text" name="text-59" required maxlength="400" placeholder="Nombre*" class="w-full bg-white border border-[#ddd] rounded-full px-5 py-3.5 text-[14px] text-black placeholder-[#999] focus:border-[#ffaa00]">
+          </div>
+          <div>
+            <input type="email" name="email-191" required maxlength="400" placeholder="Correo Electrónico*" class="w-full bg-white border border-[#ddd] rounded-full px-5 py-3.5 text-[14px] text-black placeholder-[#999] focus:border-[#ffaa00]">
+          </div>
+          <div>
+            <input type="text" name="text-590" maxlength="400" placeholder="Asunto" class="w-full bg-white border border-[#ddd] rounded-full px-5 py-3.5 text-[14px] text-black placeholder-[#999] focus:border-[#ffaa00]">
+          </div>
+          <div>
+            <textarea name="textarea-838" maxlength="2000" rows="5" placeholder="Mensaje*" class="w-full bg-white border border-[#ddd] rounded-2xl px-5 py-4 text-[14px] text-black placeholder-[#999] focus:border-[#ffaa00] resize-none"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="bg-[#111] text-white font-oswald font-bold px-8 py-3.5 rounded-full text-[13px] tracking-widest uppercase hover:bg-[#ffaa00] hover:text-black transition shadow">
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- ITEM 5 - IMAGEN REAL PORTADA -->
+      <div class="rounded-2xl overflow-hidden border border-[#222] shadow">
+        <img src="https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/PORTADA-CARATULA-2-menor.jpg" alt="Licorería cerca de mí Tragos y Licores a Domicilio en Lima" class="w-full h-auto md:h-[580px] object-cover">
+        <div class="bg-[#111] p-5 flex items-center justify-between">
+          <div>
+            <p class="font-oswald font-bold text-white text-[16px] uppercase">Tragones Licorería Delivery</p>
+            <p class="text-[#777] text-[12px] mt-1 leading-5">Surquillo, San Isidro, Magdalena, Lince, Miraflores, Pueblo Libre, San Miguel, Jesus Maria, Breña</p>
+          </div>
+          <a href="https://wa.me/51933475638" target="_blank" class="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center text-white text-xl hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ITEM 6 - MAPA / CTA EXTRA DUPLICABLE -->
+    <div class="mt-10 bg-[#111] border border-[#222] rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-14 h-14 rounded-full bg-[#1a1a1a] border border-[#333] flex items-center justify-center text-[#ffaa00] text-2xl"><i class="fas fa-truck"></i></div>
+        <div>
+          <h4 class="font-oswald font-bold text-white text-[18px] uppercase">Delivery Express 15-25 min</h4>
+          <p class="text-[#777] text-[13px]">Cotiza tu envío al instante por WhatsApp</p>
+        </div>
+      </div>
+      <a href="https://wa.me/51933475638?text=Hola%20Tragones,%20quiero%20cotizar%20mi%20envio" target="_blank" class="bg-white text-black font-oswald font-bold px-8 py-3 rounded-full text-[13px] tracking-widest flex items-center gap-2 hover:bg-[#ffaa00] transition">
+        Pedir por WhatsApp <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER TRAGONES -->
+<div id="tragones-footer"></div>
+<script src="footer.js"></script>
+
+<a href="https://wa.me/51933475638?text=Hola%20Tragones%20Licoreria,%20quisiera%20realizar%20un%20pedido%20de%20delivery" target="_blank" class="fixed bottom-5 right-5 z-[999] w-[56px] h-[56px] bg-[#25D366] rounded-full flex items-center justify-center text-white text-[28px] shadow-[0_4px_15px_rgba(0,0,0,.3)] hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if(menuBtn){ menuBtn.addEventListener('click', function(){ mobileMenu.classList.toggle('hidden'); }); }
+</script>
+
+</body>
+</html>

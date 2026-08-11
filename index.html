@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="wp-content/uploads/2025/01/LOGO-TRAGONES-cuadrado-64x61.png" sizes="32x32">
+  <title>Tragos y Licores a Domicilio en Lima | Tragones Delivery</title>
+  <meta name="description" content="Pide tus tragos y licores favoritos a domicilio en Lima. Delivery rápido 24/7, precios accesibles y atención inmediata. ¡Somos tu licorería online!">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Yellowtail&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root { --gold:#ffaa00; --black:#050505; }
+    html{overflow-x:clip}
+    body{font-family:'Roboto',sans-serif;background:#050505;color:#fff;overflow-x:clip; position:relative}
+    .font-oswald{font-family:'Oswald',sans-serif}
+    .font-yellowtail{font-family:'Yellowtail',cursive}
+    .no-scrollbar::-webkit-scrollbar{display:none}
+    .no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+    .slide{transition:opacity .6s ease, transform .6s ease}
+    .glow{filter:blur(90px);opacity:.22}
+    #tragones-header{display:block; width:100%; overflow:visible}
+    /* Draggable cursor */
+    .draggable{cursor:grab; user-select:none}
+    .draggable.active{cursor:grabbing; user-select:none}
+    .draggable a{pointer-events:auto}
+    .draggable.dragging a{pointer-events:none}
+    /* Search dropdown */
+    #searchResults{max-height:320px; overflow-y:auto}
+    #searchResults::-webkit-scrollbar{width:6px}
+    #searchResults::-webkit-scrollbar-thumb{background:#333;border-radius:10px}
+  </style>
+</head>
+<body class="bg-[#050505]">
+
+<!-- HEADER -->
+<div id="tragones-header"></div>
+
+<!-- HERO -->
+<section class="relative w-full h-[320px] md:h-[600px] bg-[#050505] overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#222_0%,#000_85%)]"></div>
+  <div id="heroSlider" class="relative z-10 w-full h-full">
+    
+    <!-- ITEM 1 - RED LABEL -->
+    <div class="slide absolute inset-0 flex items-center justify-center opacity-100" data-slide="0" data-product="red-label">
+      <div class="glow absolute w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#ffaa00] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="relative max-w-[1300px] w-full h-full mx-auto px-4 md:px-10 flex flex-row items-center justify-center gap-3 md:gap-16">
+        <div class="flex-1 text-right flex flex-col items-end justify-center">
+          <div class="font-yellowtail text-[#ffaa00] text-[22px] md:text-[64px] leading-none -rotate-3 drop-shadow-[0_0_10px_rgba(255,170,0,.5)]">Promo Semanal</div>
+          <div class="font-oswald font-bold uppercase leading-[0.9] text-[28px] md:text-[92px] text-white mt-1">RED LABEL<br><span class="text-transparent" style="-webkit-text-stroke:1.5px white">+ HIELO</span></div>
+          <div class="font-roboto font-light text-[11px] md:text-[20px] text-[#d1d1d1] mt-1 md:mt-2 text-right leading-tight">Botella Red Label. 750ml +<br>Evervess + Hielo</div>
+          <a id="heroBtn1" href="tienda.html?cat=Whisky" class="mt-3 md:mt-8 bg-white text-black font-oswald font-bold px-5 md:px-10 py-2 md:py-4 rounded text-[11px] md:text-[18px] tracking-widest hover:bg-[#ffaa00] hover:text-white transition shadow-lg">PEDIR AHORA</a>
+          <p id="heroPrice1" class="text-[#ffaa00] text-[11px] mt-2 font-bold"></p>
+        </div>
+        <div class="flex-[1.3] md:flex-1 h-full flex items-center justify-center">
+          <img id="heroImg1" src="https://i.imgur.com/5JklPcL.png" alt="Combo Whisky Red Label + Hielo" class="max-h-[220px] md:max-h-[560px] w-auto object-contain drop-shadow-[0_0_40px_rgba(0,0,0,.8)]">
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 2 - FLOR DE CAÑA -->
+    <div class="slide absolute inset-0 flex items-center justify-center opacity-0 pointer-events-none" data-slide="1" data-product="flor-de-cana">
+      <div class="glow absolute w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#00eaff] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="relative max-w-[1300px] w-full h-full mx-auto px-4 md:px-10 flex flex-row items-center justify-center gap-3 md:gap-16">
+        <div class="flex-1 text-right flex flex-col items-end justify-center">
+          <div class="font-yellowtail text-[#00eaff] text-[22px] md:text-[64px] leading-none -rotate-3">Pack Ron</div>
+          <div class="font-oswald font-bold uppercase leading-[0.9] text-[26px] md:text-[82px] text-white mt-1">FLOR DE CAÑA<br><span class="text-transparent" style="-webkit-text-stroke:1.5px white">+ HIELO</span></div>
+          <div class="font-roboto font-light text-[11px] md:text-[20px] text-[#d1d1d1] mt-1 md:mt-2 text-right leading-tight">Botella Flor de C. 750ml +<br>Coca Cola + Hielo</div>
+          <a id="heroBtn2" href="tienda.html?cat=Ron" class="mt-3 md:mt-6 bg-white text-black font-oswald font-bold px-5 md:px-10 py-2 md:py-4 rounded text-[11px] md:text-[18px] tracking-widest hover:bg-[#ffaa00] hover:text-white transition shadow-lg">PEDIR AHORA</a>
+          <p id="heroPrice2" class="text-[#00eaff] text-[11px] mt-2 font-bold"></p>
+        </div>
+        <div class="flex-[1.3] md:flex-1 h-full flex items-center justify-center">
+          <img id="heroImg2" src="wp-content/uploads/2022/04/SLIDER-NM003.png" alt="Combo Ron Flor de Caña" class="max-h-[220px] md:max-h-[520px] w-auto object-contain drop-shadow-[0_0_40px_rgba(0,0,0,.8)]">
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id="prevSlide" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white items-center justify-center"><i class="fas fa-chevron-left"></i></button>
+  <button id="nextSlide" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white items-center justify-center"><i class="fas fa-chevron-right"></i></button>
+  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+    <button class="hero-dot w-2 h-2 rounded-full bg-white/30" data-dot="0"></button>
+    <button class="hero-dot w-2 h-2 rounded-full bg-white/30" data-dot="1"></button>
+  </div>
+</section>
+
+<!-- BANNER INFINITO -->
+<section class="w-full bg-[#050505] border-y-2 border-[#ffaa00] py-3 overflow-hidden select-none">
+  <div class="flex items-center w-max animate-[scroll_40s_linear_infinite]">
+    <div class="flex items-center shrink-0"><span class="font-oswald text-[#ffaa00] text-[16px] md:text-[22px] font-bold tracking-[2px] mx-6 md:mx-8 whitespace-nowrap">DELIVERY EXPRESS ALTOQUE</span><i class="fas fa-bolt text-[#ffaa00] text-sm"></i></div>
+    <div class="flex items-center shrink-0"><span class="font-oswald text-[#ffaa00] text-[16px] md:text-[22px] font-bold tracking-[2px] mx-6 md:mx-8 whitespace-nowrap">DELIVERY EXPRESS DE 15 A 30 MIN</span><i class="fas fa-moon text-[#ffaa00] text-sm"></i></div>
+    <div class="flex items-center shrink-0"><span class="font-oswald text-[#ffaa00] text-[16px] md:text-[22px] font-bold tracking-[2px] mx-6 md:mx-8 whitespace-nowrap">DELIVERY EXPRESS DE 10 PM A 5 AM</span><i class="fas fa-bolt text-[#ffaa00] text-sm"></i></div>
+    <div class="flex items-center shrink-0"><span class="font-oswald text-[#ffaa00] text-[16px] md:text-[22px] font-bold tracking-[2px] mx-6 md:mx-8 whitespace-nowrap">DELIVERY EXPRESS TODA LA MADRUGADA</span><i class="fas fa-moon text-[#ffaa00] text-sm"></i></div>
+    <div class="flex items-center shrink-0"><span class="font-oswald text-[#ffaa00] text-[16px] md:text-[22px] font-bold tracking-[2px] mx-6 md:mx-8 whitespace-nowrap">DELIVERY EXPRESS ALTOQUE</span><i class="fas fa-bolt text-[#ffaa00] text-sm"></i></div>
+    <div class="flex items-center shrink-0"><span class="font-oswald text-[#ffaa00] text-[16px] md:text-[22px] font-bold tracking-[2px] mx-6 md:mx-8 whitespace-nowrap">DELIVERY EXPRESS DE 15 A 30 MIN</span><i class="fas fa-moon text-[#ffaa00] text-sm"></i></div>
+  </div>
+</section>
+
+<main class="bg-[#080808]">
+
+<!-- CATEGORIAS FAVORITAS - DRAGGABLE -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-6 py-8 md:py-12">
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="font-oswald text-white text-[22px] md:text-[32px] uppercase tracking-wide">TUS CATEGORÍAS <span class="text-[#ffaa00] italic">FAVORITAS</span></h2>
+    <div class="hidden md:flex gap-2">
+      <button id="catLeft" class="w-10 h-10 rounded-full border border-[#333] text-white hover:border-[#ffaa00] hover:text-[#ffaa00] flex items-center justify-center"><i class="fas fa-chevron-left"></i></button>
+      <button id="catRight" class="w-10 h-10 rounded-full border border-[#333] text-white hover:border-[#ffaa00] hover:text-[#ffaa00] flex items-center justify-center"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+  <p class="text-[#555] text-[11px] mb-3 md:hidden">👆 Arrastra con el dedo para mover</p>
+  <div id="catTrack" class=" flex gap-4 md:gap-8 overflow-x-auto no-scrollbar scroll-smooth pb-4 select-none">
+    <a href="tienda.html?cat=Whisky" data-cat="Whisky" class="cat-item min-w-[110px] md:min-w-[130px] flex flex-col items-center text-center group">
+      <div class="w-[100px] h-[100px] md:w-[120px] md:h-[120px] bg-black rounded-full border-2 border-[#ffaa00] flex items-center justify-center relative overflow-hidden shadow-[inset_0_0_25px_rgba(255,170,0,.5)] group-hover:shadow-[0_0_20px_rgba(255,170,0,.4)] transition">
+        <img src="https://i.imgur.com/G9sSiCs.png" alt="Whisky" class="h-[110px] md:h-[135px] w-auto object-contain translate-y-[-6px] group-hover:scale-110 transition duration-300 pointer-events-none">
+      </div>
+      <span class="font-oswald font-bold text-white text-[13px] md:text-[14px] mt-3 tracking-widest group-hover:text-[#ffaa00]">WHISKYES</span>
+    </a>
+    <a href="tienda.html?cat=Ron" data-cat="Ron" class="cat-item min-w-[110px] md:min-w-[130px] flex flex-col items-center text-center group">
+      <div class="w-[100px] h-[100px] md:w-[120px] md:h-[120px] bg-black rounded-full border-2 border-[#ffaa00] flex items-center justify-center relative overflow-hidden shadow-[inset_0_0_25px_rgba(255,170,0,.5)] group-hover:shadow-[0_0_20px_rgba(255,170,0,.4)] transition">
+        <img src="https://i.imgur.com/lwQQHEw.png" alt="Ron" class="h-[110px] md:h-[135px] w-auto object-contain translate-y-[-6px] group-hover:scale-110 transition duration-300 pointer-events-none">
+      </div>
+      <span class="font-oswald font-bold text-white text-[13px] md:text-[14px] mt-3 tracking-widest group-hover:text-[#ffaa00]">RONES</span>
+    </a>
+    <a href="tienda.html?cat=Pisco" data-cat="Pisco" class="cat-item min-w-[110px] md:min-w-[130px] flex flex-col items-center text-center group">
+      <div class="w-[100px] h-[100px] md:w-[120px] md:h-[120px] bg-black rounded-full border-2 border-[#ffaa00] flex items-center justify-center relative overflow-hidden shadow-[inset_0_0_25px_rgba(255,170,0,.5)] group-hover:shadow-[0_0_20px_rgba(255,170,0,.4)] transition">
+        <img src="https://i.imgur.com/xc01s6q.png" alt="Pisco" class="h-[110px] md:h-[135px] w-auto object-contain translate-y-[-6px] group-hover:scale-110 transition duration-300 pointer-events-none">
+      </div>
+      <span class="font-oswald font-bold text-white text-[13px] md:text-[14px] mt-3 tracking-widest group-hover:text-[#ffaa00]">PISCOS</span>
+    </a>
+    <a href="tienda.html?cat=Cerveza" data-cat="Cerveza" class="cat-item min-w-[110px] md:min-w-[130px] flex flex-col items-center text-center group">
+      <div class="w-[100px] h-[100px] md:w-[120px] md:h-[120px] bg-black rounded-full border-2 border-[#ffaa00] flex items-center justify-center relative overflow-hidden shadow-[inset_0_0_25px_rgba(255,170,0,.5)] group-hover:shadow-[0_0_20px_rgba(255,170,0,.4)] transition">
+        <img src="https://i.imgur.com/PapLZcV.png" alt="Cervezas" class="h-[110px] md:h-[135px] w-auto object-contain translate-y-[-6px] group-hover:scale-110 transition duration-300 pointer-events-none">
+      </div>
+      <span class="font-oswald font-bold text-white text-[13px] md:text-[14px] mt-3 tracking-widest group-hover:text-[#ffaa00]">CERVEZAS</span>
+    </a>
+    <a href="tienda.html?cat=Vinos" data-cat="Vinos" class="cat-item min-w-[110px] md:min-w-[130px] flex flex-col items-center text-center group">
+      <div class="w-[100px] h-[100px] md:w-[120px] md:h-[120px] bg-black rounded-full border-2 border-[#ffaa00] flex items-center justify-center relative overflow-hidden shadow-[inset_0_0_25px_rgba(255,170,0,.5)] group-hover:shadow-[0_0_20px_rgba(255,170,0,.4)] transition">
+        <img src="https://i.imgur.com/AMM079F.png" alt="Vinos" class="h-[110px] md:h-[135px] w-auto object-contain translate-y-[-6px] group-hover:scale-110 transition duration-300 pointer-events-none">
+      </div>
+      <span class="font-oswald font-bold text-white text-[13px] md:text-[14px] mt-3 tracking-widest group-hover:text-[#ffaa00]">VINOS</span>
+    </a>
+    <a href="tienda.html?cat=Champagne" data-cat="Champagne" class="cat-item min-w-[110px] md:min-w-[130px] flex flex-col items-center text-center group">
+      <div class="w-[100px] h-[100px] md:w-[120px] md:h-[120px] bg-black rounded-full border-2 border-[#ffaa00] flex items-center justify-center relative overflow-hidden shadow-[inset_0_0_25px_rgba(255,170,0,.5)] group-hover:shadow-[0_0_20px_rgba(255,170,0,.4)] transition">
+        <img src="https://i.imgur.com/RQmDq7p.png" alt="Espumantes" class="h-[110px] md:h-[135px] w-auto object-contain translate-y-[-6px] group-hover:scale-110 transition duration-300 pointer-events-none">
+      </div>
+      <span class="font-oswald font-bold text-white text-[13px] md:text-[14px] mt-3 tracking-widest group-hover:text-[#ffaa00]">ESPUMANTES</span>
+    </a>
+    <a href="tienda.html?cat=Gin" data-cat="Gin" class="cat-item min-w-[110px] md:min-w-[130px] flex flex-col items-center text-center group">
+      <div class="w-[100px] h-[100px] md:w-[120px] md:h-[120px] bg-black rounded-full border-2 border-[#ffaa00] flex items-center justify-center relative overflow-hidden shadow-[inset_0_0_25px_rgba(255,170,0,.5)] group-hover:shadow-[0_0_20px_rgba(255,170,0,.4)] transition">
+        <img src="https://i.imgur.com/6IqDlFb.png" alt="Gin" class="h-[110px] md:h-[135px] w-auto object-contain translate-y-[-6px] group-hover:scale-110 transition duration-300 pointer-events-none">
+      </div>
+      <span class="font-oswald font-bold text-white text-[13px] md:text-[14px] mt-3 tracking-widest group-hover:text-[#ffaa00]">GINS</span>
+    </a>
+    <a href="tienda.html?cat=Vodka" data-cat="Vodka" class="cat-item min-w-[110px] md:min-w-[130px] flex flex-col items-center text-center group">
+      <div class="w-[100px] h-[100px] md:w-[120px] md:h-[120px] bg-black rounded-full border-2 border-[#ffaa00] flex items-center justify-center relative overflow-hidden shadow-[inset_0_0_25px_rgba(255,170,0,.5)] group-hover:shadow-[0_0_20px_rgba(255,170,0,.4)] transition">
+        <img src="https://i.imgur.com/BXUFLMC.png" alt="Vodka" class="h-[110px] md:h-[135px] w-auto object-contain translate-y-[-6px] group-hover:scale-110 transition duration-300 pointer-events-none">
+      </div>
+      <span class="font-oswald font-bold text-white text-[13px] md:text-[14px] mt-3 tracking-widest group-hover:text-[#ffaa00]">VODKAS</span>
+    </a>
+  </div>
+  <div class="w-[60%] md:w-[40%] h-[3px] bg-white/10 mx-auto mt-6 rounded-full overflow-hidden relative">
+    <div id="catProgress" class="h-full w-[30%] bg-[#ffaa00] rounded-full absolute left-0 transition-transform duration-100"></div>
+  </div>
+</section>
+
+<!-- BUSCADOR WHERE LIKE SOLO NOMBRE -->
+<section class="w-full bg-[#050505] border-b-2 border-[#ffaa00] py-10 md:py-14 px-4 flex justify-center">
+  <div class="w-full max-w-[700px] text-center">
+    <h2 class="font-oswald text-white text-[36px] md:text-[56px] leading-none uppercase">¿TIENES <span class="text-[#ffaa00] italic">SED?</span></h2>
+    <p class="text-[#999] text-sm md:text-base font-light mt-2 mb-6">Llegamos en minutos con lo que te gusta - <span id="totalProductosSearch" class="text-[#ffaa00] font-bold">0</span> productos</p>
+    <div class="relative">
+      <input id="searchInput" type="text" placeholder="Escribe aquí (Ej: Whisky, Ron, Hielo...)" class="w-full bg-[#1a1a1a] border border-[#333] rounded px-6 py-4 pr-14 text-white text-[15px] focus:outline-none focus:border-[#ffaa00] focus:shadow-[0_0_20px_rgba(255,170,0,.15)] transition">
+      <button id="searchBtn" class="absolute right-3 top-1/2 -translate-y-1/2 text-[#ffaa00] text-xl w-10 h-10 flex items-center justify-center hover:bg-[#222] rounded-full transition"><i class="fas fa-search"></i></button>
+      
+      <!-- Dropdown resultados WHERE LIKE nombre -->
+      <div id="searchResults" class="hidden absolute top-full left-0 right-0 mt-2 bg-[#111] border border-[#222] rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,.6)] z-50 text-left overflow-hidden">
+        <div class="p-3 border-b border-[#222] flex justify-between items-center">
+          <span class="text-[#666] text-[11px] tracking-widest uppercase">Resultados por nombre (LIKE)</span>
+          <span id="searchCount" class="text-[#ffaa00] text-[11px] font-bold">0</span>
+        </div>
+        <div id="searchList" class="divide-y divide-[#1a1a1a]"></div>
+        <a id="searchVerTodos" href="#" class="block p-3 text-center text-[#ffaa00] text-[12px] font-bold tracking-widest hover:bg-[#1a1a1a]">VER TODOS EN TIENDA →</a>
+      </div>
+    </div>
+    <div class="flex justify-center items-center flex-wrap gap-2 mt-5 font-oswald text-[11px] md:text-xs tracking-widest">
+      <span class="text-[#555] hidden md:inline">BUSCAR RÁPIDO:</span>
+      <button data-term="Whisky" class="quick-tag border border-[#333] px-3 py-1.5 text-[#ccc] hover:border-[#ffaa00] hover:text-[#ffaa00] transition">WHISKY</button>
+      <button data-term="Ron" class="quick-tag border border-[#333] px-3 py-1.5 text-[#ccc] hover:border-[#ffaa00] hover:text-[#ffaa00] transition">RON</button>
+      <button data-term="Pisco" class="quick-tag border border-[#333] px-3 py-1.5 text-[#ccc] hover:border-[#ffaa00] hover:text-[#ffaa00] transition">PISCO</button>
+      <button data-term="Vino" class="quick-tag border border-[#ffaa00] px-3 py-1.5 text-[#ffaa00] hover:bg-[#ffaa00] hover:text-black transition">VINO</button>
+    </div>
+    <p class="text-[#444] text-[10px] mt-3">Buscador WHERE LIKE solo en nombre del producto, no marca ni categoría</p>
+  </div>
+</section>
+
+<!-- HORARIO Y COBERTURA -->
+<section class="w-full bg-[#050505] py-10 px-4 border-y border-[#111] flex justify-center">
+  <div class="w-full max-w-[1200px] flex flex-col md:flex-row gap-10">
+    <div class="flex-1 md:border-r border-[#222] md:pr-10">
+      <div class="flex items-center gap-3 border-b-2 border-[#ffaa00] w-fit pb-2 mb-5"><i class="fas fa-moon text-[#ffaa00] text-xl"></i><h3 class="font-oswald text-white text-[18px] uppercase tracking-widest">HORARIO NOCTURNO</h3></div>
+      <ul class="space-y-3 text-[14px]">
+        <li class="flex justify-between border-b border-[#1a1a1a] pb-3"><span class="text-[#ccc]">Jueves</span><span class="text-[#999]">10:00 PM - 03:00 AM</span></li>
+        <li class="flex justify-between"><span class="text-white">Viernes y Sábados</span><span class="text-[#ffaa00] font-bold">10:00 PM ¡Hasta las 05:00 AM!</span></li>
+      </ul>
+    </div>
+    <div class="flex-1 md:pl-10">
+      <div class="flex items-center gap-3 border-b-2 border-[#ffaa00] w-fit pb-2 mb-5"><i class="fas fa-map-marker-alt text-[#ffaa00] text-xl"></i><h3 class="font-oswald text-white text-[18px] uppercase tracking-widest">ZONAS DE COBERTURA</h3></div>
+      <div class="flex flex-wrap gap-x-3 gap-y-1 text-[13px] text-[#999] leading-7">
+        <span>Miraflores</span><span class="text-[#333]">•</span><span>San Isidro</span><span class="text-[#333]">•</span><span>San Borja</span><span class="text-[#333]">•</span><span>Surquillo</span><span class="text-[#333]">•</span><span>Magdalena</span><span class="text-[#333]">•</span><span>Jesús María</span><span class="text-[#333]">•</span><span>Pueblo Libre</span><span class="text-[#333]">•</span><span>San Miguel</span><span class="text-[#333]">•</span><span>Lince</span><span class="text-[#333]">•</span><span>La Victoria</span><span class="text-[#333]">•</span><span>San Luis</span><span class="text-[#333]">•</span><span>Breña</span><span class="text-[#333]">•</span><span>Bellavista</span><span class="text-[#333]">•</span><span>Cercado</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNERS GRID - FUNCIONAN CON INFO REAL -->
+<section class="max-w-[1200px] mx-auto px-3 md:px-6 py-6 md:py-10">
+  <div class="text-center mb-4"><div class="w-[60px] h-[4px] bg-[#ffaa00] mx-auto"></div></div>
+  <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-3 md:gap-5 h-auto md:h-[500px]">
+    <a id="bannerVinos" href="tienda.html?cat=Vinos" class="h-[220px] md:h-full rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_rgba(255,170,0,.25)] transition group block relative">
+      <img src="https://i.imgur.com/8t4Xeja.jpeg" alt="Vinos" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+      <div class="absolute bottom-4 left-4 bg-[#ffaa00] text-black text-[11px] font-bold px-3 py-1 rounded-full">VINOS • <span id="countVinos">0</span> productos</div>
+    </a>
+    <div class="flex flex-col gap-3 md:gap-5 h-auto md:h-full">
+      <a id="bannerWhisky" href="tienda.html?cat=Whisky" class="h-[220px] md:h-1/2 rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_rgba(255,170,0,.25)] transition group block relative">
+        <img src="https://i.imgur.com/MMCXMmR.jpeg" alt="Whiskies" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 bg-white text-black text-[11px] font-bold px-3 py-1 rounded-full">WHISKY • <span id="countWhisky">0</span> productos</div>
+      </a>
+      <a id="bannerPacks" href="tienda.html?search=Pack" class="h-[220px] md:h-1/2 rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_rgba(255,170,0,.25)] transition group block relative">
+        <img src="https://i.imgur.com/RV8wN02.jpeg" alt="Packs" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute bottom-4 left-4 bg-[#00eaff] text-black text-[11px] font-bold px-3 py-1 rounded-full">PACKS • <span id="countPacks">0</span> productos</div>
+      </a>
+    </div>
+  </div>
+  <div class="text-center mt-6">
+    <a href="tienda.html" class="inline-block bg-[#ffaa00] text-black font-oswald font-bold px-8 py-3 rounded-full text-sm tracking-widest hover:bg-white transition">VER MAS PROMOCIONES</a>
+  </div>
+</section>
+
+<!-- CARRUSEL MARCAS - DRAGGABLE -->
+<section class="bg-[#0a0a0a] py-8 border-y border-[#1a1a1a]">
+  <div class="max-w-[1300px] mx-auto px-4">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="font-oswald text-white text-[16px] uppercase tracking-widest">Marcas que <span class="text-[#ffaa00]">confías</span></h3>
+      <p class="text-[#555] text-[11px]">👆 Arrastra para mover</p>
+    </div>
+    <div id="brandTrack" class="draggable flex gap-3 overflow-x-auto no-scrollbar pb-2 select-none">
+      <!-- Se llena dinámico con marcas reales -->
+    </div>
+  </div>
+</section>
+
+<!-- SEO BENEFICIOS -->
+<section class="bg-[#080808] py-12 md:py-16 px-4 text-center border-t border-[#222]">
+  <h2 class="font-oswald text-white text-[22px] md:text-[34px] font-bold uppercase leading-tight">LOS MEJORES <span class="text-[#ffaa00]">LICORES, MARCAS Y PRECIOS</span><br class="hidden md:block"> EN UN SOLO LUGAR.</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 max-w-[1200px] mx-auto mt-12 text-left">
+    <div class="bg-[#111] rounded-2xl p-6 shadow hover:shadow-[0_0_20px_rgba(255,170,0,.15)] hover:-translate-y-1 transition">
+      <div class="text-[#ffaa00] text-[28px] mb-3"><i class="fas fa-crown"></i></div>
+      <h3 class="font-oswald text-white text-[13px] md:text-[16px] uppercase tracking-wide">BEBIDAS PREMIUM 100% originales</h3>
+      <div class="w-[30px] h-[2px] bg-[#ffaa00] my-3"></div>
+      <p class="text-[#999] text-[12px] md:text-[13px] leading-6 font-light">
+        Amplia selección de alta gama. En Tragones, ofrecemos variedad garantizada: desde whisky Blue Label y rones añejos, hasta piscos, tequilas, vinos y Flor de Caña 12 años.
+      </p>
+    </div>
+    <div class="bg-[#111] rounded-2xl p-6 shadow hover:shadow-[0_0_20px_rgba(255,170,0,.15)] hover:-translate-y-1 transition">
+      <div class="text-[#ffaa00] text-[28px] mb-3"><i class="fas fa-tags"></i></div>
+      <h3 class="font-oswald text-white text-[13px] md:text-[16px] uppercase tracking-wide">Los Mejores precios</h3>
+      <div class="w-[30px] h-[2px] bg-[#ffaa00] my-3"></div>
+      <p class="text-[#999] text-[12px] md:text-[13px] leading-6 font-light">
+        Nos enorgullece ser la licorería líder en precios del mercado. Disfruta de ofertas especiales y promociones semanales que te permitirán obtener tus licores favoritos al mejor costo.
+      </p>
+    </div>
+    <div class="bg-[#111] rounded-2xl p-6 shadow hover:shadow-[0_0_20px_rgba(255,170,0,.15)] hover:-translate-y-1 transition">
+      <div class="text-[#ffaa00] text-[28px] mb-3"><i class="fas fa-motorcycle"></i></div>
+      <h3 class="font-oswald text-white text-[13px] md:text-[16px] uppercase tracking-wide">DELIVERY EXPRESS</h3>
+      <div class="w-[30px] h-[2px] bg-[#ffaa00] my-3"></div>
+      <p class="text-[#999] text-[12px] md:text-[13px] leading-6 font-light">
+        Sabemos que la fiesta no espera. Recibe tus productos fríos, rápido y seguro gracias a nuestra flota de repartidores. Somos tu Licorería Delivery de confianza.
+      </p>
+    </div>
+    <div class="bg-[#111] rounded-2xl p-6 shadow hover:shadow-[0_0_20px_rgba(255,170,0,.15)] hover:-translate-y-1 transition">
+      <div class="text-[#ffaa00] text-[28px] mb-3"><i class="fas fa-user-tie"></i></div>
+      <h3 class="font-oswald text-white text-[13px] md:text-[16px] uppercase tracking-wide">ASESORÍA EXPERTA</h3>
+      <div class="w-[30px] h-[2px] bg-[#ffaa00] my-3"></div>
+      <p class="text-[#999] text-[12px] md:text-[13px] leading-6 font-light">
+        ¿No sabes qué elegir? Nuestro equipo de expertos está listo para recomendarte la opción perfecta para cada ocasión. Confía en el consejo de los que saben.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL WARNING - TEXTO REAL -->
+<section class="bg-[#151515] text-center py-8 px-4 border-y border-[#333]">
+  <p class="text-white font-bold text-[14px] md:text-[18px] uppercase tracking-wide">TOMAR BEBIDAS ALCOHÓLICAS EN EXCESO ES DAÑINO. ESTÁ PROHIBIDA LA VENTA DE ALCOHOL A MENORES DE 18 AÑOS.</p>
+</section>
+
+<!-- TRUST BAR - MISMO ESTILO QUE INDEX -->
+<section class="bg-[#f9f9f9] py-6 md:py-8 px-4 flex flex-wrap md:flex-nowrap justify-center items-start md:items-center gap-6 md:gap-16 border-y border-[#eee]">
+  <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left flex-1 max-w-[200px] md:max-w-[300px]">
+    <div class="text-[24px] md:text-[32px]">🚀</div>
+    <div><h4 class="text-[#333] font-bold text-[10px] md:text-[14px] uppercase">Delivery Express</h4><p class="text-[#666] text-[9px] md:text-[12px]">Envios de 15 a 25 minutos</p></div>
+  </div>
+  <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left flex-1 max-w-[200px] md:max-w-[300px]">
+    <div class="text-[24px] md:text-[32px]">🛡</div>
+    <div><h4 class="text-[#333] font-bold text-[10px] md:text-[14px] uppercase">Garantía Original</h4><p class="text-[#666] text-[9px] md:text-[12px]">Licores 100% originales</p></div>
+  </div>
+  <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left flex-1 max-w-[200px] md:max-w-[300px]">
+    <div class="text-[24px] md:text-[32px]">💳</div>
+    <div><h4 class="text-[#333] font-bold text-[10px] md:text-[14px] uppercase">Pago Flexible</h4><p class="text-[#666] text-[9px] md:text-[12px]">Aceptamos Yape, Plin, Visa, Master</p></div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER TRAGONES -->
+<div id="tragones-footer"></div>
+<script src="footer.js"></script>
+
+<a href="https://wa.me/51933475638?text=Hola%20Tragones%20Licoreria,%20quisiera%20realizar%20un%20pedido%20de%20delivery" target="_blank" class="fixed bottom-5 right-5 z-[999] w-[56px] h-[56px] bg-[#25D366] rounded-full flex items-center justify-center text-white text-[28px] shadow-[0_4px_15px_rgba(0,0,0,.3)] hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
+
+<style>@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}</style>
+
+<!-- DATOS -->
+<script src="./productos.db.js"></script>
+<script src="./header.js"></script>
+
+<script>
+  // ---------- PRODUCTOS ----------
+  function getProductos() {
+    if (typeof PRODUCTOS_INICIALES !== 'undefined' && PRODUCTOS_INICIALES.length) return PRODUCTOS_INICIALES;
+    try { const l = localStorage.getItem('tragones_db_v1'); if (l) return JSON.parse(l); } catch {}
+    return [];
+  }
+  const productos = getProductos();
+  console.log('Index - productos cargados:', productos.length);
+
+  // ---------- CONTADORES ----------
+  document.getElementById('totalProductosSearch').textContent = productos.length;
+  document.getElementById('beneficioProductos').textContent = productos.length;
+  const cats = [...new Set(productos.map(p=>p.categoria))];
+  document.getElementById('beneficioCats').textContent = cats.length;
+  const marcas = [...new Set(productos.map(p=>p.marca).filter(Boolean))];
+  document.getElementById('beneficioMarcas').textContent = marcas.length;
+  const precios = productos.map(p=>Number(p.precio)).filter(n=>n>0).sort((a,b)=>a-b);
+  document.getElementById('beneficioDesde').textContent = precios.length ? 'S/ ' + precios[0].toFixed(2) : '0';
+
+  // Banners counts
+  const countByCat = (cat) => productos.filter(p=>p.categoria.toLowerCase().includes(cat.toLowerCase())).length;
+  const countBySearch = (term) => productos.filter(p=>p.nombre.toLowerCase().includes(term.toLowerCase()) || p.slug.toLowerCase().includes(term.toLowerCase())).length;
+  document.getElementById('countVinos').textContent = countByCat('Vinos');
+  document.getElementById('countWhisky').textContent = countByCat('Whisky');
+  document.getElementById('countPacks').textContent = countBySearch('pack');
+
+  // ---------- HERO DINAMICO ----------
+  function findProduct(terms) {
+    const t = terms.map(s=>s.toLowerCase());
+    return productos.find(p => {
+      const hay = (p.slug + ' ' + p.nombre).toLowerCase();
+      return t.every(term => hay.includes(term));
+    });
+  }
+  const redLabel = findProduct(['red', 'label']) || findProduct(['whisky', 'johnnie']) || productos.find(p=>p.categoria==='Whisky');
+  if (redLabel) {
+    document.getElementById('heroBtn1').href = 'producto.html?slug=' + encodeURIComponent(redLabel.slug);
+    document.getElementById('heroPrice1').textContent = 'S/ ' + Number(redLabel.precio).toFixed(2) + ' • ' + redLabel.categoria;
+  }
+  const florCana = findProduct(['flor', 'cana']) || findProduct(['botran']) || productos.find(p=>p.categoria==='Ron');
+  if (florCana) {
+    document.getElementById('heroBtn2').href = 'producto.html?slug=' + encodeURIComponent(florCana.slug);
+    document.getElementById('heroPrice2').textContent = 'S/ ' + Number(florCana.precio).toFixed(2) + ' • ' + florCana.categoria;
+  }
+
+  // ---------- CARRUSEL DRAGGABLE ----------
+  function makeDraggable(el) {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    el.addEventListener('mousedown', (e) => {
+      isDown = true;
+      el.classList.add('active', 'dragging');
+      startX = e.pageX - el.offsetLeft;
+      scrollLeft = el.scrollLeft;
+    });
+    el.addEventListener('mouseleave', () => {
+      isDown = false;
+      el.classList.remove('active', 'dragging');
+    });
+    el.addEventListener('mouseup', () => {
+      isDown = false;
+      el.classList.remove('active', 'dragging');
+    });
+    el.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - el.offsetLeft;
+      const walk = (x - startX) * 2;
+      el.scrollLeft = scrollLeft - walk;
+    });
+
+    // Touch
+    el.addEventListener('touchstart', (e) => {
+      isDown = true;
+      startX = e.touches[0].pageX - el.offsetLeft;
+      scrollLeft = el.scrollLeft;
+    });
+    el.addEventListener('touchend', () => { isDown = false; });
+    el.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      const x = e.touches[0].pageX - el.offsetLeft;
+      const walk = (x - startX) * 2;
+      el.scrollLeft = scrollLeft - walk;
+    });
+  }
+
+  const catTrack = document.getElementById('catTrack');
+  const brandTrack = document.getElementById('brandTrack');
+  if (catTrack) makeDraggable(catTrack);
+  if (brandTrack) makeDraggable(brandTrack);
+
+  // Progress bar categorias
+  const progress = document.getElementById('catProgress');
+  function updateProgress(){
+    if(!catTrack || !progress) return;
+    const max = catTrack.scrollWidth - catTrack.clientWidth;
+    if(max<=0) return;
+    const pct = catTrack.scrollLeft / max;
+    const barContainer = progress.parentElement;
+    const maxTranslate = barContainer.offsetWidth - progress.offsetWidth;
+    progress.style.transform = `translateX(${pct * maxTranslate}px)`;
+  }
+  if(catTrack){
+    catTrack.addEventListener('scroll', updateProgress);
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  }
+  document.getElementById('catLeft')?.addEventListener('click', ()=> catTrack.scrollBy({left:-300, behavior:'smooth'}));
+  document.getElementById('catRight')?.addEventListener('click', ()=> catTrack.scrollBy({left:300, behavior:'smooth'}));
+
+  // ---------- BRAND TRACK DINAMICO ----------
+  function renderBrandTrack() {
+    if (!brandTrack) return;
+    // Toma marcas reales de productos.db.js
+    const marcasUnicas = [...new Set(productos.map(p=>p.marca).filter(m=>m && m.length>1))].slice(0,12);
+    const fallbackImgs = [
+      "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/1.jpg",
+      "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/2.jpg",
+      "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/3.jpg",
+      "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/4.jpg",
+      "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/5.jpg",
+      "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/6.jpg",
+      "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/7.jpg",
+      "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/8.jpg",
+      "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/9.jpg",
+      "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/10.jpg",
+      "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/11.jpg",
+      "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/12.jpg"
+    ];
+    brandTrack.innerHTML = marcasUnicas.map((marca, i) => `
+      <div class="min-w-[140px] h-[90px] bg-white rounded-xl p-2 flex flex-col items-center justify-center shadow hover:shadow-lg hover:scale-105 transition group">
+        <img src="${fallbackImgs[i % fallbackImgs.length]}" class="max-h-[50px] max-w-full object-contain pointer-events-none">
+      </div>
+    `).join('') || fallbackImgs.map((src,i)=>`
+      <div class="min-w-[140px] h-[90px] bg-white rounded-xl p-2 flex items-center justify-center shadow"><img src="${src}" class="max-h-full max-w-full object-contain pointer-events-none"></div>
+    `).join('');
+  }
+  renderBrandTrack();
+
+  // ---------- BUSCADOR WHERE LIKE SOLO NOMBRE ----------
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+  const searchList = document.getElementById('searchList');
+  const searchCount = document.getElementById('searchCount');
+  const searchVerTodos = document.getElementById('searchVerTodos');
+
+  function limpiarNombre(nombre) {
+    // Quita " | Tragones..." para mostrar solo nombre
+    return nombre.split('|')[0].split('  ')[0].trim();
+  }
+
+  function doSearch(query) {
+    if (!query || query.trim().length < 2) {
+      searchResults.classList.add('hidden');
+      return;
+    }
+    const q = query.toLowerCase().trim();
+    // WHERE LIKE solo en nombre
+    const resultados = productos.filter(p => p.nombre.toLowerCase().includes(q)).slice(0, 8);
+
+    searchCount.textContent = resultados.length + ' encontrados';
+    searchVerTodos.href = 'tienda.html?search=' + encodeURIComponent(query);
+
+    if (resultados.length === 0) {
+      searchList.innerHTML = '<div class="p-4 text-center text-[#666] text-[13px]">No hay productos con "' + query + '" en el nombre</div>';
+    } else {
+      searchList.innerHTML = resultados.map(p => {
+        const nombreLimpio = limpiarNombre(p.nombre);
+        // Resalta término
+        const regex = new RegExp('(' + q.replace(/[.*+?^${}()|\\]/g, '\\$&') + ')', 'gi');
+        const nombreResaltado = nombreLimpio.replace(regex, '<span class="bg-[#ffaa00]/20 text-[#ffaa00] font-bold">$1</span>');
+        return `
+          <a href="producto.html?slug=${encodeURIComponent(p.slug)}" class="flex gap-3 p-3 hover:bg-[#1a1a1a] transition group">
+            <img src="${p.imagen}" alt="${nombreLimpio}" class="w-12 h-12 rounded-xl object-cover bg-white p-1 flex-shrink-0">
+            <div class="flex-1 min-w-0">
+              <p class="text-white text-[13px] leading-tight group-hover:text-[#ffaa00] line-clamp-2">${nombreResaltado}</p>
+              <p class="text-[#666] text-[11px] mt-1">${p.categoria} • <span class="text-[#ffaa00] font-bold">S/ ${Number(p.precio).toFixed(2)}</span></p>
+            </div>
+          </a>
+        `;
+      }).join('');
+    }
+    searchResults.classList.remove('hidden');
+  }
+
+  let searchTimeout;
+  searchInput?.addEventListener('input', (e) => {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => doSearch(e.target.value), 200);
+  });
+  searchInput?.addEventListener('focus', (e) => { if (e.target.value.length >= 2) doSearch(e.target.value); });
+  searchInput?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const v = e.target.value.trim();
+      if (v) window.location.href = 'tienda.html?search=' + encodeURIComponent(v);
+    }
+    if (e.key === 'Escape') {
+      searchResults.classList.add('hidden');
+    }
+  });
+  document.getElementById('searchBtn')?.addEventListener('click', () => {
+    const v = searchInput.value.trim();
+    if (v) window.location.href = 'tienda.html?search=' + encodeURIComponent(v);
+  });
+
+  // Cierra dropdown al hacer clic fuera
+  document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+      searchResults.classList.add('hidden');
+    }
+  });
+
+  // Quick tags
+  document.querySelectorAll('.quick-tag').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const term = btn.getAttribute('data-term');
+      searchInput.value = term;
+      doSearch(term);
+      // También redirige a tienda con búsqueda
+      window.location.href = 'tienda.html?search=' + encodeURIComponent(term);
+    });
+  });
+
+  // ---------- HERO SLIDER ----------
+  let current = 0;
+  const slides = document.querySelectorAll('#heroSlider .slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  function showSlide(idx){
+    slides.forEach((s,i)=>{ 
+      if(i===idx){ s.style.opacity='1'; s.style.pointerEvents='auto'; } 
+      else { s.style.opacity='0'; s.style.pointerEvents='none'; } 
+    });
+    dots.forEach((d,i)=>{ d.className = i===idx ? 'hero-dot w-6 h-2 rounded-full bg-[#ffaa00]' : 'hero-dot w-2 h-2 rounded-full bg-white/30'; });
+  }
+  document.getElementById('nextSlide')?.addEventListener('click', ()=>{ current = (current+1)%slides.length; showSlide(current); });
+  document.getElementById('prevSlide')?.addEventListener('click', ()=>{ current = (current-1+slides.length)%slides.length; showSlide(current); });
+  dots.forEach(d=> d.addEventListener('click', ()=>{ current = parseInt(d.dataset.dot); showSlide(current); }));
+  setInterval(()=>{ current = (current+1)%slides.length; showSlide(current); }, 5000);
+  showSlide(0);
+
+  // Swipe en hero para móvil
+  let heroStartX = 0;
+  const heroSlider = document.getElementById('heroSlider');
+  heroSlider.addEventListener('touchstart', e=>{ heroStartX = e.touches[0].clientX; });
+  heroSlider.addEventListener('touchend', e=>{
+    const diff = e.changedTouches[0].clientX - heroStartX;
+    if (Math.abs(diff) > 50) {
+      if (diff < 0) current = (current+1)%slides.length;
+      else current = (current-1+slides.length)%slides.length;
+      showSlide(current);
+    }
+  });
+</script>
+
+</body>
+</html>
