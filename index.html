@@ -40,7 +40,6 @@
 <section class="relative w-full h-[320px] md:h-[600px] bg-[#050505] overflow-hidden">
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#222_0%,#000_85%)]"></div>
   <div id="heroSlider" class="relative z-10 w-full h-full">
-    
     <!-- ITEM 1 - RED LABEL -->
     <div class="slide absolute inset-0 flex items-center justify-center opacity-100" data-slide="0" data-product="red-label">
       <div class="glow absolute w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#ffaa00] rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
@@ -335,22 +334,23 @@
   const productos = getProductos();
   console.log('Index - productos cargados:', productos.length);
 
-  // ---------- CONTADORES ----------
-  document.getElementById('totalProductosSearch').textContent = productos.length;
-  document.getElementById('beneficioProductos').textContent = productos.length;
+  // ---------- CONTADORES SEGUROS (con ?. para no romper carrusel) ----------
+  document.getElementById('totalProductosSearch') && (document.getElementById('totalProductosSearch').textContent = productos.length);
+  // Estos ids no existen en tu nuevo maquetado, los dejamos con ?. para que no rompa
+  document.getElementById('beneficioProductos') && (document.getElementById('beneficioProductos').textContent = productos.length);
   const cats = [...new Set(productos.map(p=>p.categoria))];
-  document.getElementById('beneficioCats').textContent = cats.length;
+  document.getElementById('beneficioCats') && (document.getElementById('beneficioCats').textContent = cats.length);
   const marcas = [...new Set(productos.map(p=>p.marca).filter(Boolean))];
-  document.getElementById('beneficioMarcas').textContent = marcas.length;
+  document.getElementById('beneficioMarcas') && (document.getElementById('beneficioMarcas').textContent = marcas.length);
   const precios = productos.map(p=>Number(p.precio)).filter(n=>n>0).sort((a,b)=>a-b);
-  document.getElementById('beneficioDesde').textContent = precios.length ? 'S/ ' + precios[0].toFixed(2) : '0';
+  document.getElementById('beneficioDesde') && (document.getElementById('beneficioDesde').textContent = precios.length ? 'S/ ' + precios[0].toFixed(2) : '0');
 
   // Banners counts
   const countByCat = (cat) => productos.filter(p=>p.categoria.toLowerCase().includes(cat.toLowerCase())).length;
   const countBySearch = (term) => productos.filter(p=>p.nombre.toLowerCase().includes(term.toLowerCase()) || p.slug.toLowerCase().includes(term.toLowerCase())).length;
-  document.getElementById('countVinos').textContent = countByCat('Vinos');
-  document.getElementById('countWhisky').textContent = countByCat('Whisky');
-  document.getElementById('countPacks').textContent = countBySearch('pack');
+  document.getElementById('countVinos') && (document.getElementById('countVinos').textContent = countByCat('Vinos'));
+  document.getElementById('countWhisky') && (document.getElementById('countWhisky').textContent = countByCat('Whisky'));
+  document.getElementById('countPacks') && (document.getElementById('countPacks').textContent = countBySearch('pack'));
 
   // ---------- HERO DINAMICO ----------
   function findProduct(terms) {
@@ -362,13 +362,17 @@
   }
   const redLabel = findProduct(['red', 'label']) || findProduct(['whisky', 'johnnie']) || productos.find(p=>p.categoria==='Whisky');
   if (redLabel) {
-    document.getElementById('heroBtn1').href = 'producto.html?slug=' + encodeURIComponent(redLabel.slug);
-    document.getElementById('heroPrice1').textContent = 'S/ ' + Number(redLabel.precio).toFixed(2) + ' • ' + redLabel.categoria;
+    const b1 = document.getElementById('heroBtn1');
+    if(b1) b1.href = 'producto.html?slug=' + encodeURIComponent(redLabel.slug);
+    const pr1 = document.getElementById('heroPrice1');
+    if(pr1) pr1.textContent = 'S/ ' + Number(redLabel.precio).toFixed(2) + ' • ' + redLabel.categoria;
   }
   const florCana = findProduct(['flor', 'cana']) || findProduct(['botran']) || productos.find(p=>p.categoria==='Ron');
   if (florCana) {
-    document.getElementById('heroBtn2').href = 'producto.html?slug=' + encodeURIComponent(florCana.slug);
-    document.getElementById('heroPrice2').textContent = 'S/ ' + Number(florCana.precio).toFixed(2) + ' • ' + florCana.categoria;
+    const b2 = document.getElementById('heroBtn2');
+    if(b2) b2.href = 'producto.html?slug=' + encodeURIComponent(florCana.slug);
+    const pr2 = document.getElementById('heroPrice2');
+    if(pr2) pr2.textContent = 'S/ ' + Number(florCana.precio).toFixed(2) + ' • ' + florCana.categoria;
   }
 
   // ---------- CARRUSEL DRAGGABLE ----------
@@ -441,7 +445,6 @@
   // ---------- BRAND TRACK DINAMICO ----------
   function renderBrandTrack() {
     if (!brandTrack) return;
-    // Toma marcas reales de productos.db.js
     const marcasUnicas = [...new Set(productos.map(p=>p.marca).filter(m=>m && m.length>1))].slice(0,12);
     const fallbackImgs = [
       "https://tragoneslicoreriadelivery.com/wp-content/uploads/2023/02/1.jpg",
@@ -475,7 +478,6 @@
   const searchVerTodos = document.getElementById('searchVerTodos');
 
   function limpiarNombre(nombre) {
-    // Quita " | Tragones..." para mostrar solo nombre
     return nombre.split('|')[0].split('  ')[0].trim();
   }
 
@@ -485,7 +487,6 @@
       return;
     }
     const q = query.toLowerCase().trim();
-    // WHERE LIKE solo en nombre
     const resultados = productos.filter(p => p.nombre.toLowerCase().includes(q)).slice(0, 8);
 
     searchCount.textContent = resultados.length + ' encontrados';
@@ -496,7 +497,6 @@
     } else {
       searchList.innerHTML = resultados.map(p => {
         const nombreLimpio = limpiarNombre(p.nombre);
-        // Resalta término
         const regex = new RegExp('(' + q.replace(/[.*+?^${}()|\\]/g, '\\$&') + ')', 'gi');
         const nombreResaltado = nombreLimpio.replace(regex, '<span class="bg-[#ffaa00]/20 text-[#ffaa00] font-bold">$1</span>');
         return `
@@ -534,53 +534,107 @@
     if (v) window.location.href = 'tienda.html?search=' + encodeURIComponent(v);
   });
 
-  // Cierra dropdown al hacer clic fuera
   document.addEventListener('click', (e) => {
     if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
       searchResults.classList.add('hidden');
     }
   });
 
-  // Quick tags
   document.querySelectorAll('.quick-tag').forEach(btn=>{
     btn.addEventListener('click', ()=>{
       const term = btn.getAttribute('data-term');
       searchInput.value = term;
       doSearch(term);
-      // También redirige a tienda con búsqueda
       window.location.href = 'tienda.html?search=' + encodeURIComponent(term);
     });
   });
+</script>
 
-  // ---------- HERO SLIDER ----------
+<!-- HERO SLIDER FIX - SOLO ESTO SE MODIFICA, AISLADO EN OTRO SCRIPT PARA QUE NO LO ROMPA NADA -->
+<script>
+(function(){
   let current = 0;
-  const slides = document.querySelectorAll('#heroSlider .slide');
+  let autoPlayTimer = null;
+  const slider = document.getElementById('heroSlider');
+  if(!slider) return;
+  const slides = slider.querySelectorAll('.slide');
   const dots = document.querySelectorAll('.hero-dot');
-  function showSlide(idx){
-    slides.forEach((s,i)=>{ 
-      if(i===idx){ s.style.opacity='1'; s.style.pointerEvents='auto'; } 
-      else { s.style.opacity='0'; s.style.pointerEvents='none'; } 
-    });
-    dots.forEach((d,i)=>{ d.className = i===idx ? 'hero-dot w-6 h-2 rounded-full bg-[#ffaa00]' : 'hero-dot w-2 h-2 rounded-full bg-white/30'; });
-  }
-  document.getElementById('nextSlide')?.addEventListener('click', ()=>{ current = (current+1)%slides.length; showSlide(current); });
-  document.getElementById('prevSlide')?.addEventListener('click', ()=>{ current = (current-1+slides.length)%slides.length; showSlide(current); });
-  dots.forEach(d=> d.addEventListener('click', ()=>{ current = parseInt(d.dataset.dot); showSlide(current); }));
-  setInterval(()=>{ current = (current+1)%slides.length; showSlide(current); }, 5000);
-  showSlide(0);
+  const prevBtn = document.getElementById('prevSlide');
+  const nextBtn = document.getElementById('nextSlide');
+  if(slides.length === 0) return;
 
-  // Swipe en hero para móvil
-  let heroStartX = 0;
-  const heroSlider = document.getElementById('heroSlider');
-  heroSlider.addEventListener('touchstart', e=>{ heroStartX = e.touches[0].clientX; });
-  heroSlider.addEventListener('touchend', e=>{
-    const diff = e.changedTouches[0].clientX - heroStartX;
-    if (Math.abs(diff) > 50) {
-      if (diff < 0) current = (current+1)%slides.length;
-      else current = (current-1+slides.length)%slides.length;
-      showSlide(current);
-    }
+  function showSlide(idx){
+    if(idx < 0) idx = slides.length - 1;
+    if(idx >= slides.length) idx = 0;
+    current = idx;
+    slides.forEach((s,i)=>{
+      if(i === current){
+        s.style.opacity = '1';
+        s.style.pointerEvents = 'auto';
+        s.classList.remove('pointer-events-none');
+        s.classList.add('opacity-100');
+      } else {
+        s.style.opacity = '0';
+        s.style.pointerEvents = 'none';
+        s.classList.add('pointer-events-none');
+        s.classList.remove('opacity-100');
+      }
+    });
+    dots.forEach((d,i)=>{
+      if(i === current){
+        d.className = 'hero-dot w-6 h-2 rounded-full bg-[#ffaa00] transition-all duration-300';
+      } else {
+        d.className = 'hero-dot w-2 h-2 rounded-full bg-white/30 transition-all duration-300';
+      }
+    });
+  }
+
+  function nextSlide(){ showSlide(current + 1); }
+  function prevSlide(){ showSlide(current - 1); }
+
+  function startAutoPlay(){
+    stopAutoPlay();
+    autoPlayTimer = setInterval(nextSlide, 5000);
+  }
+  function stopAutoPlay(){
+    if(autoPlayTimer){ clearInterval(autoPlayTimer); autoPlayTimer = null; }
+  }
+
+  nextBtn && nextBtn.addEventListener('click', ()=>{ nextSlide(); startAutoPlay(); });
+  prevBtn && prevBtn.addEventListener('click', ()=>{ prevSlide(); startAutoPlay(); });
+  dots.forEach((d, i)=>{
+    d.addEventListener('click', ()=>{
+      showSlide(i);
+      startAutoPlay();
+    });
   });
+
+  // Swipe móvil
+  let startX = 0;
+  let isDragging = false;
+  slider.addEventListener('touchstart', (e)=>{
+    startX = e.touches[0].clientX;
+    isDragging = true;
+    stopAutoPlay();
+  }, {passive:true});
+  slider.addEventListener('touchend', (e)=>{
+    if(!isDragging) return;
+    const diff = e.changedTouches[0].clientX - startX;
+    if(Math.abs(diff) > 50){
+      if(diff < 0) nextSlide();
+      else prevSlide();
+    }
+    isDragging = false;
+    startAutoPlay();
+  }, {passive:true});
+  slider.addEventListener('mouseenter', stopAutoPlay);
+  slider.addEventListener('mouseleave', startAutoPlay);
+
+  // Init
+  showSlide(0);
+  startAutoPlay();
+  console.log('Hero Slider FIX cargado - slides:', slides.length);
+})();
 </script>
 
 </body>
